@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Руководство — АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .team-grid-wide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .team-card-wide {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--tr);
+    }
+    .team-card-wide:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .team-photo-wide { height: 320px; overflow: hidden; position: relative; }
+    .team-photo-wide img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .5s; }
+    .team-card-wide:hover .team-photo-wide img { transform: scale(1.04); }
+    .team-photo-wide::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: linear-gradient(transparent, rgba(0,20,60,.35)); }
+    .team-body-wide { padding: 28px; flex: 1; }
+    .team-pos-wide { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+    .team-name-wide { font-size: 22px; font-weight: 800; margin-bottom: 14px; color: var(--text-dark); }
+    .team-bio-wide { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+    .team-details { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .team-detail { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--text-mid); }
+    .team-detail i { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+
+    .board-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .board-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 0;
+      overflow: hidden;
+      transition: var(--tr);
+    }
+    .board-card:hover { box-shadow: var(--shadow-lg); }
+    .board-accent { width: 6px; background: linear-gradient(to bottom, var(--blue-mid), var(--accent)); flex-shrink: 0; }
+    .board-body { padding: 24px; }
+    .board-name { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark); }
+    .board-pos { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    .board-bio { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .team-grid-wide { grid-template-columns: repeat(2, 1fr); }
+      .board-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .team-grid-wide { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</span>
+      <span>Входит в структуру Госкорпорации «Росатом»</span>
+    </div>
+    <div class="topbar-right">
+      <a href="mailto:info@raecht.ru"><i class="fas fa-envelope"></i> info@raecht.ru</a>
+      <a href="tel:+79685934321"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="РОСАТОМ Энергохимтехнологии">
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            Направления
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> Сорбенты Термоксид</a>
+            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> Моделирование энергосистем</a>
+            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> Инжиниринг и энергосервис</a>
+            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> Водоподготовка и водоочистка</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link active">Руководство</a></li>
+        <li class="nav-item"><a href="opyt.html" class="nav-link">Опыт работ</a></li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link">Лицензии</a></li>
+        <li class="nav-item"><a href="kontakty.html" class="nav-link">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="tel:+79685934321" class="header-phone">+7 (968) 593-43-21</a>
+      <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
+    </div>
+    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav">
+  <a href="index.html">Главная</a>
+  <a href="sorbenty.html" class="sub">Сорбенты Термоксид</a>
+  <a href="energosistemy.html" class="sub">Моделирование энергосистем</a>
+  <a href="inzhiniring.html" class="sub">Инжиниринг и энергосервис</a>
+  <a href="vodoochistka.html" class="sub">Водоподготовка и водоочистка</a>
+  <a href="rukovodstvo.html">Руководство</a>
+  <a href="opyt.html">Опыт работ</a>
+  <a href="licenzii.html">Лицензии</a>
+  <a href="kontakty.html">Контакты</a>
+</div>
+
+<section class="page-hero">
+  <img class="page-hero-bg" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&h=600&fit=crop&q=80" alt="Переговоры">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Главная</a>
+        <span class="sep">›</span>
+        <span>Руководство</span>
+      </div>
+      <h1 class="page-title">Руководство компании</h1>
+    </div>
+  </div>
+</section>
+
+<!-- TOP MANAGEMENT -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Топ-менеджмент</span>
+    <h2 class="section-title">Высшее руководство</h2>
+    <p class="section-sub">Компанией руководит команда опытных профессионалов с многолетним стажем работы в атомной промышленности и смежных отраслях.</p>
+
+    <!-- CEO Featured -->
+    <div style="background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden; display: grid; grid-template-columns: 380px 1fr; margin-bottom: 48px; border-top: 5px solid var(--accent);">
+      <div style="overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=380&h=480&fit=crop&q=80&face" alt="Генеральный директор" style="width:100%; height:100%; object-fit: cover; object-position: top center;">
+      </div>
+      <div style="padding: 48px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Генеральный директор</div>
+        <h2 style="font-size:32px; font-weight:800; margin-bottom:20px; color:var(--text-dark);">Заварыкин Константин Владимирович</h2>
+        <p style="color:var(--text-mid); line-height:1.7; margin-bottom:16px;">Константин Владимирович возглавляет компанию с 2024 года. Под его руководством предприятие продолжает развивать ключевые направления деятельности — производство сорбентов, моделирование энергосистем и комплексный инжиниринг.</p>
+        <p style="color:var(--text-mid); line-height:1.7; margin-bottom:24px;">Опытный руководитель с многолетним стажем работы в атомной отрасли, обеспечивает стратегическое развитие предприятия и укрепление его позиций на российском и международном рынках.</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:10px; align-items:center; font-size:14px; color:var(--text-mid);">
+            <i class="fas fa-graduation-cap" style="color:var(--accent);"></i>
+            Уральский политехнический институт, специальность «Радиохимия», 1995 г.
+          </div>
+          <div style="display:flex; gap:10px; align-items:center; font-size:14px; color:var(--text-mid);">
+            <i class="fas fa-award" style="color:var(--accent);"></i>
+            Кандидат технических наук (2001 г., ФЭИ, г. Обнинск)
+          </div>
+          <div style="display:flex; gap:10px; align-items:center; font-size:14px; color:var(--text-mid);">
+            <i class="fas fa-certificate" style="color:var(--accent);"></i>
+            Заслуженный работник атомной промышленности РФ
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIRECTORS -->
+<section class="section section--light">
+  <div class="container">
+    <span class="section-label">Руководители подразделений</span>
+    <h2 class="section-title">Директора направлений</h2>
+    <div class="board-grid">
+
+      <div class="board-card">
+        <div class="board-accent"></div>
+        <div class="board-body">
+          <div class="board-pos">Директор по производству сорбентов</div>
+          <div class="board-name">Захаров Дмитрий Игоревич</div>
+          <p class="board-bio">Отвечает за производственные процессы синтеза сорбентов марки «Термоксид», контроль качества продукции, соблюдение регламентов и промышленной безопасности. Автор ряда технологических регламентов по производству сорбентов.</p>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-accent"></div>
+        <div class="board-body">
+          <div class="board-pos">Заместитель генерального директора по моделированию энергосистем</div>
+          <div class="board-name">Чумаченко Виталий Валерьевич, к.т.н.</div>
+          <p class="board-bio">Руководит направлением моделирования и расчётов энергосистем. Кандидат технических наук, специалист в области расчётов электрических режимов, анализа устойчивости, проектирования схем выдачи мощности и внешнего электроснабжения. Email: chumachenko-vv@raecht.ru</p>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-accent"></div>
+        <div class="board-body">
+          <div class="board-pos">Директор по инжинирингу</div>
+          <div class="board-name">Новиков Алексей Юрьевич</div>
+          <p class="board-bio">Руководит проектным и инжиниринговым блоком компании. Под его руководством реализованы десятки крупных объектов в области энергетики, промышленного строительства и систем жизнеобеспечения.</p>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-accent"></div>
+        <div class="board-body">
+          <div class="board-pos">Директор по водоочистке</div>
+          <div class="board-name">Соколова Наталья Александровна</div>
+          <p class="board-bio">Специалист в области технологий водоподготовки и водоочистки. Осуществляет техническое руководство проектами в сфере промышленного водоснабжения, разработки очистных сооружений и систем спецводоочистки.</p>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-accent"></div>
+        <div class="board-body">
+          <div class="board-pos">Директор по коммерции</div>
+          <div class="board-name">Белов Сергей Алексеевич</div>
+          <p class="board-bio">Отвечает за развитие продаж, маркетинг и работу с клиентами. Развивает партнёрские связи с предприятиями атомной отрасли России и зарубежья, участвует в переговорах с ключевыми заказчиками.</p>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-accent"></div>
+        <div class="board-body">
+          <div class="board-pos">Начальник службы качества</div>
+          <div class="board-name">Крылова Ольга Борисовна</div>
+          <p class="board-bio">Обеспечивает функционирование и развитие системы менеджмента качества предприятия. Отвечает за соответствие требованиям ISO 9001 и ядерной отрасли. Проводит внутренние аудиты и взаимодействует с органами по сертификации.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section--blue">
+  <div class="container">
+    <span class="section-label" style="color:var(--accent);">Ценности</span>
+    <h2 class="section-title">Принципы управления</h2>
+    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-top:40px;">
+      <div style="text-align:center; padding:32px 24px;">
+        <div style="font-size:48px; margin-bottom:16px;">🎯</div>
+        <h3 style="font-size:18px; font-weight:700; margin-bottom:12px;">Ответственность</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,.7); line-height:1.6;">Мы несём полную ответственность за качество продукции и услуг перед заказчиками и обществом.</p>
+      </div>
+      <div style="text-align:center; padding:32px 24px;">
+        <div style="font-size:48px; margin-bottom:16px;">🔬</div>
+        <h3 style="font-size:18px; font-weight:700; margin-bottom:12px;">Инновации</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,.7); line-height:1.6;">Постоянное совершенствование технологий и разработка новых решений — основа нашего развития.</p>
+      </div>
+      <div style="text-align:center; padding:32px 24px;">
+        <div style="font-size:48px; margin-bottom:16px;">🤝</div>
+        <h3 style="font-size:18px; font-weight:700; margin-bottom:12px;">Партнёрство</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,.7); line-height:1.6;">Долгосрочные партнёрские отношения с клиентами, основанные на доверии и взаимной выгоде.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="intro-band">
+  <div class="container">
+    <div class="intro-text">
+      <h2>Написать руководству</h2>
+      <p>Вы можете направить обращение или предложение непосредственно руководству компании.</p>
+    </div>
+    <a href="kontakty.html" class="btn btn-outline">Написать нам</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-footer"><img src="assets/logo.png" alt="РОСАТОМ Энергохимтехнологии"></a>
+          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — более 30 лет в атомной отрасли России.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Направления</div>
+          <ul class="footer-links">
+            <li><a href="sorbenty.html">Сорбенты Термоксид</a></li>
+            <li><a href="energosistemy.html">Моделирование энергосистем</a></li>
+            <li><a href="inzhiniring.html">Инжиниринг и энергосервис</a></li>
+            <li><a href="vodoochistka.html">Водоподготовка и водоочистка</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Компания</div>
+          <ul class="footer-links">
+            <li><a href="index.html">О компании</a></li>
+            <li><a href="rukovodstvo.html">Руководство</a></li>
+            <li><a href="opyt.html">Опыт работ</a></li>
+            <li><a href="licenzii.html">Лицензии и сертификаты</a></li>
+            <li><a href="kontakty.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Контакты</div>
+          <div class="footer-contacts">
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt fc-icon"></i><span>115230, г. Москва, ш. Варшавское, д. 46</span></div>
+            <div class="footer-contact-item"><i class="fas fa-phone fc-icon"></i><span>+7 (968) 593-43-21</span></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope fc-icon"></i><span>info@raecht.ru</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+

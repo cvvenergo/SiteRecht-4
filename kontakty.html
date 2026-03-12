@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .maps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .map-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .map-label {
+      background: var(--blue-dark, #1a3a5c);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .map-label i { color: var(--accent, #e8a020); font-size: 16px; }
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+    }
+    .map-address {
+      background: var(--white);
+      padding: 12px 20px;
+      font-size: 13px;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-top: 1px solid #e8edf3;
+    }
+    .map-address i { color: var(--red, #c0392b); flex-shrink: 0; }
+    @media (max-width: 768px) {
+      .maps-grid { grid-template-columns: 1fr; }
+    }
+
+    .dept-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .dept-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; border-top: 4px solid var(--accent); }
+    .dept-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; color: var(--text-dark); }
+    .dept-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-mid); margin-bottom: 8px; }
+    .dept-row i { color: var(--accent); width: 16px; }
+    .dept-row a { color: var(--text-mid); }
+    .dept-row a:hover { color: var(--blue-mid); }
+
+    @media (max-width: 768px) {
+      .dept-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</span>
+      <span>Входит в структуру Госкорпорации «Росатом»</span>
+    </div>
+    <div class="topbar-right">
+      <a href="mailto:info@raecht.ru"><i class="fas fa-envelope"></i> info@raecht.ru</a>
+      <a href="tel:+79685934321"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="РОСАТОМ Энергохимтехнологии">
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            Направления
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> Сорбенты Термоксид</a>
+            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> Моделирование энергосистем</a>
+            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> Инжиниринг и энергосервис</a>
+            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> Водоподготовка и водоочистка</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link">Руководство</a></li>
+        <li class="nav-item"><a href="opyt.html" class="nav-link">Опыт работ</a></li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link">Лицензии</a></li>
+        <li class="nav-item"><a href="kontakty.html" class="nav-link active">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="tel:+79685934321" class="header-phone">+7 (968) 593-43-21</a>
+      <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
+    </div>
+    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav">
+  <a href="index.html">Главная</a>
+  <a href="sorbenty.html" class="sub">Сорбенты Термоксид</a>
+  <a href="energosistemy.html" class="sub">Моделирование энергосистем</a>
+  <a href="inzhiniring.html" class="sub">Инжиниринг и энергосервис</a>
+  <a href="vodoochistka.html" class="sub">Водоподготовка и водоочистка</a>
+  <a href="rukovodstvo.html">Руководство</a>
+  <a href="opyt.html">Опыт работ</a>
+  <a href="licenzii.html">Лицензии</a>
+  <a href="kontakty.html">Контакты</a>
+</div>
+
+<section class="page-hero">
+  <img class="page-hero-bg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=600&fit=crop&q=80" alt="Офис">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Главная</a>
+        <span class="sep">›</span>
+        <span>Контакты</span>
+      </div>
+      <h1 class="page-title">Контакты</h1>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTACTS + FORM -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-label">Как с нами связаться</span>
+        <h2 style="font-size:32px; margin-bottom:32px;">Мы готовы ответить на ваши вопросы</h2>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-building"></i></div>
+          <div>
+            <div class="contact-label">Общество (г. Москва) — основной офис</div>
+            <div class="contact-val">115230, г. Москва, вн. тер. г. Муниципальный<br>округ Нагорный, ш. Варшавское, д. 46</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-industry"></i></div>
+          <div>
+            <div class="contact-label">Производственный филиал (г. Заречный)</div>
+            <div class="contact-val">624250, Свердловская область,<br>г. Заречный, а/я 94</div>
+            <div class="contact-sub">Телефон филиала: <a href="tel:+73437736090">+7 (34377) 3-60-90</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <div class="contact-label">Телефон (Москва)</div>
+            <div class="contact-val"><a href="tel:+79685934321">+7 (968) 593-43-21</a></div>
+            <div class="contact-sub">Понедельник — пятница: 9:00–18:00</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-label">Электронная почта</div>
+            <div class="contact-val"><a href="mailto:info@raecht.ru">info@raecht.ru</a></div>
+            <div class="contact-sub">Ответим в течение одного рабочего дня</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="contact-label">Режим работы</div>
+            <div class="contact-val">Понедельник — пятница: 9:00–18:00</div>
+            <div class="contact-sub">Суббота, воскресенье — выходные дни</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-file-alt"></i></div>
+          <div>
+            <div class="contact-label">Реквизиты</div>
+            <div class="contact-val" style="font-size:14px; line-height:1.8;">
+              ИНН: 6683018026<br>
+              КПП: 772601001<br>
+              ОГРН: 1216600003927<br>
+              ОКПО: 47046771
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <span class="section-label">Обратная связь</span>
+        <h2 style="font-size:28px; margin-bottom:28px;">Отправить сообщение</h2>
+        <form class="form" onsubmit="return handleForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Ваше имя *</label>
+              <input type="text" class="form-input" placeholder="Иван Иванов" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Организация</label>
+              <input type="text" class="form-input" placeholder="АО «Название»">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Телефон *</label>
+              <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email *</label>
+              <input type="email" class="form-input" placeholder="name@company.ru" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Направление</label>
+            <select class="form-select">
+              <option value="">— Выберите направление —</option>
+              <option>Сорбенты Термоксид</option>
+              <option>Моделирование энергосистем</option>
+              <option>Инжиниринг и энергосервис</option>
+              <option>Водоподготовка и водоочистка</option>
+              <option>Общий вопрос</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Сообщение *</label>
+            <textarea class="form-textarea" placeholder="Опишите вашу задачу или вопрос..." required></textarea>
+          </div>
+          <div style="font-size:12px; color:var(--text-mid); line-height:1.5;">
+            Нажимая кнопку «Отправить», вы соглашаетесь с <a href="#" style="color:var(--blue-mid);">политикой конфиденциальности</a> и даёте согласие на обработку персональных данных.
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+            <i class="fas fa-paper-plane"></i> Отправить сообщение
+          </button>
+        </form>
+        <div id="form-success" style="display:none; background:rgba(0,168,100,.1); border:1px solid rgba(0,168,100,.3); border-radius:var(--radius); padding:20px; color:#006e40; margin-top:16px;">
+          <i class="fas fa-check-circle"></i> Ваше сообщение отправлено! Мы свяжемся с вами в течение одного рабочего дня.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="section section--light">
+  <div class="container">
+    <span class="section-label">Расположение</span>
+    <h2 class="section-title" style="margin-bottom:32px;">Как нас найти</h2>
+    <div class="maps-grid">
+      <div class="map-item">
+        <div class="map-label">
+          <i class="fas fa-building"></i>
+          Исполнительный аппарат (г. Москва)
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?mode=search&text=Москва%2C+Варшавское+шоссе%2C+46&z=16&l=map"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="map-address">
+          <i class="fas fa-map-marker-alt"></i>
+          115230, г. Москва, ш. Варшавское, д. 46
+        </div>
+      </div>
+      <div class="map-item">
+        <div class="map-label">
+          <i class="fas fa-industry"></i>
+          Производственный филиал (г. Заречный)
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?mode=search&text=Свердловская+область%2C+Заречный&z=13&l=map"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="map-address">
+          <i class="fas fa-map-marker-alt"></i>
+          624250, Свердловская область, г. Заречный, а/я 94
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:20px; background:var(--white); border-radius:var(--radius); padding:20px 24px; display:flex; gap:32px; flex-wrap:wrap; box-shadow:var(--shadow);">
+      <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--text-mid);">
+        <i class="fas fa-subway" style="color:var(--accent); font-size:20px;"></i>
+        <div><strong style="color:var(--text-dark);">Метро (Москва)</strong><br>ст. «Варшавская» или «Нагатинская» — 10 мин пешком</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--text-mid);">
+        <i class="fas fa-bus" style="color:var(--accent); font-size:20px;"></i>
+        <div><strong style="color:var(--text-dark);">Автобус (Москва)</strong><br>ост. «Варшавское шоссе, д. 46» — маршруты 225, 296, 901</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--text-mid);">
+        <i class="fas fa-car" style="color:var(--accent); font-size:20px;"></i>
+        <div><strong style="color:var(--text-dark);">На автомобиле (Москва)</strong><br>Со стороны ТТК по Варшавскому шоссе, парковка у здания</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPT CONTACTS -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Подразделения</span>
+    <h2 class="section-title">Контакты отделов</h2>
+    <div class="dept-cards">
+      <div class="dept-card">
+        <div class="dept-title"><i class="fas fa-atom" style="color:var(--accent);margin-right:8px;"></i>Отдел сорбентов</div>
+        <div class="dept-row"><i class="fas fa-user"></i>Захаров Д.И., директор по производству</div>
+        <div class="dept-row"><i class="fas fa-phone"></i><a href="tel:+79685934321">+7 (968) 593-43-21</a> доб. 40</div>
+        <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:sorbenty@raecht.ru">sorbenty@raecht.ru</a></div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-title"><i class="fas fa-bolt" style="color:var(--accent);margin-right:8px;"></i>Отдел энергосистем</div>
+        <div class="dept-row"><i class="fas fa-user"></i>Чумаченко В.В., к.т.н., замгендиректора по моделированию энергосистем</div>
+        <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:chumachenko-vv@raecht.ru">chumachenko-vv@raecht.ru</a></div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-title"><i class="fas fa-industry" style="color:var(--accent);margin-right:8px;"></i>Инжиниринговый отдел</div>
+        <div class="dept-row"><i class="fas fa-user"></i>Новиков А.Ю., директор по инжинирингу</div>
+        <div class="dept-row"><i class="fas fa-phone"></i><a href="tel:+79685934321">+7 (968) 593-43-21</a> доб. 42</div>
+        <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:inzh@raecht.ru">inzh@raecht.ru</a></div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-title"><i class="fas fa-tint" style="color:var(--accent);margin-right:8px;"></i>Отдел водоочистки</div>
+        <div class="dept-row"><i class="fas fa-user"></i>Соколова Н.А., директор направления</div>
+        <div class="dept-row"><i class="fas fa-phone"></i><a href="tel:+79685934321">+7 (968) 593-43-21</a> доб. 43</div>
+        <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:water@raecht.ru">water@raecht.ru</a></div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-title"><i class="fas fa-handshake" style="color:var(--accent);margin-right:8px;"></i>Коммерческий отдел</div>
+        <div class="dept-row"><i class="fas fa-user"></i>Белов С.А., коммерческий директор</div>
+        <div class="dept-row"><i class="fas fa-phone"></i><a href="tel:+79685934321">+7 (968) 593-43-21</a> доб. 44</div>
+        <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:sales@raecht.ru">sales@raecht.ru</a></div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-title"><i class="fas fa-briefcase" style="color:var(--accent);margin-right:8px;"></i>Бухгалтерия / Закупки</div>
+        <div class="dept-row"><i class="fas fa-user"></i>Приёмная генерального директора</div>
+        <div class="dept-row"><i class="fas fa-phone"></i><a href="tel:+79685934321">+7 (968) 593-43-21</a></div>
+        <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:buh@raecht.ru">buh@raecht.ru</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-footer"><img src="assets/logo.png" alt="РОСАТОМ Энергохимтехнологии"></a>
+          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — более 30 лет в атомной отрасли России.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Направления</div>
+          <ul class="footer-links">
+            <li><a href="sorbenty.html">Сорбенты Термоксид</a></li>
+            <li><a href="energosistemy.html">Моделирование энергосистем</a></li>
+            <li><a href="inzhiniring.html">Инжиниринг и энергосервис</a></li>
+            <li><a href="vodoochistka.html">Водоподготовка и водоочистка</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Компания</div>
+          <ul class="footer-links">
+            <li><a href="index.html">О компании</a></li>
+            <li><a href="rukovodstvo.html">Руководство</a></li>
+            <li><a href="opyt.html">Опыт работ</a></li>
+            <li><a href="licenzii.html">Лицензии и сертификаты</a></li>
+            <li><a href="kontakty.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Контакты</div>
+          <div class="footer-contacts">
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt fc-icon"></i><span>115230, г. Москва, ш. Варшавское, д. 46</span></div>
+            <div class="footer-contact-item"><i class="fas fa-phone fc-icon"></i><span>+7 (968) 593-43-21</span></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope fc-icon"></i><span>info@raecht.ru</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+function handleForm(e) {
+  e.preventDefault();
+  document.getElementById('form-success').style.display = 'block';
+  e.target.style.display = 'none';
+  return false;
+}
+</script>
+</body>
+</html>
