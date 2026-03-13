@@ -34,7 +34,7 @@
     .map-frame iframe {
       display: block;
       width: 100%;
-      height: 360px;
+      height: 280px;
       border: 0;
     }
     .map-address {
@@ -133,17 +133,17 @@
 </section>
 
 <!-- MAIN CONTACTS + FORM -->
-<section class="section section--light">
+<section class="section section--light" style="padding: 40px 0 32px;">
   <div class="container">
     <div class="contact-grid">
 
       <!-- LEFT: contacts -->
-      <div class="contact-panel">
+      <div class="contact-panel" style="padding: 24px;">
         <span class="section-label">Как с нами связаться</span>
-        <h2 style="font-size:24px; font-weight:800; margin:10px 0 24px;">Наши реквизиты и адреса</h2>
-        <div class="contact-info">
+        <h2 style="font-size:20px; font-weight:800; margin:6px 0 14px;">Наши реквизиты и адреса</h2>
+        <div class="contact-info" style="gap: 0;">
 
-          <div class="contact-item">
+          <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-building"></i></div>
             <div>
               <div class="contact-label">Основной офис (г. Москва)</div>
@@ -151,7 +151,7 @@
             </div>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-industry"></i></div>
             <div>
               <div class="contact-label">Производственный филиал (г. Заречный)</div>
@@ -160,7 +160,7 @@
             </div>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
             <div>
               <div class="contact-label">Телефон (Москва)</div>
@@ -169,7 +169,7 @@
             </div>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div>
               <div class="contact-label">Электронная почта</div>
@@ -178,11 +178,11 @@
             </div>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-file-alt"></i></div>
             <div>
               <div class="contact-label">Реквизиты</div>
-              <div class="contact-val" style="font-size:14px; font-weight:500; line-height:2;">
+              <div class="contact-val" style="font-size:13px; font-weight:500; line-height:1.8;">
                 ИНН: 6683018026 &nbsp;·&nbsp; КПП: 772601001<br>
                 ОГРН: 1216600003927 &nbsp;·&nbsp; ОКПО: 47046771
               </div>
@@ -193,33 +193,33 @@
       </div>
 
       <!-- RIGHT: form -->
-      <div class="contact-panel">
+      <div class="contact-panel" style="padding: 24px;">
         <span class="section-label">Обратная связь</span>
-        <h2 style="font-size:24px; font-weight:800; margin:10px 0 24px;">Отправить сообщение</h2>
-        <form class="form" onsubmit="return handleForm(event)" style="flex:1;">
-          <div class="form-row">
-            <div class="form-group">
+        <h2 style="font-size:20px; font-weight:800; margin:6px 0 14px;">Отправить сообщение</h2>
+        <form class="form" onsubmit="return handleForm(event)" style="flex:1; gap: 10px;">
+          <div class="form-row" style="gap: 12px;">
+            <div class="form-group" style="gap: 4px;">
               <label class="form-label">Ваше имя *</label>
-              <input type="text" class="form-input" placeholder="Иван Иванов" required>
+              <input type="text" class="form-input" placeholder="Иван Иванов" required style="padding: 8px 12px;">
             </div>
-            <div class="form-group">
+            <div class="form-group" style="gap: 4px;">
               <label class="form-label">Организация</label>
-              <input type="text" class="form-input" placeholder="АО «Название»">
+              <input type="text" class="form-input" placeholder="АО «Название»" style="padding: 8px 12px;">
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
+          <div class="form-row" style="gap: 12px;">
+            <div class="form-group" style="gap: 4px;">
               <label class="form-label">Телефон *</label>
-              <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required>
+              <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required style="padding: 8px 12px;">
             </div>
-            <div class="form-group">
+            <div class="form-group" style="gap: 4px;">
               <label class="form-label">Email *</label>
-              <input type="email" class="form-input" placeholder="name@company.ru" required>
+              <input type="email" class="form-input" placeholder="name@company.ru" required style="padding: 8px 12px;">
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="gap: 4px;">
             <label class="form-label">Направление</label>
-            <select class="form-select">
+            <select class="form-select" style="padding: 8px 12px;">
               <option value="">— Выберите направление —</option>
               <option>Сорбенты Термоксид</option>
               <option>Моделирование энергосистем</option>
@@ -228,19 +228,19 @@
               <option>Общий вопрос</option>
             </select>
           </div>
-          <div class="form-group" style="flex:1;">
+          <div class="form-group" style="gap: 4px;">
             <label class="form-label">Сообщение *</label>
-            <textarea class="form-textarea" placeholder="Опишите вашу задачу или вопрос..." required style="flex:1; min-height:100px;"></textarea>
+            <textarea class="form-textarea" placeholder="Опишите вашу задачу или вопрос..." required style="min-height:72px; resize:vertical;"></textarea>
           </div>
-          <div style="font-size:12px; color:var(--text-mid); line-height:1.5;">
-            Нажимая кнопку «Отправить», вы соглашаетесь с <a href="#" style="color:var(--blue-mid);">политикой конфиденциальности</a> и даёте согласие на обработку персональных данных.
+          <div style="font-size:11px; color:var(--text-mid); line-height:1.5;">
+            Нажимая «Отправить», вы соглашаетесь с <a href="#" style="color:var(--blue-mid);">политикой конфиденциальности</a>.
           </div>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+          <button type="submit" class="btn btn-primary btn-sm" style="align-self:flex-start;">
             Отправить сообщение
           </button>
         </form>
-        <div id="form-success" style="display:none; background:rgba(0,168,100,.1); border:1px solid rgba(0,168,100,.3); border-radius:var(--radius); padding:20px; color:#006e40; margin-top:16px;">
-          <i class="fas fa-check-circle"></i> Ваше сообщение отправлено! Мы свяжемся с вами в течение одного рабочего дня.
+        <div id="form-success" style="display:none; background:rgba(0,168,100,.1); border:1px solid rgba(0,168,100,.3); border-radius:var(--radius); padding:14px; color:#006e40; margin-top:12px; font-size:14px;">
+          <i class="fas fa-check-circle"></i> Ваше сообщение отправлено! Свяжемся с вами в течение рабочего дня.
         </div>
       </div>
 
@@ -249,10 +249,10 @@
 </section>
 
 <!-- MAP -->
-<section class="section section--light">
+<section class="section section--light" style="padding: 28px 0 36px;">
   <div class="container">
     <span class="section-label">Расположение</span>
-    <h2 class="section-title" style="margin-bottom:32px;">Как нас найти</h2>
+    <h2 class="section-title" style="margin-bottom:20px;">Как нас найти</h2>
     <div class="maps-grid">
       <div class="map-item">
         <div class="map-label">
@@ -291,17 +291,17 @@
         </div>
       </div>
     </div>
-    <div style="margin-top:20px; background:var(--white); border-radius:var(--radius); padding:20px 24px; display:flex; gap:32px; flex-wrap:wrap; box-shadow:var(--shadow);">
-      <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--text-mid);">
-        <i class="fas fa-subway" style="color:var(--accent); font-size:20px;"></i>
+    <div style="margin-top:16px; background:var(--white); border-radius:var(--radius); padding:14px 20px; display:flex; gap:24px; flex-wrap:wrap; box-shadow:var(--shadow);">
+      <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-mid);">
+        <i class="fas fa-subway" style="color:var(--accent); font-size:18px;"></i>
         <div><strong style="color:var(--text-dark);">Метро (Москва)</strong><br>ст. «Варшавская» или «Нагатинская» — 10 мин пешком</div>
       </div>
-      <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--text-mid);">
-        <i class="fas fa-bus" style="color:var(--accent); font-size:20px;"></i>
+      <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-mid);">
+        <i class="fas fa-bus" style="color:var(--accent); font-size:18px;"></i>
         <div><strong style="color:var(--text-dark);">Автобус (Москва)</strong><br>ост. «Варшавское шоссе, д. 46» — маршруты 225, 296, 901</div>
       </div>
-      <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--text-mid);">
-        <i class="fas fa-car" style="color:var(--accent); font-size:20px;"></i>
+      <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-mid);">
+        <i class="fas fa-car" style="color:var(--accent); font-size:18px;"></i>
         <div><strong style="color:var(--text-dark);">На автомобиле (Москва)</strong><br>Со стороны ТТК по Варшавскому шоссе, парковка у здания</div>
       </div>
     </div>
@@ -309,7 +309,7 @@
 </section>
 
 <!-- DEPT CONTACTS -->
-<section class="section">
+<section class="section" style="padding: 36px 0 56px;">
   <div class="container">
     <span class="section-label">Подразделения</span>
     <h2 class="section-title">Контакты отделов</h2>
