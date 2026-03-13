@@ -6,21 +6,11 @@
   <title>Опыт выполняемых работ — АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="container">
-    <div class="topbar-left">
-      <span>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</span>
-      <span>Входит в структуру Госкорпорации «Росатом»</span>
-    </div>
-    <div class="topbar-right">
-      <a href="mailto:info@raecht.ru"><i class="fas fa-envelope"></i> info@raecht.ru</a>
-      <a href="tel:+79685934321"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
-    </div>
-  </div>
-</div>
 
 <header class="header">
   <div class="container">
@@ -49,7 +39,10 @@
       </ul>
     </nav>
     <div class="header-right">
-      <a href="tel:+79685934321" class="header-phone">+7 (968) 593-43-21</a>
+      <div class="header-contact">
+        <a href="tel:+79685934321" class="header-phone"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
+        <a href="mailto:info@raecht.ru" class="header-phone"><i class="fas fa-envelope"></i> info@raecht.ru</a>
+      </div>
       <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
     </div>
     <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
@@ -462,31 +455,77 @@
 <section class="section section--light">
   <div class="container">
     <span class="section-label">География</span>
-    <h2 class="section-title">Наши объекты по всей стране</h2>
-    <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:20px; margin-top:40px;">
-      <div style="background:var(--white); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); text-align:center;">
-        <div style="font-size:32px; margin-bottom:12px;">🏭</div>
-        <h3 style="font-size:16px; font-weight:700; margin-bottom:8px; color:var(--blue-dark);">Урал и Западная Сибирь</h3>
-        <p style="font-size:13px; color:var(--text-mid);">Белоярская АЭС, Нижний Тагил, Екатеринбург, Пермь, Тюмень</p>
-      </div>
-      <div style="background:var(--white); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); text-align:center;">
-        <div style="font-size:32px; margin-bottom:12px;">🏙</div>
-        <h3 style="font-size:16px; font-weight:700; margin-bottom:8px; color:var(--blue-dark);">Центральная Россия</h3>
-        <p style="font-size:13px; color:var(--text-mid);">Нововоронежская, Смоленская, Курская АЭС, Обнинск, Москва</p>
-      </div>
-      <div style="background:var(--white); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); text-align:center;">
-        <div style="font-size:32px; margin-bottom:12px;">⚓</div>
-        <h3 style="font-size:16px; font-weight:700; margin-bottom:8px; color:var(--blue-dark);">Северо-Запад</h3>
-        <p style="font-size:13px; color:var(--text-mid);">Ленинградская, Балтийская АЭС, Санкт-Петербург, Сосновый Бор</p>
-      </div>
-      <div style="background:var(--white); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); text-align:center;">
-        <div style="font-size:32px; margin-bottom:12px;">🌍</div>
-        <h3 style="font-size:16px; font-weight:700; margin-bottom:8px; color:var(--blue-dark);">За рубежом</h3>
-        <p style="font-size:13px; color:var(--text-mid);">АЭС Аккую (Турция), объекты Беларуси, Казахстана</p>
-      </div>
+    <h2 class="section-title">Наши объекты в России и за рубежом</h2>
+    <p class="section-sub">18 реализованных проектов на ведущих атомных и тепловых станциях, промышленных предприятиях — от Кольского полуострова до Восточной Сибири и за рубежом.</p>
+
+    <div style="margin-top:40px; border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 32px rgba(0,32,96,.12); border:1px solid #dde3ee;">
+      <div id="geo-map" style="height:520px; width:100%;"></div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:20px; justify-content:center;">
+      <span style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-mid);">
+        <span style="width:14px; height:14px; border-radius:50%; background:#002060; display:inline-block; flex-shrink:0;"></span> АЭС и ядерные объекты
+      </span>
+      <span style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-mid);">
+        <span style="width:14px; height:14px; border-radius:50%; background:#e87c1e; display:inline-block; flex-shrink:0;"></span> Промышленные предприятия
+      </span>
+      <span style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-mid);">
+        <span style="width:14px; height:14px; border-radius:50%; background:#c0392b; display:inline-block; flex-shrink:0;"></span> Зарубежные объекты
+      </span>
     </div>
   </div>
 </section>
+
+<script>
+(function() {
+  var map = new maplibregl.Map({
+    container: 'geo-map',
+    style: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
+    center: [72, 40],
+    zoom: 2,
+    scrollZoom: false
+  });
+
+  var objects = [
+    { name: 'Калининская АЭС',                   lat: 57.498, lng: 36.558, color: '#002060', desc: 'Тверская область' },
+    { name: 'Нововоронежская АЭС',                lat: 51.289, lng: 39.212, color: '#002060', desc: 'Воронежская область' },
+    { name: 'Смоленская АЭС',                     lat: 54.170, lng: 33.230, color: '#002060', desc: 'Смоленская область' },
+    { name: 'Балаклавская АЭС',                   lat: 44.496, lng: 33.601, color: '#002060', desc: 'Республика Крым' },
+    { name: 'Кольская АЭС',                       lat: 67.462, lng: 32.490, color: '#002060', desc: 'Мурманская область' },
+    { name: 'ФГУП «Атомфлот»',                    lat: 68.980, lng: 33.092, color: '#002060', desc: 'Мурманск' },
+    { name: 'Белоярская АЭС',                     lat: 56.842, lng: 61.318, color: '#002060', desc: 'Свердловская область' },
+    { name: 'Кандалакшский алюминиевый завод',    lat: 67.153, lng: 32.413, color: '#e87c1e', desc: 'Мурманская область' },
+    { name: 'Тобольская ТЭЦ',                     lat: 58.200, lng: 68.253, color: '#e87c1e', desc: 'Тобольск, Тюменская область' },
+    { name: 'АО «СибурТюменьГаз»',               lat: 64.456, lng: 76.504, color: '#e87c1e', desc: 'Западная Сибирь' },
+    { name: 'АО «Транснефть — Западная Сибирь»', lat: 57.150, lng: 65.530, color: '#e87c1e', desc: 'Тюмень' },
+    { name: 'Красноярский алюминиевый завод',     lat: 55.926, lng: 92.793, color: '#e87c1e', desc: 'Красноярск' },
+    { name: 'Братский алюминиевый завод',         lat: 56.134, lng: 101.610, color: '#e87c1e', desc: 'Братск, Иркутская область' },
+    { name: 'Русал Новокузнецк',                  lat: 53.758, lng: 87.100,  color: '#e87c1e', desc: 'Новокузнецк, Кемеровская область' },
+    { name: 'АО «Тываэнерго» (Туран)',            lat: 52.141, lng: 93.920,  color: '#e87c1e', desc: 'Туран, Республика Тыва' },
+    { name: 'АЭС «Тяньвань»',                     lat: 34.609, lng: 119.461, color: '#c0392b', desc: 'Лянюньган, Китай' },
+    { name: 'АЭС «Куданкулам»',                   lat:  8.171, lng:  77.712, color: '#c0392b', desc: 'Тамилнад, Индия' },
+    { name: 'Южно-Украинская АЭС',                lat: 47.834, lng:  31.220, color: '#c0392b', desc: 'Николаевская область, Украина' }
+  ];
+
+  map.on('load', function() {
+    objects.forEach(function(o) {
+      var el = document.createElement('div');
+      el.style.cssText = 'width:16px;height:16px;border-radius:50%;background:' + o.color + ';border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);cursor:pointer;';
+      new maplibregl.Marker({ element: el })
+        .setLngLat([o.lng, o.lat])
+        .setPopup(
+          new maplibregl.Popup({ offset: 12 }).setHTML(
+            '<div style="min-width:160px;">' +
+            '<strong style="font-size:13px;color:#002060;">' + o.name + '</strong>' +
+            '<br><span style="font-size:12px;color:#666;">' + o.desc + '</span>' +
+            '</div>'
+          )
+        )
+        .addTo(map);
+    });
+  });
+})();
+</script>
 
 <div class="intro-band">
   <div class="container">
@@ -498,17 +537,17 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-top">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo-footer"><img src="assets/logo.png" alt="РОСАТОМ Энергохимтехнологии"></a>
-          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — более 30 лет в атомной отрасли России.</p>
-          <div class="footer-socials">
-            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-          </div>
+          <a href="index.html" class="logo-footer logo-footer--text">
+            <span class="logo-text-top">РОСАТОМ</span>
+            <span class="logo-text-bottom">ЭНЕРГОХИМТЕХНОЛОГИИ</span>
+          </a>
+          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
         </div>
         <div>
           <div class="footer-col-title">Направления</div>
@@ -532,9 +571,22 @@
         <div>
           <div class="footer-col-title">Контакты</div>
           <div class="footer-contacts">
-            <div class="footer-contact-item"><i class="fas fa-map-marker-alt fc-icon"></i><span>115230, г. Москва, ш. Варшавское, д. 46</span></div>
-            <div class="footer-contact-item"><i class="fas fa-phone fc-icon"></i><span>+7 (968) 593-43-21</span></div>
-            <div class="footer-contact-item"><i class="fas fa-envelope fc-icon"></i><span>info@raecht.ru</span></div>
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt fc-icon"></i>
+              <span>115230, г. Москва,<br>ш. Варшавское, д. 46</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone fc-icon"></i>
+              <span><a href="tel:+79685934321" style="color:inherit;">+7 (968) 593-43-21</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope fc-icon"></i>
+              <span><a href="mailto:info@raecht.ru" style="color:inherit;">info@raecht.ru</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-globe fc-icon"></i>
+              <span>термоксид.рф</span>
+            </div>
           </div>
         </div>
       </div>
@@ -543,7 +595,10 @@
   <div class="container">
     <div class="footer-bottom">
       <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
-      <a href="#">Политика конфиденциальности</a>
+      <div style="display:flex;gap:20px;">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Карта сайта</a>
+      </div>
     </div>
   </div>
 </footer>

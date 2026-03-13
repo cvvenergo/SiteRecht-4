@@ -17,18 +17,6 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div class="container">
-    <div class="topbar-left">
-      <span>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</span>
-      <span>Входит в структуру Госкорпорации «Росатом»</span>
-    </div>
-    <div class="topbar-right">
-      <a href="mailto:info@raecht.ru"><i class="fas fa-envelope"></i> info@raecht.ru</a>
-      <a href="tel:+79685934321"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
-    </div>
-  </div>
-</div>
 
 <header class="header">
   <div class="container">
@@ -57,7 +45,10 @@
       </ul>
     </nav>
     <div class="header-right">
-      <a href="tel:+79685934321" class="header-phone">+7 (968) 593-43-21</a>
+      <div class="header-contact">
+        <a href="tel:+79685934321" class="header-phone"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
+        <a href="mailto:info@raecht.ru" class="header-phone"><i class="fas fa-envelope"></i> info@raecht.ru</a>
+      </div>
       <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
     </div>
     <button class="hamburger" aria-label="Меню">
@@ -378,17 +369,17 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-top">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo-footer"><img src="assets/logo.png" alt="РОСАТОМ Энергохимтехнологии"></a>
-          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — более 30 лет в атомной отрасли России.</p>
-          <div class="footer-socials">
-            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-          </div>
+          <a href="index.html" class="logo-footer logo-footer--text">
+            <span class="logo-text-top">РОСАТОМ</span>
+            <span class="logo-text-bottom">ЭНЕРГОХИМТЕХНОЛОГИИ</span>
+          </a>
+          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
         </div>
         <div>
           <div class="footer-col-title">Направления</div>
@@ -412,9 +403,22 @@
         <div>
           <div class="footer-col-title">Контакты</div>
           <div class="footer-contacts">
-            <div class="footer-contact-item"><i class="fas fa-map-marker-alt fc-icon"></i><span>115230, г. Москва, ш. Варшавское, д. 46</span></div>
-            <div class="footer-contact-item"><i class="fas fa-phone fc-icon"></i><span>+7 (968) 593-43-21</span></div>
-            <div class="footer-contact-item"><i class="fas fa-envelope fc-icon"></i><span>info@raecht.ru</span></div>
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt fc-icon"></i>
+              <span>115230, г. Москва,<br>ш. Варшавское, д. 46</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone fc-icon"></i>
+              <span><a href="tel:+79685934321" style="color:inherit;">+7 (968) 593-43-21</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope fc-icon"></i>
+              <span><a href="mailto:info@raecht.ru" style="color:inherit;">info@raecht.ru</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-globe fc-icon"></i>
+              <span>термоксид.рф</span>
+            </div>
           </div>
         </div>
       </div>
@@ -423,7 +427,10 @@
   <div class="container">
     <div class="footer-bottom">
       <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
-      <a href="#">Политика конфиденциальности</a>
+      <div style="display:flex;gap:20px;">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Карта сайта</a>
+      </div>
     </div>
   </div>
 </footer>
