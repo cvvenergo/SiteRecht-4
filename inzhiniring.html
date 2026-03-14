@@ -16,7 +16,7 @@
     .stage-desc { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
   </style>
 </head>
-<body>
+<body data-page-title="inzh.title">
 
 
 <header class="header">
@@ -26,46 +26,54 @@
     </a>
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Главная</a></li>
         <li class="nav-item">
           <a href="#" class="nav-link active">
-            Направления
+            <span data-i18n="nav.directions">Направления</span>
             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown">
-            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> Сорбенты Термоксид</a>
-            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> Моделирование энергосистем</a>
-            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> Инжиниринг и энергосервис</a>
-            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> Водоподготовка и водоочистка</a>
+            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> <span data-i18n="nav.dd.sorbents">Сорбенты Термоксид</span></a>
+            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> <span data-i18n="nav.dd.energy">Моделирование энергосистем</span></a>
+            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> <span data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</span></a>
+            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> <span data-i18n="nav.dd.water">Водоподготовка и водоочистка</span></a>
           </div>
         </li>
-        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link">Руководство</a></li>
-        <li class="nav-item"><a href="opyt.html" class="nav-link">Опыт работ</a></li>
-        <li class="nav-item"><a href="licenzii.html" class="nav-link">Лицензии</a></li>
-        <li class="nav-item"><a href="kontakty.html" class="nav-link">Контакты</a></li>
+        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link" data-i18n="nav.management">Руководство</a></li>
+        <li class="nav-item"><a href="opyt.html" class="nav-link" data-i18n="nav.experience">Опыт работ</a></li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link" data-i18n="nav.licenses">Лицензии</a></li>
+        <li class="nav-item"><a href="kontakty.html" class="nav-link" data-i18n="nav.contacts">Контакты</a></li>
       </ul>
     </nav>
     <div class="header-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
       <div class="header-contact">
         <a href="tel:+79685934321" class="header-phone"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
         <a href="mailto:info@raecht.ru" class="header-phone"><i class="fas fa-envelope"></i> info@raecht.ru</a>
       </div>
-      <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
+      <a href="kontakty.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Написать нам</a>
     </div>
-    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+    <button class="hamburger" data-i18n-aria="nav.menu.aria" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <div class="mobile-nav">
-  <a href="index.html">Главная</a>
-  <a href="sorbenty.html" class="sub">Сорбенты Термоксид</a>
-  <a href="energosistemy.html" class="sub">Моделирование энергосистем</a>
-  <a href="inzhiniring.html" class="sub">Инжиниринг и энергосервис</a>
-  <a href="vodoochistka.html" class="sub">Водоподготовка и водоочистка</a>
-  <a href="rukovodstvo.html">Руководство</a>
-  <a href="opyt.html">Опыт работ</a>
-  <a href="licenzii.html">Лицензии</a>
-  <a href="kontakty.html">Контакты</a>
+  <div class="mobile-lang-switcher">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="index.html" data-i18n="nav.home">Главная</a>
+  <a href="sorbenty.html" class="sub" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a>
+  <a href="energosistemy.html" class="sub" data-i18n="nav.dd.energy">Моделирование энергосистем</a>
+  <a href="inzhiniring.html" class="sub" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a>
+  <a href="vodoochistka.html" class="sub" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a>
+  <a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a>
+  <a href="opyt.html" data-i18n="nav.experience">Опыт работ</a>
+  <a href="licenzii.html" data-i18n="nav.licenses">Лицензии</a>
+  <a href="kontakty.html" data-i18n="nav.contacts">Контакты</a>
 </div>
 
 <section class="page-hero">
@@ -74,13 +82,13 @@
   <div class="page-hero-content">
     <div class="container">
       <div class="breadcrumb">
-        <a href="index.html">Главная</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Главная</a>
         <span class="sep">›</span>
-        <span>Направления деятельности</span>
+        <span data-i18n="breadcrumb.directions">Направления деятельности</span>
         <span class="sep">›</span>
-        <span>Инжиниринг и энергосервис</span>
+        <span data-i18n="inzh.bc.page">Инжиниринг и энергосервис</span>
       </div>
-      <h1 class="page-title">Инжиниринг и энергосервис</h1>
+      <h1 class="page-title" data-i18n="inzh.h1">Инжиниринг и энергосервис</h1>
     </div>
   </div>
 </section>
@@ -90,16 +98,16 @@
   <div class="container">
     <div class="content-grid">
       <div class="content-text">
-        <span class="section-label">О направлении</span>
-        <h2>Комплексные инженерные решения для энергетики</h2>
-        <p>Направление инжиниринга и энергосервиса предоставляет полный спектр услуг по проектированию, поставке оборудования, вводу объектов в эксплуатацию и дальнейшему сервисному обслуживанию энергетических и промышленных объектов.</p>
-        <p>Наша команда инженеров объединяет специалистов с многолетним практическим опытом реализации проектов различной сложности — от локальных объектов промышленного электроснабжения до комплексной модернизации систем жизнеобеспечения крупных предприятий.</p>
+        <span class="section-label" data-i18n="inzh.intro.label">О направлении</span>
+        <h2 data-i18n="inzh.intro.h2">Комплексные инженерные решения для энергетики</h2>
+        <p data-i18n="inzh.intro.p1">Направление инжиниринга и энергосервиса предоставляет полный спектр услуг по проектированию, поставке оборудования, вводу объектов в эксплуатацию и дальнейшему сервисному обслуживанию энергетических и промышленных объектов.</p>
+        <p data-i18n="inzh.intro.p2">Наша команда инженеров объединяет специалистов с многолетним практическим опытом реализации проектов различной сложности — от локальных объектов промышленного электроснабжения до комплексной модернизации систем жизнеобеспечения крупных предприятий.</p>
         <ul>
-          <li>Реализация проектов «под ключ»</li>
-          <li>Международный и российский опыт проектирования</li>
-          <li>Собственный штат ГИПов и главных специалистов</li>
-          <li>Членство в СРО проектировщиков (допуск к особо опасным объектам)</li>
-          <li>Технический аудит и независимая экспертиза</li>
+          <li data-i18n="inzh.intro.li1">Реализация проектов «под ключ»</li>
+          <li data-i18n="inzh.intro.li2">Международный и российский опыт проектирования</li>
+          <li data-i18n="inzh.intro.li3">Собственный штат ГИПов и главных специалистов</li>
+          <li data-i18n="inzh.intro.li4">Членство в СРО проектировщиков (допуск к особо опасным объектам)</li>
+          <li data-i18n="inzh.intro.li5">Технический аудит и независимая экспертиза</li>
         </ul>
       </div>
       <div class="content-img">
@@ -112,38 +120,38 @@
 <!-- SERVICES -->
 <section class="section section--light">
   <div class="container">
-    <span class="section-label">Услуги</span>
-    <h2 class="section-title">Что мы предлагаем</h2>
+    <span class="section-label" data-i18n="inzh.services.label">Услуги</span>
+    <h2 class="section-title" data-i18n="inzh.services.title">Что мы предлагаем</h2>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-search"></i></div>
-        <h3 class="service-title">Предпроектное обследование</h3>
-        <p class="service-desc">Технический аудит существующей инфраструктуры, выявление проблемных зон, анализ технического состояния оборудования. Подготовка детального отчёта с рекомендациями.</p>
+        <h3 class="service-title" data-i18n="inzh.svc1.title">Предпроектное обследование</h3>
+        <p class="service-desc" data-i18n="inzh.svc1.desc">Технический аудит существующей инфраструктуры, выявление проблемных зон, анализ технического состояния оборудования. Подготовка детального отчёта с рекомендациями.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-        <h3 class="service-title">Разработка ТЗ и ТЭО</h3>
-        <p class="service-desc">Формирование технических заданий и технико-экономических обоснований для инвестиционных решений. Оценка капитальных и эксплуатационных затрат.</p>
+        <h3 class="service-title" data-i18n="inzh.svc2.title">Разработка ТЗ и ТЭО</h3>
+        <p class="service-desc" data-i18n="inzh.svc2.desc">Формирование технических заданий и технико-экономических обоснований для инвестиционных решений. Оценка капитальных и эксплуатационных затрат.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
-        <h3 class="service-title">Проектирование</h3>
-        <p class="service-desc">Разработка проектной и рабочей документации в соответствии с российскими нормами (ГОСТ, СП, НП). Прохождение государственной экспертизы.</p>
+        <h3 class="service-title" data-i18n="inzh.svc3.title">Проектирование</h3>
+        <p class="service-desc" data-i18n="inzh.svc3.desc">Разработка проектной и рабочей документации в соответствии с российскими нормами (ГОСТ, СП, НП). Прохождение государственной экспертизы.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-boxes"></i></div>
-        <h3 class="service-title">Подбор и поставка оборудования</h3>
-        <p class="service-desc">Технический подбор, проведение тендерных процедур, поставка электротехнического и механического оборудования ведущих российских и зарубежных производителей.</p>
+        <h3 class="service-title" data-i18n="inzh.svc4.title">Подбор и поставка оборудования</h3>
+        <p class="service-desc" data-i18n="inzh.svc4.desc">Технический подбор, проведение тендерных процедур, поставка электротехнического и механического оборудования ведущих российских и зарубежных производителей.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
-        <h3 class="service-title">Технический и ценовой аудит</h3>
-        <p class="service-desc">Независимая экспертиза проектных решений, контроль соответствия нормативным требованиям, проверка сметных расчётов и обоснованности стоимости.</p>
+        <h3 class="service-title" data-i18n="inzh.svc5.title">Технический и ценовой аудит</h3>
+        <p class="service-desc" data-i18n="inzh.svc5.desc">Независимая экспертиза проектных решений, контроль соответствия нормативным требованиям, проверка сметных расчётов и обоснованности стоимости.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-tasks"></i></div>
-        <h3 class="service-title">Управление проектами</h3>
-        <p class="service-desc">Функции технического заказчика и управляющей компании: координация подрядчиков, контроль сроков и бюджета, строительный надзор, ввод в эксплуатацию.</p>
+        <h3 class="service-title" data-i18n="inzh.svc6.title">Управление проектами</h3>
+        <p class="service-desc" data-i18n="inzh.svc6.desc">Функции технического заказчика и управляющей компании: координация подрядчиков, контроль сроков и бюджета, строительный надзор, ввод в эксплуатацию.</p>
       </div>
     </div>
   </div>
@@ -154,49 +162,49 @@
   <div class="container">
     <div class="content-grid">
       <div class="content-text">
-        <span class="section-label">Процесс работы</span>
-        <h2>Как мы реализуем проекты</h2>
+        <span class="section-label" data-i18n="inzh.process.label">Процесс работы</span>
+        <h2 data-i18n="inzh.process.h2">Как мы реализуем проекты</h2>
         <div class="stages">
           <div class="stage">
             <div class="stage-num">1</div>
             <div class="stage-body">
-              <h3 class="stage-title">Первичная консультация</h3>
-              <p class="stage-desc">Анализ задачи заказчика, предварительная оценка объёма работ и возможных решений.</p>
+              <h3 class="stage-title" data-i18n="inzh.stage1.title">Первичная консультация</h3>
+              <p class="stage-desc" data-i18n="inzh.stage1.desc">Анализ задачи заказчика, предварительная оценка объёма работ и возможных решений.</p>
             </div>
           </div>
           <div class="stage">
             <div class="stage-num">2</div>
             <div class="stage-body">
-              <h3 class="stage-title">Обследование объекта</h3>
-              <p class="stage-desc">Выезд специалистов, сбор исходных данных, подготовка отчёта об обследовании.</p>
+              <h3 class="stage-title" data-i18n="inzh.stage2.title">Обследование объекта</h3>
+              <p class="stage-desc" data-i18n="inzh.stage2.desc">Выезд специалистов, сбор исходных данных, подготовка отчёта об обследовании.</p>
             </div>
           </div>
           <div class="stage">
             <div class="stage-num">3</div>
             <div class="stage-body">
-              <h3 class="stage-title">Разработка концепции</h3>
-              <p class="stage-desc">Подготовка технических решений, предварительное ТЭО, согласование с заказчиком.</p>
+              <h3 class="stage-title" data-i18n="inzh.stage3.title">Разработка концепции</h3>
+              <p class="stage-desc" data-i18n="inzh.stage3.desc">Подготовка технических решений, предварительное ТЭО, согласование с заказчиком.</p>
             </div>
           </div>
           <div class="stage">
             <div class="stage-num">4</div>
             <div class="stage-body">
-              <h3 class="stage-title">Проектирование и согласование</h3>
-              <p class="stage-desc">Разработка проектной документации, прохождение экспертизы, получение разрешений.</p>
+              <h3 class="stage-title" data-i18n="inzh.stage4.title">Проектирование и согласование</h3>
+              <p class="stage-desc" data-i18n="inzh.stage4.desc">Разработка проектной документации, прохождение экспертизы, получение разрешений.</p>
             </div>
           </div>
           <div class="stage">
             <div class="stage-num">5</div>
             <div class="stage-body">
-              <h3 class="stage-title">Поставка оборудования</h3>
-              <p class="stage-desc">Организация конкурсных процедур, заключение договоров поставки, логистика и входной контроль.</p>
+              <h3 class="stage-title" data-i18n="inzh.stage5.title">Поставка оборудования</h3>
+              <p class="stage-desc" data-i18n="inzh.stage5.desc">Организация конкурсных процедур, заключение договоров поставки, логистика и входной контроль.</p>
             </div>
           </div>
           <div class="stage">
             <div class="stage-num">6</div>
             <div class="stage-body">
-              <h3 class="stage-title">Сдача и сервис</h3>
-              <p class="stage-desc">Ввод объекта в эксплуатацию, обучение персонала, дальнейшее сервисное обслуживание.</p>
+              <h3 class="stage-title" data-i18n="inzh.stage6.title">Сдача и сервис</h3>
+              <p class="stage-desc" data-i18n="inzh.stage6.desc">Ввод объекта в эксплуатацию, обучение персонала, дальнейшее сервисное обслуживание.</p>
             </div>
           </div>
         </div>
@@ -213,19 +221,19 @@
   <div class="stats-grid">
     <div class="stat-item">
       <div class="stat-number" data-count="50" data-suffix="+">0</div>
-      <div class="stat-label">завершённых инжиниринговых проектов</div>
+      <div class="stat-label" data-i18n="inzh.stat1.label">завершённых инжиниринговых проектов</div>
     </div>
     <div class="stat-item">
       <div class="stat-number" data-count="15" data-suffix="">0</div>
-      <div class="stat-label">регионов присутствия</div>
+      <div class="stat-label" data-i18n="inzh.stat2.label">регионов присутствия</div>
     </div>
     <div class="stat-item">
       <div class="stat-number" data-count="12" data-suffix="">0</div>
-      <div class="stat-label">ГИПов и главных специалистов</div>
+      <div class="stat-label" data-i18n="inzh.stat3.label">ГИПов и главных специалистов</div>
     </div>
     <div class="stat-item">
       <div class="stat-number" data-count="100" data-suffix="%">0</div>
-      <div class="stat-label">объектов сданы в срок</div>
+      <div class="stat-label" data-i18n="inzh.stat4.label">объектов сданы в срок</div>
     </div>
   </div>
 </section>
@@ -233,10 +241,10 @@
 <div class="intro-band">
   <div class="container">
     <div class="intro-text">
-      <h2>Обсудим ваш инжиниринговый проект?</h2>
-      <p>Свяжитесь с нашими инженерами — мы предложим оптимальное решение любой сложности.</p>
+      <h2 data-i18n="inzh.cta.title">Обсудим ваш инжиниринговый проект?</h2>
+      <p data-i18n="inzh.cta.desc">Свяжитесь с нашими инженерами — мы предложим оптимальное решение любой сложности.</p>
     </div>
-    <a href="kontakty.html" class="btn btn-outline">Получить консультацию</a>
+    <a href="kontakty.html" class="btn btn-outline" data-i18n="inzh.cta.btn">Получить консультацию</a>
   </div>
 </div>
 
@@ -250,33 +258,33 @@
             <span class="logo-text-top">РОСАТОМ</span>
             <span class="logo-text-bottom">ЭНЕРГОХИМТЕХНОЛОГИИ</span>
           </a>
-          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
+          <p data-i18n="footer.brand_desc">АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
         </div>
         <div>
-          <div class="footer-col-title">Направления</div>
+          <div class="footer-col-title" data-i18n="footer.directions">Направления</div>
           <ul class="footer-links">
-            <li><a href="sorbenty.html">Сорбенты Термоксид</a></li>
-            <li><a href="energosistemy.html">Моделирование энергосистем</a></li>
-            <li><a href="inzhiniring.html">Инжиниринг и энергосервис</a></li>
-            <li><a href="vodoochistka.html">Водоподготовка и водоочистка</a></li>
+            <li><a href="sorbenty.html" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a></li>
+            <li><a href="energosistemy.html" data-i18n="nav.dd.energy">Моделирование энергосистем</a></li>
+            <li><a href="inzhiniring.html" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a></li>
+            <li><a href="vodoochistka.html" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Компания</div>
+          <div class="footer-col-title" data-i18n="footer.company">Компания</div>
           <ul class="footer-links">
-            <li><a href="index.html">О компании</a></li>
-            <li><a href="rukovodstvo.html">Руководство</a></li>
-            <li><a href="opyt.html">Опыт работ</a></li>
-            <li><a href="licenzii.html">Лицензии и сертификаты</a></li>
-            <li><a href="kontakty.html">Контакты</a></li>
+            <li><a href="index.html" data-i18n="footer.about">О компании</a></li>
+            <li><a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a></li>
+            <li><a href="opyt.html" data-i18n="nav.experience">Опыт работ</a></li>
+            <li><a href="licenzii.html" data-i18n="footer.licenses_certs">Лицензии и сертификаты</a></li>
+            <li><a href="kontakty.html" data-i18n="nav.contacts">Контакты</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Контакты</div>
+          <div class="footer-col-title" data-i18n="footer.contacts">Контакты</div>
           <div class="footer-contacts">
             <div class="footer-contact-item">
               <i class="fas fa-map-marker-alt fc-icon"></i>
-              <span>115230, г. Москва,<br>ш. Варшавское, д. 46</span>
+              <span data-i18n-html="addr.moscow">115230, г. Москва,<br>ш. Варшавское, д. 46</span>
             </div>
             <div class="footer-contact-item">
               <i class="fas fa-phone fc-icon"></i>
@@ -297,16 +305,17 @@
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
+      <span data-i18n="footer.copyright">© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
       <div style="display:flex;gap:20px;">
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Карта сайта</a>
+        <a href="#" data-i18n="footer.privacy">Политика конфиденциальности</a>
+        <a href="#" data-i18n="footer.sitemap">Карта сайта</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script src="js/script.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>
 

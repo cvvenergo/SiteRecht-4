@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body data-page-title="ener.title">
 
 
 <header class="header">
@@ -17,48 +17,56 @@
     </a>
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Главная</a></li>
         <li class="nav-item">
           <a href="#" class="nav-link active">
-            Направления
+            <span data-i18n="nav.directions">Направления</span>
             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown">
-            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> Сорбенты Термоксид</a>
-            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> Моделирование энергосистем</a>
-            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> Инжиниринг и энергосервис</a>
-            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> Водоподготовка и водоочистка</a>
+            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> <span data-i18n="nav.dd.sorbents">Сорбенты Термоксид</span></a>
+            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> <span data-i18n="nav.dd.energy">Моделирование энергосистем</span></a>
+            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> <span data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</span></a>
+            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> <span data-i18n="nav.dd.water">Водоподготовка и водоочистка</span></a>
           </div>
         </li>
-        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link">Руководство</a></li>
-        <li class="nav-item"><a href="opyt.html" class="nav-link">Опыт работ</a></li>
-        <li class="nav-item"><a href="licenzii.html" class="nav-link">Лицензии</a></li>
-        <li class="nav-item"><a href="kontakty.html" class="nav-link">Контакты</a></li>
+        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link" data-i18n="nav.management">Руководство</a></li>
+        <li class="nav-item"><a href="opyt.html" class="nav-link" data-i18n="nav.experience">Опыт работ</a></li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link" data-i18n="nav.licenses">Лицензии</a></li>
+        <li class="nav-item"><a href="kontakty.html" class="nav-link" data-i18n="nav.contacts">Контакты</a></li>
       </ul>
     </nav>
     <div class="header-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
       <div class="header-contact">
         <a href="tel:+79685934321" class="header-phone"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
         <a href="mailto:info@raecht.ru" class="header-phone"><i class="fas fa-envelope"></i> info@raecht.ru</a>
       </div>
-      <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
+      <a href="kontakty.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Написать нам</a>
     </div>
-    <button class="hamburger" aria-label="Меню">
+    <button class="hamburger" data-i18n-aria="nav.menu.aria" aria-label="Меню">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
 <div class="mobile-nav">
-  <a href="index.html">Главная</a>
-  <a href="sorbenty.html" class="sub">Сорбенты Термоксид</a>
-  <a href="energosistemy.html" class="sub">Моделирование энергосистем</a>
-  <a href="inzhiniring.html" class="sub">Инжиниринг и энергосервис</a>
-  <a href="vodoochistka.html" class="sub">Водоподготовка и водоочистка</a>
-  <a href="rukovodstvo.html">Руководство</a>
-  <a href="opyt.html">Опыт работ</a>
-  <a href="licenzii.html">Лицензии</a>
-  <a href="kontakty.html">Контакты</a>
+  <div class="mobile-lang-switcher">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="index.html" data-i18n="nav.home">Главная</a>
+  <a href="sorbenty.html" class="sub" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a>
+  <a href="energosistemy.html" class="sub" data-i18n="nav.dd.energy">Моделирование энергосистем</a>
+  <a href="inzhiniring.html" class="sub" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a>
+  <a href="vodoochistka.html" class="sub" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a>
+  <a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a>
+  <a href="opyt.html" data-i18n="nav.experience">Опыт работ</a>
+  <a href="licenzii.html" data-i18n="nav.licenses">Лицензии</a>
+  <a href="kontakty.html" data-i18n="nav.contacts">Контакты</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -68,13 +76,13 @@
   <div class="page-hero-content">
     <div class="container">
       <div class="breadcrumb">
-        <a href="index.html">Главная</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Главная</a>
         <span class="sep">›</span>
-        <span>Направления деятельности</span>
+        <span data-i18n="breadcrumb.directions">Направления деятельности</span>
         <span class="sep">›</span>
-        <span>Моделирование энергосистем</span>
+        <span data-i18n="ener.bc.page">Моделирование энергосистем</span>
       </div>
-      <h1 class="page-title">Моделирование энергосистем</h1>
+      <h1 class="page-title" data-i18n="ener.h1">Моделирование энергосистем</h1>
     </div>
   </div>
 </section>
@@ -84,10 +92,10 @@
   <div class="container">
     <div class="content-grid">
       <div class="content-text">
-        <span class="section-label">О направлении</span>
-        <h2>Электрические расчёты и консалтинг в области электроэнергетики</h2>
-        <p>Специалисты АО «Росатом Энергохимтех» имеют широкий опыт в разработке и согласовании с субъектами электроэнергетики документации в части электрических расчётов и моделирования сложных энергетических объектов.</p>
-        <p>Мы выполняем работы для генерирующих компаний, промышленных предприятий и территориальных сетевых организаций, обеспечивая соответствие требованиям Системного оператора ЕЭС России.</p>
+        <span class="section-label" data-i18n="ener.intro.label">О направлении</span>
+        <h2 data-i18n="ener.intro.h2">Электрические расчёты и консалтинг в области электроэнергетики</h2>
+        <p data-i18n="ener.intro.p1">Специалисты АО «Росатом Энергохимтех» имеют широкий опыт в разработке и согласовании с субъектами электроэнергетики документации в части электрических расчётов и моделирования сложных энергетических объектов.</p>
+        <p data-i18n="ener.intro.p2">Мы выполняем работы для генерирующих компаний, промышленных предприятий и территориальных сетевых организаций, обеспечивая соответствие требованиям Системного оператора ЕЭС России.</p>
       </div>
       <div class="content-img">
         <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=520&fit=crop&q=80" alt="Высоковольтные линии электропередачи">
@@ -99,9 +107,9 @@
 <!-- SERVICES: 4 MAIN AREAS -->
 <section class="section section--light">
   <div class="container">
-    <span class="section-label">Услуги</span>
-    <h2 class="section-title">Комплекс выполняемых работ</h2>
-    <p class="section-sub">Четыре ключевых направления электрических расчётов и консалтинга — от моделирования до поддержки эксплуатации.</p>
+    <span class="section-label" data-i18n="ener.services.label">Услуги</span>
+    <h2 class="section-title" data-i18n="ener.services.title">Комплекс выполняемых работ</h2>
+    <p class="section-sub" data-i18n="ener.services.sub">Четыре ключевых направления электрических расчётов и консалтинга — от моделирования до поддержки эксплуатации.</p>
     <div style="display:grid; grid-template-columns: repeat(2,1fr); gap: 28px; margin-top: 40px;">
 
       <div style="background:#fff; border-radius:var(--radius); padding:32px; border:1px solid #e8ecf2; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column;">
@@ -109,17 +117,17 @@
           <div style="width:48px; height:48px; border-radius:12px; background:var(--blue-mid); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
             <i class="fas fa-drafting-compass" style="color:#fff; font-size:20px;"></i>
           </div>
-          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;">Выполнение электрических расчётов</h3>
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;" data-i18n="ener.svc1.title">Выполнение электрических расчётов</h3>
         </div>
-        <p style="font-size:14px; color:#666; margin-bottom:14px;">Проектирование и внестадийные работы для объектов генерации, сетей и промышленных предприятий.</p>
+        <p style="font-size:14px; color:#666; margin-bottom:14px;" data-i18n="ener.svc1.desc">Проектирование и внестадийные работы для объектов генерации, сетей и промышленных предприятий.</p>
         <ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Разработка схем выдачи мощности (СВМ)</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Разработка схем внешнего электроснабжения (СВЭ)</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Разработка схем внутреннего электроснабжения</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> ТЭО развития сети и объектов генерации</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Балансы и режимы</li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc1.li1">Разработка схем выдачи мощности (СВМ)</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc1.li2">Разработка схем внешнего электроснабжения (СВЭ)</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc1.li3">Разработка схем внутреннего электроснабжения</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc1.li4">ТЭО развития сети и объектов генерации</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc1.li5">Балансы и режимы</span></li>
         </ul>
-        <a href="kontakty.html" class="dir-card-link" style="margin-top:auto;">Обсудить задачу <i class="fas fa-arrow-right"></i></a>
+        <a href="kontakty.html" class="dir-card-link" style="margin-top:auto;"><span data-i18n="ener.svc.link">Обсудить задачу</span> <i class="fas fa-arrow-right"></i></a>
       </div>
 
       <div style="background:#fff; border-radius:var(--radius); padding:32px; border:1px solid #e8ecf2; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column;">
@@ -127,15 +135,15 @@
           <div style="width:48px; height:48px; border-radius:12px; background:var(--blue-mid); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
             <i class="fas fa-cubes" style="color:#fff; font-size:20px;"></i>
           </div>
-          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;">Моделирование схем электроснабжения</h3>
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;" data-i18n="ener.svc2.title">Моделирование схем электроснабжения</h3>
         </div>
-        <p style="font-size:14px; color:#666; margin-bottom:14px;">Создание и поддержка цифровых моделей энергообъектов — от автономных систем до схем собственных нужд станций.</p>
+        <p style="font-size:14px; color:#666; margin-bottom:14px;" data-i18n="ener.svc2.desc">Создание и поддержка цифровых моделей энергообъектов — от автономных систем до схем собственных нужд станций.</p>
         <ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Документальное и инструментальное обследование, замеры фактических нагрузок и качества ЭЭ</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Разработка цифровой модели системы электроснабжения</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Сопровождение и поддержка цифровой модели</li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc2.li1">Документальное и инструментальное обследование, замеры фактических нагрузок и качества ЭЭ</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc2.li2">Разработка цифровой модели системы электроснабжения</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc2.li3">Сопровождение и поддержка цифровой модели</span></li>
         </ul>
-        <a href="kontakty.html" class="dir-card-link" style="margin-top:auto;">Обсудить задачу <i class="fas fa-arrow-right"></i></a>
+        <a href="kontakty.html" class="dir-card-link" style="margin-top:auto;"><span data-i18n="ener.svc.link">Обсудить задачу</span> <i class="fas fa-arrow-right"></i></a>
       </div>
 
       <a href="nadezhnost.html" style="background:#fff; border-radius:var(--radius); padding:32px; border:1px solid #e8ecf2; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column; text-decoration:none; transition:all .3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 48px rgba(0,32,96,0.22)';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(0,0,0,.06)';">
@@ -143,16 +151,16 @@
           <div style="width:48px; height:48px; border-radius:12px; background:var(--blue-mid); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
             <i class="fas fa-shield-alt" style="color:#fff; font-size:20px;"></i>
           </div>
-          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;">Оценка надёжности электроснабжения</h3>
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;" data-i18n="ener.svc3.title">Оценка надёжности электроснабжения</h3>
         </div>
-        <p style="font-size:14px; color:#666; margin-bottom:14px;">Комплексная оценка и разработка мероприятий по обеспечению надёжного электроснабжения предприятий.</p>
+        <p style="font-size:14px; color:#666; margin-bottom:14px;" data-i18n="ener.svc3.desc">Комплексная оценка и разработка мероприятий по обеспечению надёжного электроснабжения предприятий.</p>
         <ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Комплексный анализ надёжности</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Оценка правильности работы релейной защиты и автоматики</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Оценка качества электрической энергии</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Разработка мероприятий и технических средств по обеспечению надёжности</li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc3.li1">Комплексный анализ надёжности</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc3.li2">Оценка правильности работы релейной защиты и автоматики</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc3.li3">Оценка качества электрической энергии</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc3.li4">Разработка мероприятий и технических средств по обеспечению надёжности</span></li>
         </ul>
-        <span class="dir-card-link" style="margin-top:auto;">Подробнее <i class="fas fa-arrow-right"></i></span>
+        <span class="dir-card-link" style="margin-top:auto;"><span data-i18n="ener.svc.more">Подробнее</span> <i class="fas fa-arrow-right"></i></span>
       </a>
 
       <a href="rza.html" style="background:#fff; border-radius:var(--radius); padding:32px; border:1px solid #e8ecf2; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column; text-decoration:none; transition:all .3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 48px rgba(0,32,96,0.22)';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(0,0,0,.06)';">
@@ -160,16 +168,16 @@
           <div style="width:48px; height:48px; border-radius:12px; background:var(--blue-mid); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
             <i class="fas fa-microchip" style="color:#fff; font-size:20px;"></i>
           </div>
-          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;">Анализ работы РЗА</h3>
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-dark); line-height:1.3;" data-i18n="ener.svc4.title">Анализ работы РЗА</h3>
         </div>
-        <p style="font-size:14px; color:#666; margin-bottom:14px;">Поддержка эксплуатации, расчёты и выбор уставок, поддержка МП устройств Siemens Siprotec.</p>
+        <p style="font-size:14px; color:#666; margin-bottom:14px;" data-i18n="ener.svc4.desc">Поддержка эксплуатации, расчёты и выбор уставок, поддержка МП устройств Siemens Siprotec.</p>
         <ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Расчёты токов короткого замыкания</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Выбор уставок РЗиА</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Анализ корректной работы устройств РЗА с учётом апериодической составляющей тока КЗ</li>
-          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> Поддержка МП устройств РЗА Siemens (Siprotec)</li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc4.li1">Расчёты токов короткого замыкания</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc4.li2">Выбор уставок РЗиА</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc4.li3">Анализ корректной работы устройств РЗА с учётом апериодической составляющей тока КЗ</span></li>
+          <li style="font-size:14px; color:#444; display:flex; align-items:flex-start; gap:8px;"><i class="fas fa-check-circle" style="color:var(--blue-mid); margin-top:3px; flex-shrink:0;"></i> <span data-i18n="ener.svc4.li4">Поддержка МП устройств РЗА Siemens (Siprotec)</span></li>
         </ul>
-        <span class="dir-card-link" style="margin-top:auto;">Подробнее <i class="fas fa-arrow-right"></i></span>
+        <span class="dir-card-link" style="margin-top:auto;"><span data-i18n="ener.svc.more">Подробнее</span> <i class="fas fa-arrow-right"></i></span>
       </a>
 
     </div>
@@ -179,39 +187,39 @@
 <!-- COMPETENCE AREAS -->
 <section class="section">
   <div class="container">
-    <span class="section-label">Сфера компетенций</span>
-    <h2 class="section-title">Объекты моделирования энергосистем</h2>
-    <p class="section-sub">Охватываем все ключевые сегменты электроэнергетики — от крупных магистральных сетей до объектов ВИЭ и промышленных предприятий.</p>
+    <span class="section-label" data-i18n="ener.comp.label">Сфера компетенций</span>
+    <h2 class="section-title" data-i18n="ener.comp.title">Объекты моделирования энергосистем</h2>
+    <p class="section-sub" data-i18n="ener.comp.sub">Охватываем все ключевые сегменты электроэнергетики — от крупных магистральных сетей до объектов ВИЭ и промышленных предприятий.</p>
     <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px;">
       <div class="service-card" style="text-align:center;">
         <div class="service-icon"><i class="fas fa-bolt"></i></div>
-        <h3 class="service-title">Магистральные сети</h3>
-        <p class="service-desc">Расчёты и моделирование объектов ЕНЭС, СВМ крупных электростанций, балансы мощности ЕЭС России.</p>
+        <h3 class="service-title" data-i18n="ener.obj1.title">Магистральные сети</h3>
+        <p class="service-desc" data-i18n="ener.obj1.desc">Расчёты и моделирование объектов ЕНЭС, СВМ крупных электростанций, балансы мощности ЕЭС России.</p>
       </div>
       <div class="service-card" style="text-align:center;">
         <div class="service-icon"><i class="fas fa-network-wired"></i></div>
-        <h3 class="service-title">Распределительные сети</h3>
-        <p class="service-desc">Схемы внешнего электроснабжения, комплексные программы развития электрических сетей (КПР).</p>
+        <h3 class="service-title" data-i18n="ener.obj2.title">Распределительные сети</h3>
+        <p class="service-desc" data-i18n="ener.obj2.desc">Схемы внешнего электроснабжения, комплексные программы развития электрических сетей (КПР).</p>
       </div>
       <div class="service-card" style="text-align:center;">
         <div class="service-icon"><i class="fas fa-fire"></i></div>
-        <h3 class="service-title">Традиционная генерация</h3>
-        <p class="service-desc">Электрические станции всех типов — АЭС, ТЭС, ГЭС. Разработка СВМ, расчёты устойчивости, выбор оборудования.</p>
+        <h3 class="service-title" data-i18n="ener.obj3.title">Традиционная генерация</h3>
+        <p class="service-desc" data-i18n="ener.obj3.desc">Электрические станции всех типов — АЭС, ТЭС, ГЭС. Разработка СВМ, расчёты устойчивости, выбор оборудования.</p>
       </div>
       <div class="service-card" style="text-align:center;">
         <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
-        <h3 class="service-title">Распределённая генерация</h3>
-        <p class="service-desc">Автономные энергосистемы, объекты собственной генерации предприятий, технические решения по распределённой энергетике.</p>
+        <h3 class="service-title" data-i18n="ener.obj4.title">Распределённая генерация</h3>
+        <p class="service-desc" data-i18n="ener.obj4.desc">Автономные энергосистемы, объекты собственной генерации предприятий, технические решения по распределённой энергетике.</p>
       </div>
       <div class="service-card" style="text-align:center;">
         <div class="service-icon"><i class="fas fa-industry"></i></div>
-        <h3 class="service-title">Промышленные предприятия</h3>
-        <p class="service-desc">Моделирование внешнего и внутреннего электроснабжения, оценка надёжности, расширение и модернизация производства.</p>
+        <h3 class="service-title" data-i18n="ener.obj5.title">Промышленные предприятия</h3>
+        <p class="service-desc" data-i18n="ener.obj5.desc">Моделирование внешнего и внутреннего электроснабжения, оценка надёжности, расширение и модернизация производства.</p>
       </div>
       <div class="service-card" style="text-align:center;">
         <div class="service-icon"><i class="fas fa-solar-panel"></i></div>
-        <h3 class="service-title">ВИЭ и нетрадиционная генерация</h3>
-        <p class="service-desc">ТЭО и СВМ для ветровых и солнечных электростанций, микросайтинг, оценка КИУМ, финансовые модели.</p>
+        <h3 class="service-title" data-i18n="ener.obj6.title">ВИЭ и нетрадиционная генерация</h3>
+        <p class="service-desc" data-i18n="ener.obj6.desc">ТЭО и СВМ для ветровых и солнечных электростанций, микросайтинг, оценка КИУМ, финансовые модели.</p>
       </div>
     </div>
   </div>
@@ -220,40 +228,40 @@
 <!-- KEY EFFECTS -->
 <section class="section section--blue">
   <div class="container">
-    <span class="section-label" style="color: var(--accent);">Результаты</span>
-    <h2 class="section-title">Ключевые эффекты от внедрения технических решений</h2>
+    <span class="section-label" style="color: var(--accent);" data-i18n="ener.effects.label">Результаты</span>
+    <h2 class="section-title" data-i18n="ener.effects.title">Ключевые эффекты от внедрения технических решений</h2>
     <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:20px; margin-top:40px;">
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-coins" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Снижение энергетических издержек и технологических ущербов</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff1">Снижение энергетических издержек и технологических ущербов</p>
       </div>
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-chart-line" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Повышение экономической эффективности работы предприятия</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff2">Повышение экономической эффективности работы предприятия</p>
       </div>
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-clipboard-check" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Прозрачность и обоснование принимаемых технических решений</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff3">Прозрачность и обоснование принимаемых технических решений</p>
       </div>
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-stopwatch" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Сокращение времени восстановления после аварий</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff4">Сокращение времени восстановления после аварий</p>
       </div>
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-shield-alt" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Повышение надёжности и качества электроснабжения предприятия</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff5">Повышение надёжности и качества электроснабжения предприятия</p>
       </div>
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-leaf" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Снижение вредного влияния на окружающую среду</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff6">Снижение вредного влияния на окружающую среду</p>
       </div>
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-tools" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Увеличение срока службы оборудования</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff7">Увеличение срока службы оборудования</p>
       </div>
       <div style="background:rgba(255,255,255,.08); border-radius:var(--radius); padding:26px 22px; border:1px solid rgba(255,255,255,.15); text-align:center;">
         <i class="fas fa-laptop-code" style="font-size:32px; color:var(--accent); margin-bottom:14px; display:block;"></i>
-        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;">Программные средства: RastrWin3, DIgSILENT PowerFactory</p>
+        <p style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.5; margin:0;" data-i18n="ener.eff8">Программные средства: RastrWin3, DIgSILENT PowerFactory</p>
       </div>
     </div>
   </div>
@@ -262,13 +270,13 @@
 <div class="intro-band">
   <div class="container">
     <div class="intro-text">
-      <h2>Нужен расчёт энергосистемы?</h2>
-      <p>Свяжитесь с куратором направления — Чумаченко Виталий Валерьевич, заместитель генерального директора по моделированию энергосистем.<br>
+      <h2 data-i18n="ener.cta.title">Нужен расчёт энергосистемы?</h2>
+      <p data-i18n-html="ener.cta.desc">Свяжитесь с куратором направления — Чумаченко Виталий Валерьевич, заместитель генерального директора по моделированию энергосистем.<br>
       <span style="font-size:14px; opacity:.85;"><i class="fas fa-envelope" style="margin-right:6px;"></i><a href="mailto:chumachenko-vv@raecht.ru" style="color:inherit;">chumachenko-vv@raecht.ru</a></span></p>
     </div>
     <div style="display:flex; gap:16px; flex-wrap:wrap;">
-      <a href="opyt.html#tab-energy" class="btn btn-outline"><i class="fas fa-briefcase" style="margin-right:8px;"></i>Наши проекты</a>
-      <a href="kontakty.html" class="btn btn-outline">Обсудить проект</a>
+      <a href="opyt.html#tab-energy" class="btn btn-outline"><i class="fas fa-briefcase" style="margin-right:8px;"></i><span data-i18n="ener.cta.btn1">Наши проекты</span></a>
+      <a href="kontakty.html" class="btn btn-outline" data-i18n="ener.cta.btn2">Обсудить проект</a>
     </div>
   </div>
 </div>
@@ -283,33 +291,33 @@
             <span class="logo-text-top">РОСАТОМ</span>
             <span class="logo-text-bottom">ЭНЕРГОХИМТЕХНОЛОГИИ</span>
           </a>
-          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
+          <p data-i18n="footer.brand_desc">АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
         </div>
         <div>
-          <div class="footer-col-title">Направления</div>
+          <div class="footer-col-title" data-i18n="footer.directions">Направления</div>
           <ul class="footer-links">
-            <li><a href="sorbenty.html">Сорбенты Термоксид</a></li>
-            <li><a href="energosistemy.html">Моделирование энергосистем</a></li>
-            <li><a href="inzhiniring.html">Инжиниринг и энергосервис</a></li>
-            <li><a href="vodoochistka.html">Водоподготовка и водоочистка</a></li>
+            <li><a href="sorbenty.html" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a></li>
+            <li><a href="energosistemy.html" data-i18n="nav.dd.energy">Моделирование энергосистем</a></li>
+            <li><a href="inzhiniring.html" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a></li>
+            <li><a href="vodoochistka.html" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Компания</div>
+          <div class="footer-col-title" data-i18n="footer.company">Компания</div>
           <ul class="footer-links">
-            <li><a href="index.html">О компании</a></li>
-            <li><a href="rukovodstvo.html">Руководство</a></li>
-            <li><a href="opyt.html">Опыт работ</a></li>
-            <li><a href="licenzii.html">Лицензии и сертификаты</a></li>
-            <li><a href="kontakty.html">Контакты</a></li>
+            <li><a href="index.html" data-i18n="footer.about">О компании</a></li>
+            <li><a href="rukovodstvo.html" data-i18n="footer.management">Руководство</a></li>
+            <li><a href="opyt.html" data-i18n="footer.experience">Опыт работ</a></li>
+            <li><a href="licenzii.html" data-i18n="footer.licenses_certs">Лицензии и сертификаты</a></li>
+            <li><a href="kontakty.html" data-i18n="footer.contacts">Контакты</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Контакты</div>
+          <div class="footer-col-title" data-i18n="footer.contacts">Контакты</div>
           <div class="footer-contacts">
             <div class="footer-contact-item">
               <i class="fas fa-map-marker-alt fc-icon"></i>
-              <span>115230, г. Москва,<br>ш. Варшавское, д. 46</span>
+              <span data-i18n-html="addr.moscow">115230, г. Москва,<br>ш. Варшавское, д. 46</span>
             </div>
             <div class="footer-contact-item">
               <i class="fas fa-phone fc-icon"></i>
@@ -330,46 +338,17 @@
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
+      <span data-i18n="footer.copyright">© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
       <div style="display:flex;gap:20px;">
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Карта сайта</a>
+        <a href="#" data-i18n="footer.privacy">Политика конфиденциальности</a>
+        <a href="#" data-i18n="footer.sitemap">Карта сайта</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script src="js/script.js"></script>
-// #region agent log
-<script>
-window.addEventListener('load', function() {
-  var nav = document.querySelector('.nav-link');
-  var header = document.querySelector('.header .container');
-  var logo = document.querySelector('.logo img');
-  var htmlEl = document.documentElement;
-  var body = document.body;
-  var cs = nav ? getComputedStyle(nav) : {};
-  var hs = header ? getComputedStyle(header) : {};
-  var payload = {
-    sessionId: '1b3ae5', page: 'energosistemy.html', runId: 'run2-postfix',
-    hypothesisId: 'H1-H2-H3-H4-H5',
-    location: 'energosistemy.html:load',
-    message: 'header computed styles',
-    timestamp: Date.now(),
-    data: {
-      navLink_fontSize: cs.fontSize, navLink_fontFamily: cs.fontFamily, navLink_fontWeight: cs.fontWeight,
-      navLink_padding: cs.padding, navLink_lineHeight: cs.lineHeight,
-      header_height: hs.height, header_gap: hs.gap,
-      logo_height: logo ? logo.getBoundingClientRect().height : null,
-      html_fontSize: getComputedStyle(htmlEl).fontSize,
-      body_fontSize: getComputedStyle(body).fontSize,
-      fontsLoaded: document.fonts ? Array.from(document.fonts).map(function(f){return f.family+':'+f.status;}) : 'N/A'
-    }
-  };
-  fetch('http://127.0.0.1:7312/ingest/5a288093-49ae-4dc5-b9f8-061942cead0e',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'1b3ae5'},body:JSON.stringify(payload)}).catch(function(){});
-});
-</script>
-// #endregion
+<script src="js/i18n.js"></script>
 </body>
 </html>
 

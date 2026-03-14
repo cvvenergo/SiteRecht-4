@@ -65,7 +65,7 @@
     }
   </style>
 </head>
-<body>
+<body data-page-title="kont.title">
 
 
 <header class="header">
@@ -75,46 +75,54 @@
     </a>
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Главная</a></li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            Направления
+            <span data-i18n="nav.directions">Направления</span>
             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown">
-            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> Сорбенты Термоксид</a>
-            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> Моделирование энергосистем</a>
-            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> Инжиниринг и энергосервис</a>
-            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> Водоподготовка и водоочистка</a>
+            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> <span data-i18n="nav.dd.sorbents">Сорбенты Термоксид</span></a>
+            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> <span data-i18n="nav.dd.energy">Моделирование энергосистем</span></a>
+            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> <span data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</span></a>
+            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> <span data-i18n="nav.dd.water">Водоподготовка и водоочистка</span></a>
           </div>
         </li>
-        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link">Руководство</a></li>
-        <li class="nav-item"><a href="opyt.html" class="nav-link">Опыт работ</a></li>
-        <li class="nav-item"><a href="licenzii.html" class="nav-link">Лицензии</a></li>
-        <li class="nav-item"><a href="kontakty.html" class="nav-link active">Контакты</a></li>
+        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link" data-i18n="nav.management">Руководство</a></li>
+        <li class="nav-item"><a href="opyt.html" class="nav-link" data-i18n="nav.experience">Опыт работ</a></li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link" data-i18n="nav.licenses">Лицензии</a></li>
+        <li class="nav-item"><a href="kontakty.html" class="nav-link active" data-i18n="nav.contacts">Контакты</a></li>
       </ul>
     </nav>
     <div class="header-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
       <div class="header-contact">
         <a href="tel:+79685934321" class="header-phone"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
         <a href="mailto:info@raecht.ru" class="header-phone"><i class="fas fa-envelope"></i> info@raecht.ru</a>
       </div>
-      <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
+      <a href="kontakty.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Написать нам</a>
     </div>
-    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+    <button class="hamburger" data-i18n-aria="nav.menu.aria" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <div class="mobile-nav">
-  <a href="index.html">Главная</a>
-  <a href="sorbenty.html" class="sub">Сорбенты Термоксид</a>
-  <a href="energosistemy.html" class="sub">Моделирование энергосистем</a>
-  <a href="inzhiniring.html" class="sub">Инжиниринг и энергосервис</a>
-  <a href="vodoochistka.html" class="sub">Водоподготовка и водоочистка</a>
-  <a href="rukovodstvo.html">Руководство</a>
-  <a href="opyt.html">Опыт работ</a>
-  <a href="licenzii.html">Лицензии</a>
-  <a href="kontakty.html">Контакты</a>
+  <div class="mobile-lang-switcher">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="index.html" data-i18n="nav.home">Главная</a>
+  <a href="sorbenty.html" class="sub" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a>
+  <a href="energosistemy.html" class="sub" data-i18n="nav.dd.energy">Моделирование энергосистем</a>
+  <a href="inzhiniring.html" class="sub" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a>
+  <a href="vodoochistka.html" class="sub" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a>
+  <a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a>
+  <a href="opyt.html" data-i18n="nav.experience">Опыт работ</a>
+  <a href="licenzii.html" data-i18n="nav.licenses">Лицензии</a>
+  <a href="kontakty.html" data-i18n="nav.contacts">Контакты</a>
 </div>
 
 <section class="page-hero">
@@ -123,11 +131,11 @@
   <div class="page-hero-content">
     <div class="container">
       <div class="breadcrumb">
-        <a href="index.html">Главная</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Главная</a>
         <span class="sep">›</span>
-        <span>Контакты</span>
+        <span data-i18n="kont.bc.page">Контакты</span>
       </div>
-      <h1 class="page-title">Контакты</h1>
+      <h1 class="page-title" data-i18n="kont.h1">Контакты</h1>
     </div>
   </div>
 </section>
@@ -139,23 +147,23 @@
 
       <!-- LEFT: contacts -->
       <div class="contact-panel" style="padding: 24px;">
-        <span class="section-label">Как с нами связаться</span>
-        <h2 style="font-size:20px; font-weight:800; margin:6px 0 14px;">Наши реквизиты и адреса</h2>
+        <span class="section-label" data-i18n="kont.info.label">Как с нами связаться</span>
+        <h2 style="font-size:20px; font-weight:800; margin:6px 0 14px;" data-i18n="kont.info.title">Наши реквизиты и адреса</h2>
         <div class="contact-info" style="gap: 0;">
 
           <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-building"></i></div>
             <div>
-              <div class="contact-label">Основной офис (г. Москва)</div>
-              <div class="contact-val">115230, г. Москва, ш. Варшавское, д. 46</div>
+              <div class="contact-label" data-i18n="kont.off1.label">Основной офис (г. Москва)</div>
+              <div class="contact-val" data-i18n="addr.moscow.inline">115230, г. Москва, ш. Варшавское, д. 46</div>
             </div>
           </div>
 
           <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-industry"></i></div>
             <div>
-              <div class="contact-label">Производственный филиал (г. Заречный)</div>
-              <div class="contact-val">624250, Свердловская обл., г. Заречный, а/я 94</div>
+              <div class="contact-label" data-i18n="kont.off2.label">Производственный филиал (г. Заречный)</div>
+              <div class="contact-val" data-i18n="addr.zarechny">624250, Свердловская обл., г. Заречный, а/я 94</div>
               <div class="contact-sub"><a href="tel:+73437736090">+7 (34377) 3-60-90</a></div>
             </div>
           </div>
@@ -163,25 +171,25 @@
           <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
             <div>
-              <div class="contact-label">Телефон (Москва)</div>
+              <div class="contact-label" data-i18n="kont.phone.label">Телефон (Москва)</div>
               <div class="contact-val"><a href="tel:+79685934321">+7 (968) 593-43-21</a></div>
-              <div class="contact-sub">Пн — Пт: 9:00–18:00</div>
+              <div class="contact-sub" data-i18n="kont.phone.sub">Пн — Пт: 9:00–18:00</div>
             </div>
           </div>
 
           <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div>
-              <div class="contact-label">Электронная почта</div>
+              <div class="contact-label" data-i18n="kont.email.label">Электронная почта</div>
               <div class="contact-val"><a href="mailto:info@raecht.ru">info@raecht.ru</a></div>
-              <div class="contact-sub">Ответим в течение одного рабочего дня</div>
+              <div class="contact-sub" data-i18n="kont.email.sub">Ответим в течение одного рабочего дня</div>
             </div>
           </div>
 
           <div class="contact-item" style="padding: 10px 0;">
             <div class="contact-icon"><i class="fas fa-file-alt"></i></div>
             <div>
-              <div class="contact-label">Реквизиты</div>
+              <div class="contact-label" data-i18n="kont.req.label">Реквизиты</div>
               <div class="contact-val" style="font-size:13px; font-weight:500; line-height:1.8;">
                 ИНН: 6683018026 &nbsp;·&nbsp; КПП: 772601001<br>
                 ОГРН: 1216600003927 &nbsp;·&nbsp; ОКПО: 47046771
@@ -194,52 +202,52 @@
 
       <!-- RIGHT: form -->
       <div class="contact-panel" style="padding: 24px;">
-        <span class="section-label">Обратная связь</span>
-        <h2 style="font-size:20px; font-weight:800; margin:6px 0 14px;">Отправить сообщение</h2>
+        <span class="section-label" data-i18n="kont.form.label">Обратная связь</span>
+        <h2 style="font-size:20px; font-weight:800; margin:6px 0 14px;" data-i18n="kont.form.title">Отправить сообщение</h2>
         <form class="form" onsubmit="return handleForm(event)" style="flex:1; gap: 10px;">
           <div class="form-row" style="gap: 12px;">
             <div class="form-group" style="gap: 4px;">
-              <label class="form-label">Ваше имя *</label>
-              <input type="text" class="form-input" placeholder="Иван Иванов" required style="padding: 8px 12px;">
+              <label class="form-label" data-i18n="kont.form.name">Ваше имя *</label>
+              <input type="text" class="form-input" placeholder="Иван Иванов" data-i18n-placeholder="kont.form.name.ph" required style="padding: 8px 12px;">
             </div>
             <div class="form-group" style="gap: 4px;">
-              <label class="form-label">Организация</label>
-              <input type="text" class="form-input" placeholder="АО «Название»" style="padding: 8px 12px;">
+              <label class="form-label" data-i18n="kont.form.org">Организация</label>
+              <input type="text" class="form-input" placeholder="АО «Название»" data-i18n-placeholder="kont.form.org.ph" style="padding: 8px 12px;">
             </div>
           </div>
           <div class="form-row" style="gap: 12px;">
             <div class="form-group" style="gap: 4px;">
-              <label class="form-label">Телефон *</label>
+              <label class="form-label" data-i18n="kont.form.phone">Телефон *</label>
               <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required style="padding: 8px 12px;">
             </div>
             <div class="form-group" style="gap: 4px;">
-              <label class="form-label">Email *</label>
+              <label class="form-label" data-i18n="kont.form.email">Email *</label>
               <input type="email" class="form-input" placeholder="name@company.ru" required style="padding: 8px 12px;">
             </div>
           </div>
           <div class="form-group" style="gap: 4px;">
-            <label class="form-label">Направление</label>
+            <label class="form-label" data-i18n="kont.form.direction">Направление</label>
             <select class="form-select" style="padding: 8px 12px;">
-              <option value="">— Выберите направление —</option>
-              <option>Сорбенты Термоксид</option>
-              <option>Моделирование энергосистем</option>
-              <option>Инжиниринг и энергосервис</option>
-              <option>Водоподготовка и водоочистка</option>
-              <option>Общий вопрос</option>
+              <option value="" data-i18n="kont.form.dir.default">— Выберите направление —</option>
+              <option data-i18n="kont.form.dir.1">Сорбенты Термоксид</option>
+              <option data-i18n="kont.form.dir.2">Моделирование энергосистем</option>
+              <option data-i18n="kont.form.dir.3">Инжиниринг и энергосервис</option>
+              <option data-i18n="kont.form.dir.4">Водоподготовка и водоочистка</option>
+              <option data-i18n="kont.form.dir.5">Общий вопрос</option>
             </select>
           </div>
           <div class="form-group" style="gap: 4px;">
-            <label class="form-label">Сообщение *</label>
-            <textarea class="form-textarea" placeholder="Опишите вашу задачу или вопрос..." required style="min-height:72px; resize:vertical;"></textarea>
+            <label class="form-label" data-i18n="kont.form.message">Сообщение *</label>
+            <textarea class="form-textarea" placeholder="Опишите вашу задачу или вопрос..." data-i18n-placeholder="kont.form.message.ph" required style="min-height:72px; resize:vertical;"></textarea>
           </div>
-          <div style="font-size:11px; color:var(--text-mid); line-height:1.5;">
+          <div style="font-size:11px; color:var(--text-mid); line-height:1.5;" data-i18n-html="kont.form.privacy">
             Нажимая «Отправить», вы соглашаетесь с <a href="#" style="color:var(--blue-mid);">политикой конфиденциальности</a>.
           </div>
-          <button type="submit" class="btn btn-primary btn-sm" style="align-self:flex-start;">
+          <button type="submit" class="btn btn-primary btn-sm" style="align-self:flex-start;" data-i18n="kont.form.submit">
             Отправить сообщение
           </button>
         </form>
-        <div id="form-success" style="display:none; background:rgba(0,168,100,.1); border:1px solid rgba(0,168,100,.3); border-radius:var(--radius); padding:14px; color:#006e40; margin-top:12px; font-size:14px;">
+        <div id="form-success" style="display:none; background:rgba(0,168,100,.1); border:1px solid rgba(0,168,100,.3); border-radius:var(--radius); padding:14px; color:#006e40; margin-top:12px; font-size:14px;" data-i18n-html="kont.form.success">
           <i class="fas fa-check-circle"></i> Ваше сообщение отправлено! Свяжемся с вами в течение рабочего дня.
         </div>
       </div>
@@ -251,13 +259,13 @@
 <!-- MAP -->
 <section class="section section--light" style="padding: 28px 0 36px;">
   <div class="container">
-    <span class="section-label">Расположение</span>
-    <h2 class="section-title" style="margin-bottom:20px;">Как нас найти</h2>
+    <span class="section-label" data-i18n="kont.map.label">Расположение</span>
+    <h2 class="section-title" style="margin-bottom:20px;" data-i18n="kont.map.title">Как нас найти</h2>
     <div class="maps-grid">
       <div class="map-item">
         <div class="map-label">
           <i class="fas fa-building"></i>
-          Исполнительный аппарат (г. Москва)
+          <span data-i18n="kont.map.off1">Исполнительный аппарат (г. Москва)</span>
         </div>
         <div class="map-frame">
           <iframe
@@ -269,13 +277,13 @@
         </div>
         <div class="map-address">
           <i class="fas fa-map-marker-alt"></i>
-          115230, г. Москва, ш. Варшавское, д. 46
+          <span data-i18n="addr.moscow.inline">115230, г. Москва, ш. Варшавское, д. 46</span>
         </div>
       </div>
       <div class="map-item">
         <div class="map-label">
           <i class="fas fa-industry"></i>
-          Производственный филиал (г. Заречный)
+          <span data-i18n="kont.map.off2">Производственный филиал (г. Заречный)</span>
         </div>
         <div class="map-frame">
           <iframe
@@ -287,22 +295,22 @@
         </div>
         <div class="map-address">
           <i class="fas fa-map-marker-alt"></i>
-          624250, Свердловская область, г. Заречный, а/я 94
+          <span data-i18n="addr.zarechny">624250, Свердловская обл., г. Заречный, а/я 94</span>
         </div>
       </div>
     </div>
     <div style="margin-top:16px; background:var(--white); border-radius:var(--radius); padding:14px 20px; display:flex; gap:24px; flex-wrap:wrap; box-shadow:var(--shadow);">
       <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-mid);">
         <i class="fas fa-subway" style="color:var(--accent); font-size:18px;"></i>
-        <div><strong style="color:var(--text-dark);">Метро (Москва)</strong><br>ст. «Варшавская» или «Нагатинская» — 10 мин пешком</div>
+        <div><strong style="color:var(--text-dark);" data-i18n="kont.metro.title">Метро (Москва)</strong><br><span data-i18n="kont.metro.desc">ст. «Варшавская» или «Нагатинская» — 10 мин пешком</span></div>
       </div>
       <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-mid);">
         <i class="fas fa-bus" style="color:var(--accent); font-size:18px;"></i>
-        <div><strong style="color:var(--text-dark);">Автобус (Москва)</strong><br>ост. «Варшавское шоссе, д. 46» — маршруты 225, 296, 901</div>
+        <div><strong style="color:var(--text-dark);" data-i18n="kont.bus.title">Автобус (Москва)</strong><br><span data-i18n="kont.bus.desc">ост. «Варшавское шоссе, д. 46» — маршруты 225, 296, 901</span></div>
       </div>
       <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-mid);">
         <i class="fas fa-car" style="color:var(--accent); font-size:18px;"></i>
-        <div><strong style="color:var(--text-dark);">На автомобиле (Москва)</strong><br>Со стороны ТТК по Варшавскому шоссе, парковка у здания</div>
+        <div><strong style="color:var(--text-dark);" data-i18n="kont.car.title">На автомобиле (Москва)</strong><br><span data-i18n="kont.car.desc">Со стороны ТТК по Варшавскому шоссе, парковка у здания</span></div>
       </div>
     </div>
   </div>
@@ -311,39 +319,39 @@
 <!-- DEPT CONTACTS -->
 <section class="section" style="padding: 36px 0 56px;">
   <div class="container">
-    <span class="section-label">Подразделения</span>
-    <h2 class="section-title">Контакты отделов</h2>
+    <span class="section-label" data-i18n="kont.dept.label">Подразделения</span>
+    <h2 class="section-title" data-i18n="kont.dept.title">Контакты отделов</h2>
     <div class="dept-cards">
       <div class="dept-card">
-        <div class="dept-title"><i class="fas fa-envelope-open-text" style="color:var(--accent);margin-right:8px;"></i>Общие вопросы</div>
-        <div class="dept-row"><i class="fas fa-user"></i>Приёмная генерального директора</div>
+        <div class="dept-title"><i class="fas fa-envelope-open-text" style="color:var(--accent);margin-right:8px;"></i><span data-i18n="kont.dept1.title">Общие вопросы</span></div>
+        <div class="dept-row"><i class="fas fa-user"></i><span data-i18n="kont.dept1.sub">Приёмная генерального директора</span></div>
         <div class="dept-row"><i class="fas fa-phone"></i><a href="tel:+79685934321">+7 (968) 593-43-21</a></div>
         <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:info@raecht.ru">info@raecht.ru</a></div>
       </div>
       <div class="dept-card">
-        <div class="dept-title"><i class="fas fa-flask" style="color:var(--accent);margin-right:8px;"></i>Производственный филиал (г. Заречный)</div>
-        <div class="dept-row"><i class="fas fa-user"></i>Макаров Антон Николаевич, заместитель директора филиала по инжинирингу</div>
+        <div class="dept-title"><i class="fas fa-flask" style="color:var(--accent);margin-right:8px;"></i><span data-i18n="kont.dept2.title">Производственный филиал (г. Заречный)</span></div>
+        <div class="dept-row"><i class="fas fa-user"></i><span data-i18n="kont.dept2.person">Макаров Антон Николаевич, заместитель директора филиала по инжинирингу</span></div>
         <div class="dept-row"><i class="fas fa-phone"></i><a href="tel:+73437736090">+7 (34377) 3-60-90</a></div>
         <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:man@termoxid.com">man@termoxid.com</a></div>
       </div>
       <div class="dept-card">
-        <div class="dept-title"><i class="fas fa-bolt" style="color:var(--accent);margin-right:8px;"></i>Моделирование энергосистем</div>
-        <div class="dept-row"><i class="fas fa-user"></i>Чумаченко Виталий Валерьевич, к.т.н., заместитель генерального директора по моделированию энергосистем</div>
+        <div class="dept-title"><i class="fas fa-bolt" style="color:var(--accent);margin-right:8px;"></i><span data-i18n="kont.dept3.title">Моделирование энергосистем</span></div>
+        <div class="dept-row"><i class="fas fa-user"></i><span data-i18n="kont.dept3.person">Чумаченко Виталий Валерьевич, к.т.н., заместитель генерального директора по моделированию энергосистем</span></div>
         <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:chumachenko-vv@raecht.ru">chumachenko-vv@raecht.ru</a></div>
       </div>
       <div class="dept-card">
-        <div class="dept-title"><i class="fas fa-industry" style="color:var(--accent);margin-right:8px;"></i>Инжиниринг и энергосервис</div>
-        <div class="dept-row"><i class="fas fa-user"></i>Березин Федор Николаевич, заместитель генерального директора по инжинирингу и энергосервису</div>
+        <div class="dept-title"><i class="fas fa-industry" style="color:var(--accent);margin-right:8px;"></i><span data-i18n="kont.dept4.title">Инжиниринг и энергосервис</span></div>
+        <div class="dept-row"><i class="fas fa-user"></i><span data-i18n="kont.dept4.person">Березин Федор Николаевич, заместитель генерального директора по инжинирингу и энергосервису</span></div>
         <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:berezin-fn@raecht.ru">berezin-fn@raecht.ru</a></div>
       </div>
       <div class="dept-card">
-        <div class="dept-title"><i class="fas fa-tint" style="color:var(--accent);margin-right:8px;"></i>Водоочистка и водоподготовка</div>
-        <div class="dept-row"><i class="fas fa-user"></i>Стеклов Андрей Станиславович, руководитель проектного офиса по направлению «Водоочистка»</div>
+        <div class="dept-title"><i class="fas fa-tint" style="color:var(--accent);margin-right:8px;"></i><span data-i18n="kont.dept5.title">Водоочистка и водоподготовка</span></div>
+        <div class="dept-row"><i class="fas fa-user"></i><span data-i18n="kont.dept5.person">Стеклов Андрей Станиславович, руководитель проектного офиса по направлению «Водоочистка»</span></div>
         <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:steklov-as@raecht.ru">steklov-as@raecht.ru</a></div>
       </div>
       <div class="dept-card">
-        <div class="dept-title"><i class="fas fa-sitemap" style="color:var(--accent);margin-right:8px;"></i>Корпоративные функции</div>
-        <div class="dept-row"><i class="fas fa-user"></i>Меркулова Светлана Георгиевна, заместитель генерального директора по корпоративным функциям</div>
+        <div class="dept-title"><i class="fas fa-sitemap" style="color:var(--accent);margin-right:8px;"></i><span data-i18n="kont.dept6.title">Корпоративные функции</span></div>
+        <div class="dept-row"><i class="fas fa-user"></i><span data-i18n="kont.dept6.person">Меркулова Светлана Георгиевна, заместитель генерального директора по корпоративным функциям</span></div>
         <div class="dept-row"><i class="fas fa-envelope"></i><a href="mailto:merkulova-sg@raecht.ru">merkulova-sg@raecht.ru</a></div>
       </div>
     </div>
@@ -360,33 +368,33 @@
             <span class="logo-text-top">РОСАТОМ</span>
             <span class="logo-text-bottom">ЭНЕРГОХИМТЕХНОЛОГИИ</span>
           </a>
-          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
+          <p data-i18n="footer.brand_desc">АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
         </div>
         <div>
-          <div class="footer-col-title">Направления</div>
+          <div class="footer-col-title" data-i18n="footer.directions">Направления</div>
           <ul class="footer-links">
-            <li><a href="sorbenty.html">Сорбенты Термоксид</a></li>
-            <li><a href="energosistemy.html">Моделирование энергосистем</a></li>
-            <li><a href="inzhiniring.html">Инжиниринг и энергосервис</a></li>
-            <li><a href="vodoochistka.html">Водоподготовка и водоочистка</a></li>
+            <li><a href="sorbenty.html" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a></li>
+            <li><a href="energosistemy.html" data-i18n="nav.dd.energy">Моделирование энергосистем</a></li>
+            <li><a href="inzhiniring.html" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a></li>
+            <li><a href="vodoochistka.html" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Компания</div>
+          <div class="footer-col-title" data-i18n="footer.company">Компания</div>
           <ul class="footer-links">
-            <li><a href="index.html">О компании</a></li>
-            <li><a href="rukovodstvo.html">Руководство</a></li>
-            <li><a href="opyt.html">Опыт работ</a></li>
-            <li><a href="licenzii.html">Лицензии и сертификаты</a></li>
-            <li><a href="kontakty.html">Контакты</a></li>
+            <li><a href="index.html" data-i18n="footer.about">О компании</a></li>
+            <li><a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a></li>
+            <li><a href="opyt.html" data-i18n="nav.experience">Опыт работ</a></li>
+            <li><a href="licenzii.html" data-i18n="footer.licenses_certs">Лицензии и сертификаты</a></li>
+            <li><a href="kontakty.html" data-i18n="nav.contacts">Контакты</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Контакты</div>
+          <div class="footer-col-title" data-i18n="footer.contacts">Контакты</div>
           <div class="footer-contacts">
             <div class="footer-contact-item">
               <i class="fas fa-map-marker-alt fc-icon"></i>
-              <span>115230, г. Москва,<br>ш. Варшавское, д. 46</span>
+              <span data-i18n-html="addr.moscow">115230, г. Москва,<br>ш. Варшавское, д. 46</span>
             </div>
             <div class="footer-contact-item">
               <i class="fas fa-phone fc-icon"></i>
@@ -407,16 +415,17 @@
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
+      <span data-i18n="footer.copyright">© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
       <div style="display:flex;gap:20px;">
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Карта сайта</a>
+        <a href="#" data-i18n="footer.privacy">Политика конфиденциальности</a>
+        <a href="#" data-i18n="footer.sitemap">Карта сайта</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script src="js/script.js"></script>
+<script src="js/i18n.js"></script>
 <script>
 function handleForm(e) {
   e.preventDefault();

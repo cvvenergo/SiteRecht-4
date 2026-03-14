@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body data-page-title="index.title">
 
 
 <!-- HEADER -->
@@ -20,40 +20,44 @@
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="index.html" class="nav-link active">Главная</a>
+          <a href="index.html" class="nav-link active" data-i18n="nav.home">Главная</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            Направления
+            <span data-i18n="nav.directions">Направления</span>
             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown">
-            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> Сорбенты Термоксид</a>
-            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> Моделирование энергосистем</a>
-            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> Инжиниринг и энергосервис</a>
-            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> Водоподготовка и водоочистка</a>
+            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> <span data-i18n="nav.dd.sorbents">Сорбенты Термоксид</span></a>
+            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> <span data-i18n="nav.dd.energy">Моделирование энергосистем</span></a>
+            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> <span data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</span></a>
+            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> <span data-i18n="nav.dd.water">Водоподготовка и водоочистка</span></a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="rukovodstvo.html" class="nav-link">Руководство</a>
+          <a href="rukovodstvo.html" class="nav-link" data-i18n="nav.management">Руководство</a>
         </li>
         <li class="nav-item">
-          <a href="opyt.html" class="nav-link">Опыт работ</a>
+          <a href="opyt.html" class="nav-link" data-i18n="nav.experience">Опыт работ</a>
         </li>
-        <li class="nav-item"><a href="licenzii.html" class="nav-link">Лицензии</a></li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link" data-i18n="nav.licenses">Лицензии</a></li>
         <li class="nav-item">
-          <a href="kontakty.html" class="nav-link">Контакты</a>
+          <a href="kontakty.html" class="nav-link" data-i18n="nav.contacts">Контакты</a>
         </li>
       </ul>
     </nav>
     <div class="header-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
       <div class="header-contact">
         <a href="tel:+79685934321" class="header-phone"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
         <a href="mailto:info@raecht.ru" class="header-phone"><i class="fas fa-envelope"></i> info@raecht.ru</a>
       </div>
-      <a href="kontakty.html" class="btn btn-primary btn-sm">Написать нам</a>
+      <a href="kontakty.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Написать нам</a>
     </div>
-    <button class="hamburger" aria-label="Меню">
+    <button class="hamburger" data-i18n-aria="nav.menu.aria" aria-label="Меню">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -61,15 +65,19 @@
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav">
-  <a href="index.html">Главная</a>
-  <a href="sorbenty.html" class="sub">Сорбенты Термоксид</a>
-  <a href="energosistemy.html" class="sub">Моделирование энергосистем</a>
-  <a href="inzhiniring.html" class="sub">Инжиниринг и энергосервис</a>
-  <a href="vodoochistka.html" class="sub">Водоподготовка и водоочистка</a>
-  <a href="rukovodstvo.html">Руководство</a>
-  <a href="opyt.html">Опыт работ</a>
-  <a href="licenzii.html">Лицензии</a>
-  <a href="kontakty.html">Контакты</a>
+  <div class="mobile-lang-switcher">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="index.html" data-i18n="nav.home">Главная</a>
+  <a href="sorbenty.html" class="sub" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a>
+  <a href="energosistemy.html" class="sub" data-i18n="nav.dd.energy">Моделирование энергосистем</a>
+  <a href="inzhiniring.html" class="sub" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a>
+  <a href="vodoochistka.html" class="sub" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a>
+  <a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a>
+  <a href="opyt.html" data-i18n="nav.experience">Опыт работ</a>
+  <a href="licenzii.html" data-i18n="nav.licenses">Лицензии</a>
+  <a href="kontakty.html" data-i18n="nav.contacts">Контакты</a>
 </div>
 
 <!-- HERO SLIDER -->
@@ -80,12 +88,12 @@
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="slide-inner">
-        <span class="slide-tag">Атомная отрасль</span>
-        <h1 class="slide-title">Передовые технологии<br>для атомной промышленности</h1>
-        <p class="slide-desc">Производство высокоэффективных сорбентов серии «Термоксид» для очистки вод АЭС и переработки жидких радиоактивных отходов с 1994 года.</p>
+        <span class="slide-tag" data-i18n="index.s1.tag">Атомная отрасль</span>
+        <h1 class="slide-title" data-i18n-html="index.s1.title">Передовые технологии<br>для атомной промышленности</h1>
+        <p class="slide-desc" data-i18n="index.s1.desc">Производство высокоэффективных сорбентов серии «Термоксид» для очистки вод АЭС и переработки жидких радиоактивных отходов с 1994 года.</p>
         <div class="slide-actions">
-          <a href="sorbenty.html" class="btn btn-primary">Узнать о продукции</a>
-          <a href="kontakty.html" class="btn btn-outline">Связаться с нами</a>
+          <a href="sorbenty.html" class="btn btn-primary" data-i18n="index.s1.btn1">Узнать о продукции</a>
+          <a href="kontakty.html" class="btn btn-outline" data-i18n="index.s1.btn2">Связаться с нами</a>
         </div>
       </div>
     </div>
@@ -96,12 +104,12 @@
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="slide-inner">
-        <span class="slide-tag">Энергетика</span>
-        <h1 class="slide-title">Моделирование<br>и анализ энергосистем</h1>
-        <p class="slide-desc">Разработка схем выдачи мощности АЭС и ТЭС, расчёты режимов, консалтинг в области надёжности и оптимизации электроснабжения.</p>
+        <span class="slide-tag" data-i18n="index.s2.tag">Энергетика</span>
+        <h1 class="slide-title" data-i18n-html="index.s2.title">Моделирование<br>и анализ энергосистем</h1>
+        <p class="slide-desc" data-i18n="index.s2.desc">Разработка схем выдачи мощности АЭС и ТЭС, расчёты режимов, консалтинг в области надёжности и оптимизации электроснабжения.</p>
         <div class="slide-actions">
-          <a href="energosistemy.html" class="btn btn-primary">Подробнее</a>
-          <a href="opyt.html" class="btn btn-outline">Наш опыт</a>
+          <a href="energosistemy.html" class="btn btn-primary" data-i18n="index.s2.btn1">Подробнее</a>
+          <a href="opyt.html" class="btn btn-outline" data-i18n="index.s2.btn2">Наш опыт</a>
         </div>
       </div>
     </div>
@@ -112,12 +120,12 @@
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="slide-inner">
-        <span class="slide-tag">Инжиниринг</span>
-        <h1 class="slide-title">Комплексные инженерные<br>решения под ключ</h1>
-        <p class="slide-desc">Проектирование, поставка оборудования и управление проектами для объектов атомной отрасли, промышленности и инфраструктуры.</p>
+        <span class="slide-tag" data-i18n="index.s3.tag">Инжиниринг</span>
+        <h1 class="slide-title" data-i18n-html="index.s3.title">Комплексные инженерные<br>решения под ключ</h1>
+        <p class="slide-desc" data-i18n="index.s3.desc">Проектирование, поставка оборудования и управление проектами для объектов атомной отрасли, промышленности и инфраструктуры.</p>
         <div class="slide-actions">
-          <a href="inzhiniring.html" class="btn btn-primary">Направления</a>
-          <a href="opyt.html" class="btn btn-outline">Выполненные проекты</a>
+          <a href="inzhiniring.html" class="btn btn-primary" data-i18n="index.s3.btn1">Направления</a>
+          <a href="opyt.html" class="btn btn-outline" data-i18n="index.s3.btn2">Выполненные проекты</a>
         </div>
       </div>
     </div>
@@ -125,8 +133,8 @@
 
   <!-- Controls -->
   <div class="hero-arrows">
-    <button class="hero-arrow hero-prev" aria-label="Назад"><i class="fas fa-chevron-left"></i></button>
-    <button class="hero-arrow hero-next" aria-label="Вперёд"><i class="fas fa-chevron-right"></i></button>
+    <button class="hero-arrow hero-prev" data-i18n-aria="hero.prev" aria-label="Назад"><i class="fas fa-chevron-left"></i></button>
+    <button class="hero-arrow hero-next" data-i18n-aria="hero.next" aria-label="Вперёд"><i class="fas fa-chevron-right"></i></button>
   </div>
   <div class="hero-controls">
     <div class="hero-dot active"></div>
@@ -138,9 +146,9 @@
 <!-- ACTIVITY DIRECTIONS -->
 <section class="section">
   <div class="container">
-    <span class="section-label">Что мы делаем</span>
-    <h2 class="section-title">Направления деятельности</h2>
-    <p class="section-sub">АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» объединяет команду инженеров-разработчиков, технологов и расчетчиков с многолетним опытом реализации проектов в атомной отрасли. Наша экспертиза сосредоточена на направлениях, где требования к надежности и безопасности максимальны – от создания уникальных высокоэффективных сорбентов до разработки схем выдачи мощности атомных станций.</p>
+    <span class="section-label" data-i18n="index.dir.label">Что мы делаем</span>
+    <h2 class="section-title" data-i18n="index.dir.title">Направления деятельности</h2>
+    <p class="section-sub" data-i18n="index.dir.sub">АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» объединяет команду инженеров-разработчиков, технологов и расчетчиков с многолетним опытом реализации проектов в атомной отрасли. Наша экспертиза сосредоточена на направлениях, где требования к надежности и безопасности максимальны – от создания уникальных высокоэффективных сорбентов до разработки схем выдачи мощности атомных станций.</p>
     <div class="directions-grid">
 
       <div class="dir-card">
@@ -149,9 +157,9 @@
         </div>
         <div class="dir-card-body">
           <div class="dir-icon"><i class="fas fa-atom"></i></div>
-          <h3 class="dir-card-title">Сорбенты Термоксид</h3>
-          <p class="dir-card-desc">Производство селективных неорганических сорбентов на основе соединений циркония для очистки технологических вод АЭС и переработки ЖРО.</p>
-          <a href="sorbenty.html" class="dir-card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+          <h3 class="dir-card-title" data-i18n="index.dir1.title">Сорбенты Термоксид</h3>
+          <p class="dir-card-desc" data-i18n="index.dir1.desc">Производство селективных неорганических сорбентов на основе соединений циркония для очистки технологических вод АЭС и переработки ЖРО.</p>
+          <a href="sorbenty.html" class="dir-card-link" data-i18n="btn.learnMore">Подробнее <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -161,9 +169,9 @@
         </div>
         <div class="dir-card-body">
           <div class="dir-icon"><i class="fas fa-bolt"></i></div>
-          <h3 class="dir-card-title">Моделирование энергосистем</h3>
-          <p class="dir-card-desc">Консалтинг и разработка схем выдачи мощности АЭС, ТЭС, ГЭС. Расчёты режимов и оптимизация схем электроснабжения промышленных потребителей.</p>
-          <a href="energosistemy.html" class="dir-card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+          <h3 class="dir-card-title" data-i18n="index.dir2.title">Моделирование энергосистем</h3>
+          <p class="dir-card-desc" data-i18n="index.dir2.desc">Консалтинг и разработка схем выдачи мощности АЭС, ТЭС, ГЭС. Расчёты режимов и оптимизация схем электроснабжения промышленных потребителей.</p>
+          <a href="energosistemy.html" class="dir-card-link" data-i18n="btn.learnMore">Подробнее <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -173,9 +181,9 @@
         </div>
         <div class="dir-card-body">
           <div class="dir-icon"><i class="fas fa-industry"></i></div>
-          <h3 class="dir-card-title">Инжиниринг и энергосервис</h3>
-          <p class="dir-card-desc">Комплексные решения по проектированию, вводу в действие и модернизации энергетических объектов любого масштаба и сложности.</p>
-          <a href="inzhiniring.html" class="dir-card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+          <h3 class="dir-card-title" data-i18n="index.dir3.title">Инжиниринг и энергосервис</h3>
+          <p class="dir-card-desc" data-i18n="index.dir3.desc">Комплексные решения по проектированию, вводу в действие и модернизации энергетических объектов любого масштаба и сложности.</p>
+          <a href="inzhiniring.html" class="dir-card-link" data-i18n="btn.learnMore">Подробнее <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -185,9 +193,9 @@
         </div>
         <div class="dir-card-body">
           <div class="dir-icon"><i class="fas fa-tint"></i></div>
-          <h3 class="dir-card-title">Водоподготовка и водоочистка</h3>
-          <p class="dir-card-desc">Предпроектное обследование, разработка технологических схем, поставка фильтрующих материалов и комплексных систем водоподготовки.</p>
-          <a href="vodoochistka.html" class="dir-card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+          <h3 class="dir-card-title" data-i18n="index.dir4.title">Водоподготовка и водоочистка</h3>
+          <p class="dir-card-desc" data-i18n="index.dir4.desc">Предпроектное обследование, разработка технологических схем, поставка фильтрующих материалов и комплексных систем водоподготовки.</p>
+          <a href="vodoochistka.html" class="dir-card-link" data-i18n="btn.learnMore">Подробнее <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -200,19 +208,19 @@
   <div class="stats-grid">
     <div class="stat-item">
       <div class="stat-number" data-count="30" data-suffix="+">0</div>
-      <div class="stat-label">лет работы в атомной отрасли</div>
+      <div class="stat-label" data-i18n="index.stat1.label">лет работы в атомной отрасли</div>
     </div>
     <div class="stat-item">
       <div class="stat-number" data-count="25" data-suffix="">0</div>
-      <div class="stat-label">атомных станций — потребители сорбентов</div>
+      <div class="stat-label" data-i18n="index.stat2.label">атомных станций — потребители сорбентов</div>
     </div>
     <div class="stat-item">
       <div class="stat-number" data-count="150" data-suffix="+">0</div>
-      <div class="stat-label">реализованных проектов</div>
+      <div class="stat-label" data-i18n="index.stat3.label">реализованных проектов</div>
     </div>
     <div class="stat-item">
       <div class="stat-number" data-count="40" data-suffix="">0</div>
-      <div class="stat-label">квалифицированных специалистов</div>
+      <div class="stat-label" data-i18n="index.stat4.label">квалифицированных специалистов</div>
     </div>
   </div>
 </section>
@@ -221,44 +229,44 @@
 <!-- KEY ADVANTAGES -->
 <section class="section">
   <div class="container">
-    <span class="section-label">Преимущества</span>
-    <h2 class="section-title">Почему выбирают нас</h2>
+    <span class="section-label" data-i18n="index.adv.label">Преимущества</span>
+    <h2 class="section-title" data-i18n="index.adv.title">Почему выбирают нас</h2>
     <div class="advantages-grid">
       <div class="adv-card">
         <div class="adv-num">01</div>
         <div class="adv-icon"><i class="fas fa-flask"></i></div>
-        <h3 class="adv-title">Собственные разработки</h3>
-        <p class="adv-desc">Уникальные технологии производства сорбентов на основе соединений циркония, разработанные нашими специалистами и защищённые патентами.</p>
+        <h3 class="adv-title" data-i18n="index.adv1.title">Собственные разработки</h3>
+        <p class="adv-desc" data-i18n="index.adv1.desc">Уникальные технологии производства сорбентов на основе соединений циркония, разработанные нашими специалистами и защищённые патентами.</p>
       </div>
       <div class="adv-card">
         <div class="adv-num">02</div>
         <div class="adv-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3 class="adv-title">Надёжность и качество</h3>
-        <p class="adv-desc">Компания располагает четырьмя действующими сертификатами соответствия (ГОСТ Р ИСО 9001-2015, 14001-2016, 45001-2020, 19443-2020).</p>
+        <h3 class="adv-title" data-i18n="index.adv2.title">Надёжность и качество</h3>
+        <p class="adv-desc" data-i18n="index.adv2.desc">Компания располагает четырьмя действующими сертификатами соответствия (ГОСТ Р ИСО 9001-2015, 14001-2016, 45001-2020, 19443-2020).</p>
       </div>
       <div class="adv-card">
         <div class="adv-num">03</div>
         <div class="adv-icon"><i class="fas fa-users-cog"></i></div>
-        <h3 class="adv-title">Компетентная команда</h3>
-        <p class="adv-desc">Высококвалифицированные специалисты с многолетним опытом работы в атомной энергетике и смежных отраслях промышленности: кандидаты технических наук, инженеры, аккредитованные в Ростехнадзоре</p>
+        <h3 class="adv-title" data-i18n="index.adv3.title">Компетентная команда</h3>
+        <p class="adv-desc" data-i18n="index.adv3.desc">Высококвалифицированные специалисты с многолетним опытом работы в атомной энергетике и смежных отраслях промышленности: кандидаты технических наук, инженеры, аккредитованные в Ростехнадзоре</p>
       </div>
       <div class="adv-card">
         <div class="adv-num">04</div>
         <div class="adv-icon"><i class="fas fa-leaf"></i></div>
-        <h3 class="adv-title">Экологическая безопасность</h3>
-        <p class="adv-desc">Наши технологии позволяют в разы сократить объём жидких радиоактивных отходов и минимизировать поступление радионуклидов в окружающую среду.</p>
+        <h3 class="adv-title" data-i18n="index.adv4.title">Экологическая безопасность</h3>
+        <p class="adv-desc" data-i18n="index.adv4.desc">Наши технологии позволяют в разы сократить объём жидких радиоактивных отходов и минимизировать поступление радионуклидов в окружающую среду.</p>
       </div>
       <div class="adv-card">
         <div class="adv-num">05</div>
         <div class="adv-icon"><i class="fas fa-project-diagram"></i></div>
-        <h3 class="adv-title">Комплексный подход</h3>
-        <p class="adv-desc">От проектирования и поставки оборудования до монтажа, пусконаладки и сервисного обслуживания — мы реализуем проекты «под ключ».</p>
+        <h3 class="adv-title" data-i18n="index.adv5.title">Комплексный подход</h3>
+        <p class="adv-desc" data-i18n="index.adv5.desc">От проектирования и поставки оборудования до монтажа, пусконаладки и сервисного обслуживания — мы реализуем проекты «под ключ».</p>
       </div>
       <div class="adv-card">
         <div class="adv-num">06</div>
         <div class="adv-icon"><i class="fas fa-handshake"></i></div>
-        <h3 class="adv-title">Надежность Росатома</h3>
-        <p class="adv-desc">Входим в структуру Государственной корпорации «Росатом», что гарантирует высочайший уровень ответственности и надёжности.</p>
+        <h3 class="adv-title" data-i18n="index.adv6.title">Надежность Росатома</h3>
+        <p class="adv-desc" data-i18n="index.adv6.desc">Входим в структуру Государственной корпорации «Росатом», что гарантирует высочайший уровень ответственности и надёжности.</p>
       </div>
     </div>
   </div>
@@ -267,17 +275,17 @@
 <!-- NEWS -->
 <section class="section section--light">
   <div class="container">
-    <span class="section-label">Актуальное</span>
-    <h2 class="section-title">Новости и события</h2>
+    <span class="section-label" data-i18n="index.news.label">Актуальное</span>
+    <h2 class="section-title" data-i18n="index.news.title">Новости и события</h2>
     <div class="news-grid">
       <div class="news-card">
         <div class="news-card-img">
           <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=300&fit=crop&q=80" alt="Стратегическая сессия">
         </div>
         <div class="news-card-body">
-          <div class="news-date">26 ДЕКАБРЯ 2025</div>
-          <h3 class="news-title"><a href="#">Проведена стратегическая сессия АО «Росатом Энергохимтех»</a></h3>
-          <p class="news-excerpt">В декабре 2025 года состоялась стратегическая сессия компании, на которой были определены ключевые направления развития на предстоящий период.</p>
+          <div class="news-date" data-i18n="index.news1.date">26 ДЕКАБРЯ 2025</div>
+          <h3 class="news-title"><a href="#" data-i18n="index.news1.title">Проведена стратегическая сессия АО «Росатом Энергохимтех»</a></h3>
+          <p class="news-excerpt" data-i18n="index.news1.excerpt">В декабре 2025 года состоялась стратегическая сессия компании, на которой были определены ключевые направления развития на предстоящий период.</p>
         </div>
       </div>
       <div class="news-card">
@@ -285,9 +293,9 @@
           <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&q=80" alt="Сертификаты ГОСТ Р ИСО">
         </div>
         <div class="news-card-body">
-          <div class="news-date">17 ДЕКАБРЯ 2025</div>
-          <h3 class="news-title"><a href="#">Получены сертификаты соответствия ГОСТ Р ИСО</a></h3>
-          <p class="news-excerpt">Органом по сертификации ООО «ЦТКАО-эксперт» компании выданы четыре сертификата соответствия: ГОСТ Р ИСО 9001-2015, 14001-2016, 45001-2020 и 19443-2020. Все сертификаты действуют до 16 декабря 2028 г.</p>
+          <div class="news-date" data-i18n="index.news2.date">17 ДЕКАБРЯ 2025</div>
+          <h3 class="news-title"><a href="#" data-i18n="index.news2.title">Получены сертификаты соответствия ГОСТ Р ИСО</a></h3>
+          <p class="news-excerpt" data-i18n="index.news2.excerpt">Органом по сертификации ООО «ЦТКАО-эксперт» компании выданы четыре сертификата соответствия: ГОСТ Р ИСО 9001-2015, 14001-2016, 45001-2020 и 19443-2020. Все сертификаты действуют до 16 декабря 2028 г.</p>
         </div>
       </div>
       <div class="news-card">
@@ -295,9 +303,9 @@
           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop&q=80" alt="Изменение адреса">
         </div>
         <div class="news-card-body">
-          <div class="news-date">1 НОЯБРЯ 2025</div>
-          <h3 class="news-title"><a href="#">С 23 октября 2025 года изменился юридический адрес и КПП компании</a></h3>
-          <p class="news-excerpt">АО «Росатом Энергохимтехнологии» уведомляет о смене юридического адреса и КПП. Просьба использовать обновлённые реквизиты при оформлении документов.</p>
+          <div class="news-date" data-i18n="index.news3.date">1 НОЯБРЯ 2025</div>
+          <h3 class="news-title"><a href="#" data-i18n="index.news3.title">С 23 октября 2025 года изменился юридический адрес и КПП компании</a></h3>
+          <p class="news-excerpt" data-i18n="index.news3.excerpt">АО «Росатом Энергохимтехнологии» уведомляет о смене юридического адреса и КПП. Просьба использовать обновлённые реквизиты при оформлении документов.</p>
         </div>
       </div>
     </div>
@@ -307,9 +315,9 @@
 <!-- CERTIFICATIONS -->
 <section class="section">
   <div class="container">
-    <span class="section-label">Документы и сертификаты</span>
-    <h2 class="section-title">Соответствие стандартам качества</h2>
-    <p class="section-sub">Наша деятельность соответствует требованиям систем менеджмента качества в области атомной энергетики и смежных отраслей.</p>
+    <span class="section-label" data-i18n="index.cert.label">Документы и сертификаты</span>
+    <h2 class="section-title" data-i18n="index.cert.title">Соответствие стандартам качества</h2>
+    <p class="section-sub" data-i18n="index.cert.sub">Наша деятельность соответствует требованиям систем менеджмента качества в области атомной энергетики и смежных отраслей.</p>
     <div class="certs-row">
       <a href="licenzii.html" class="cert-item">
         <div class="cert-icon"><i class="fas fa-award"></i></div>
@@ -335,12 +343,12 @@
 <div class="intro-band" style="background: linear-gradient(135deg, #0a1628 0%, #002060 100%);">
   <div class="container">
     <div class="intro-text">
-      <h2>Готовы обсудить ваш проект?</h2>
-      <p>Наши специалисты ответят на все вопросы и предложат оптимальное решение для вашей задачи.</p>
+      <h2 data-i18n="index.cta.title">Готовы обсудить ваш проект?</h2>
+      <p data-i18n="index.cta.desc">Наши специалисты ответят на все вопросы и предложат оптимальное решение для вашей задачи.</p>
     </div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="kontakty.html" class="btn btn-primary">Оставить заявку</a>
-      <a href="tel:+79685934321" class="btn btn-outline">Позвонить нам</a>
+      <a href="kontakty.html" class="btn btn-primary" data-i18n="btn.leaveRequest">Оставить заявку</a>
+      <a href="tel:+79685934321" class="btn btn-outline" data-i18n="btn.callUs">Позвонить нам</a>
     </div>
   </div>
 </div>
@@ -355,33 +363,33 @@
             <span class="logo-text-top">РОСАТОМ</span>
             <span class="logo-text-bottom">ЭНЕРГОХИМТЕХНОЛОГИИ</span>
           </a>
-          <p>АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
+          <p data-i18n="footer.brand_desc">АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
         </div>
         <div>
-          <div class="footer-col-title">Направления</div>
+          <div class="footer-col-title" data-i18n="footer.directions">Направления</div>
           <ul class="footer-links">
-            <li><a href="sorbenty.html">Сорбенты Термоксид</a></li>
-            <li><a href="energosistemy.html">Моделирование энергосистем</a></li>
-            <li><a href="inzhiniring.html">Инжиниринг и энергосервис</a></li>
-            <li><a href="vodoochistka.html">Водоподготовка и водоочистка</a></li>
+            <li><a href="sorbenty.html" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a></li>
+            <li><a href="energosistemy.html" data-i18n="nav.dd.energy">Моделирование энергосистем</a></li>
+            <li><a href="inzhiniring.html" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a></li>
+            <li><a href="vodoochistka.html" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Компания</div>
+          <div class="footer-col-title" data-i18n="footer.company">Компания</div>
           <ul class="footer-links">
-            <li><a href="index.html">О компании</a></li>
-            <li><a href="rukovodstvo.html">Руководство</a></li>
-            <li><a href="opyt.html">Опыт работ</a></li>
-            <li><a href="licenzii.html">Лицензии и сертификаты</a></li>
-            <li><a href="kontakty.html">Контакты</a></li>
+            <li><a href="index.html" data-i18n="footer.about">О компании</a></li>
+            <li><a href="rukovodstvo.html" data-i18n="footer.management">Руководство</a></li>
+            <li><a href="opyt.html" data-i18n="footer.experience">Опыт работ</a></li>
+            <li><a href="licenzii.html" data-i18n="footer.licenses_certs">Лицензии и сертификаты</a></li>
+            <li><a href="kontakty.html" data-i18n="footer.contacts">Контакты</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Контакты</div>
+          <div class="footer-col-title" data-i18n="footer.contacts">Контакты</div>
           <div class="footer-contacts">
             <div class="footer-contact-item">
               <i class="fas fa-map-marker-alt fc-icon"></i>
-              <span>115230, г. Москва,<br>ш. Варшавское, д. 46</span>
+              <span data-i18n-html="addr.moscow">115230, г. Москва,<br>ш. Варшавское, д. 46</span>
             </div>
             <div class="footer-contact-item">
               <i class="fas fa-phone fc-icon"></i>
@@ -402,46 +410,16 @@
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span>© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
+      <span data-i18n="footer.copyright">© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
       <div style="display:flex;gap:20px;">
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Карта сайта</a>
+        <a href="#" data-i18n="footer.privacy">Политика конфиденциальности</a>
+        <a href="#" data-i18n="footer.sitemap">Карта сайта</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script src="js/script.js"></script>
-// #region agent log
-<script>
-window.addEventListener('load', function() {
-  var nav = document.querySelector('.nav-link');
-  var header = document.querySelector('.header .container');
-  var logo = document.querySelector('.logo img');
-  var htmlEl = document.documentElement;
-  var body = document.body;
-  var cs = nav ? getComputedStyle(nav) : {};
-  var hs = header ? getComputedStyle(header) : {};
-  var payload = {
-    sessionId: '1b3ae5', page: 'index.html', runId: 'run2-postfix',
-    hypothesisId: 'H1-H2-H3-H4-H5',
-    location: 'index.html:load',
-    message: 'header computed styles',
-    timestamp: Date.now(),
-    data: {
-      navLink_fontSize: cs.fontSize, navLink_fontFamily: cs.fontFamily, navLink_fontWeight: cs.fontWeight,
-      navLink_padding: cs.padding, navLink_lineHeight: cs.lineHeight,
-      header_height: hs.height, header_gap: hs.gap,
-      logo_height: logo ? logo.getBoundingClientRect().height : null,
-      html_fontSize: getComputedStyle(htmlEl).fontSize,
-      body_fontSize: getComputedStyle(body).fontSize,
-      fontsLoaded: document.fonts ? Array.from(document.fonts).map(function(f){return f.family+':'+f.status;}) : 'N/A'
-    }
-  };
-  fetch('http://127.0.0.1:7312/ingest/5a288093-49ae-4dc5-b9f8-061942cead0e',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'1b3ae5'},body:JSON.stringify(payload)}).catch(function(){});
-});
-</script>
-// #endregion
+<script src="js/i18n.js"></script>
 </body>
 </html>
-
