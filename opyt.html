@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- fonts.googleapis returns UA-specific CSS; SRI not used -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <title>Опыт выполняемых работ — АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" rel="stylesheet"/>
-  <script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" integrity="sha384-MinO0mNliZ3vwppuPOUnGa+iq619pfMhLVUXfC4LHwSCvF9H+6P/KO4Q7qBOYV5V" crossorigin="anonymous">
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" integrity="sha384-SYKAG6cglRMN0RVvhNeBY0r3FYKNOJtznwA0v7B5Vp9tr31xAHsZC0DqkQ/pZDmj" crossorigin="anonymous" defer></script>
 </head>
 <body data-page-title="opyt.title" data-nav-active="experience">
 
@@ -80,6 +84,18 @@
   <a href="licenzii.html" data-i18n="nav.licenses">Лицензии</a>
   <a href="kontakty.html" data-i18n="nav.contacts">Контакты</a>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -500,57 +516,6 @@
   </div>
 </section>
 
-<script>
-(function() {
-  var map = new maplibregl.Map({
-    container: 'geo-map',
-    style: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
-    center: [72, 40],
-    zoom: 2,
-    scrollZoom: false
-  });
-
-  var objects = [
-    { name: 'Калининская АЭС',                   lat: 57.498, lng: 36.558, color: '#002060', desc: 'Тверская область' },
-    { name: 'Нововоронежская АЭС',                lat: 51.289, lng: 39.212, color: '#002060', desc: 'Воронежская область' },
-    { name: 'Смоленская АЭС',                     lat: 54.170, lng: 33.230, color: '#002060', desc: 'Смоленская область' },
-    { name: 'Балаклавская АЭС',                   lat: 44.496, lng: 33.601, color: '#002060', desc: 'Республика Крым' },
-    { name: 'Кольская АЭС',                       lat: 67.462, lng: 32.490, color: '#002060', desc: 'Мурманская область' },
-    { name: 'ФГУП «Атомфлот»',                    lat: 68.980, lng: 33.092, color: '#002060', desc: 'Мурманск' },
-    { name: 'Белоярская АЭС',                     lat: 56.842, lng: 61.318, color: '#002060', desc: 'Свердловская область' },
-    { name: 'Кандалакшский алюминиевый завод',    lat: 67.153, lng: 32.413, color: '#e87c1e', desc: 'Мурманская область' },
-    { name: 'Тобольская ТЭЦ',                     lat: 58.200, lng: 68.253, color: '#e87c1e', desc: 'Тобольск, Тюменская область' },
-    { name: 'АО «СибурТюменьГаз»',               lat: 64.456, lng: 76.504, color: '#e87c1e', desc: 'Западная Сибирь' },
-    { name: 'АО «Транснефть — Западная Сибирь»', lat: 57.150, lng: 65.530, color: '#e87c1e', desc: 'Тюмень' },
-    { name: 'Красноярский алюминиевый завод',     lat: 55.926, lng: 92.793, color: '#e87c1e', desc: 'Красноярск' },
-    { name: 'Братский алюминиевый завод',         lat: 56.134, lng: 101.610, color: '#e87c1e', desc: 'Братск, Иркутская область' },
-    { name: 'Русал Новокузнецк',                  lat: 53.758, lng: 87.100,  color: '#e87c1e', desc: 'Новокузнецк, Кемеровская область' },
-    { name: 'АО «Тываэнерго» (Туран)',            lat: 52.141, lng: 93.920,  color: '#e87c1e', desc: 'Туран, Республика Тыва' },
-    { name: 'АЭС «Тяньвань»',                     lat: 34.609, lng: 119.461, color: '#c0392b', desc: 'Лянюньган, Китай' },
-    { name: 'АЭС «Куданкулам»',                   lat:  8.171, lng:  77.712, color: '#c0392b', desc: 'Тамилнад, Индия' },
-    { name: 'Южно-Украинская АЭС',                lat: 47.834, lng:  31.220, color: '#c0392b', desc: 'Николаевская область, Украина' }
-  ];
-
-  map.on('load', function() {
-    objects.forEach(function(o) {
-      var el = document.createElement('div');
-      el.style.cssText = 'width:16px;height:16px;border-radius:50%;background:' + o.color + ';border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);cursor:pointer;';
-      new maplibregl.Marker({ element: el })
-        .setLngLat([o.lng, o.lat])
-        .setPopup(
-          new maplibregl.Popup({ offset: 12 }).setHTML(
-            '<div style="min-width:160px;">' +
-            '<strong style="font-size:13px;color:#002060;">' + o.name + '</strong>' +
-            '<br><span style="font-size:12px;color:#666;">' + o.desc + '</span>' +
-            '</div>'
-          )
-        )
-        .addTo(map);
-    });
-  });
-})();
-</script>
-
 <div class="intro-band">
   <div class="container">
     <div class="intro-text">
@@ -620,7 +585,7 @@
     <div class="footer-bottom">
       <span data-i18n="footer.copyright">© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
       <div style="display:flex;gap:20px;">
-        <a href="#" data-i18n="footer.privacy">Политика конфиденциальности</a>
+        <a href="politika-konfidencialnosti.html" data-i18n="footer.privacy">Политика конфиденциальности</a>
         <a href="#" data-i18n="footer.sitemap">Карта сайта</a>
       </div>
     </div>
@@ -631,8 +596,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="js/script.js"></script>
 <script src="js/i18n.js"></script>
+<script src="js/pages/opyt-map.js" defer></script>
 </body>
 </html>
 

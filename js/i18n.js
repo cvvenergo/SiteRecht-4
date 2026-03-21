@@ -49,6 +49,24 @@
       'breadcrumb.home': 'Главная',
       'breadcrumb.directions': 'Направления деятельности',
 
+      // ---- Privacy policy page ----
+      'privacy.title': 'Политика конфиденциальности — АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»',
+      'privacy.meta': 'Политика обработки и защиты персональных данных пользователей официального сайта АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ».',
+      'privacy.h1': 'Политика конфиденциальности',
+      'privacy.bc': 'Политика конфиденциальности',
+      'privacy.updated': 'Действует с 21 марта 2026 г.',
+      'privacy.s1': '<h2>1. Общие положения</h2><p>Настоящая Политика конфиденциальности (далее — Политика) определяет порядок обработки и защиты персональных данных пользователей официального сайта в сети «Интернет» Акционерного общества «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» (далее — Оператор, Общество). Используя сайт и формы обратной связи, вы подтверждаете, что ознакомились с настоящей Политикой.</p>',
+      'privacy.s2': '<h2>2. Термины</h2><p>Персональные данные — любая информация, прямо или косвенно относящаяся к определённому или определяемому физическому лицу (субъекту персональных данных).</p><p>Обработка персональных данных — любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных.</p>',
+      'privacy.s3': '<h2>3. Цели обработки персональных данных</h2><p>Оператор обрабатывает персональные данные в целях: рассмотрения обращений и запросов пользователей сайта; связи с пользователем по указанным им контактным данным; направления информации о продукции и услугах Общества при наличии соответствующего согласия или иного законного основания.</p>',
+      'privacy.s4': '<h2>4. Правовые основания обработки</h2><p>Обработка персональных данных осуществляется в соответствии с Конституцией Российской Федерации, Трудовым кодексом Российской Федерации, Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных», иными нормативными правовыми актами Российской Федерации, а также согласием субъекта персональных данных — в случаях, когда получение такого согласия предусмотрено законом.</p>',
+      'privacy.s5': '<h2>5. Категории обрабатываемых данных</h2><p>В зависимости от способа обращения могут обрабатываться, в частности: фамилия, имя, отчество; наименование организации; номер контактного телефона; адрес электронной почты; текст сообщения и иные сведения, добровольно сообщённые пользователем в форме обратной связи или письме.</p>',
+      'privacy.s6': '<h2>6. Принципы и сроки обработки</h2><p>Обработка персональных данных осуществляется на законной и справедливой основе, ограничивается достижением конкретных, заранее определённых и законных целей. Персональные данные не подлежат обработке дольше, чем этого требуют цели обработки, если иной срок не установлен законодательством Российской Федерации. Хранение осуществляется с соблюдением конфиденциальности и ограничения доступа.</p>',
+      'privacy.s7': '<h2>7. Меры по защите персональных данных</h2><p>Оператор принимает необходимые организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональных данных, а также от иных неправомерных действий.</p>',
+      'privacy.s8': '<h2>8. Права субъекта персональных данных</h2><p>Субъект персональных данных вправе получать сведения, касающиеся обработки его персональных данных, а также требовать уточнения, блокирования или уничтожения персональных данных, если они являются неполными, устаревшими, неточными, незаконно полученными или не являются необходимыми для заявленной цели обработки, в порядке, установленном законодательством Российской Федерации. Для реализации указанных прав можно обратиться к Оператору по контактам, указанным в разделе 11 настоящей Политики.</p>',
+      'privacy.s9': '<h2>9. Файлы cookie и аналогичные технологии</h2><p>Сайт может использовать файлы cookie и иные технологии, необходимые для корректной работы страниц и отображения содержимого. Пользователь может ограничить или отключить использование cookie в настройках браузера.</p>',
+      'privacy.s10': '<h2>10. Изменение Политики</h2><p>Оператор вправе вносить изменения в настоящую Политику. Новая редакция вступает в силу с момента её размещения на сайте, если иное не предусмотрено текстом Политики.</p>',
+      'privacy.s11': '<h2>11. Контакты по вопросам персональных данных</h2><p>По вопросам, связанным с обработкой персональных данных, вы можете направить обращение:</p><p>E-mail: <a href="mailto:info@raecht.ru">info@raecht.ru</a><br>Телефон: <a href="tel:+79685934321">+7 (968) 593-43-21</a><br>Почтовый адрес: 115230, г. Москва, ш. Варшавское, д. 46.</p>',
+
       // ---- Hero arrows ----
       'hero.prev': 'Назад',
       'hero.next': 'Вперёд',
@@ -403,6 +421,8 @@
       'opyt.cta.title': 'Хотите стать нашим заказчиком?',
       'opyt.cta.desc': 'Расскажите о своей задаче — мы предложим решение на основе богатого опыта реализованных проектов.',
       'opyt.cta.btn': 'Обсудить проект',
+      'opyt.map.error.title': 'Карта недоступна',
+      'opyt.map.error.desc': 'Не удалось загрузить карту. Проверьте подключение к интернету или попробуйте позже.',
 
       // ===== LICENZII PAGE =====
       'lic.title': 'Лицензии и сертификаты — АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»',
@@ -482,7 +502,7 @@
       'kont.form.dir.5': 'Общий вопрос',
       'kont.form.message': 'Сообщение *',
       'kont.form.message.ph': 'Опишите вашу задачу или вопрос...',
-      'kont.form.privacy': 'Нажимая «Отправить», вы соглашаетесь с <a href="#" style="color:var(--blue-mid);">политикой конфиденциальности</a>.',
+      'kont.form.privacy': 'Нажимая «Отправить», вы соглашаетесь с <a href="politika-konfidencialnosti.html" style="color:var(--blue-mid);">политикой конфиденциальности</a>.',
       'kont.form.submit': 'Отправить сообщение',
       'kont.form.success': '<i class="fas fa-check-circle"></i> Ваше сообщение отправлено! Свяжемся с вами в течение рабочего дня.',
       'kont.map.label': 'Расположение',
@@ -624,6 +644,24 @@
       // ---- Common breadcrumb ----
       'breadcrumb.home': 'Home',
       'breadcrumb.directions': 'Business Directions',
+
+      // ---- Privacy policy page ----
+      'privacy.title': 'Privacy Policy — JSC ROSATOM ENERGOKHIMTEKHNOLOGII',
+      'privacy.meta': 'Policy on processing and protection of personal data of users of the official website of JSC ROSATOM ENERGOKHIMTEKHNOLOGII.',
+      'privacy.h1': 'Privacy Policy',
+      'privacy.bc': 'Privacy Policy',
+      'privacy.updated': 'Effective from March 21, 2026.',
+      'privacy.s1': '<h2>1. General</h2><p>This Privacy Policy (the Policy) describes how personal data of users of the official website of Joint Stock Company ROSATOM ENERGOKHIMTEKHNOLOGII (the Operator) is processed and protected. By using the website and feedback forms, you acknowledge that you have read this Policy.</p>',
+      'privacy.s2': '<h2>2. Definitions</h2><p>Personal data means any information relating directly or indirectly to an identified or identifiable individual. Processing means any operation or set of operations performed on personal data, including collection, recording, organisation, storage, adaptation, retrieval, use, disclosure (provision, access), anonymisation, blocking, erasure or destruction.</p>',
+      'privacy.s3': '<h2>3. Purposes of processing</h2><p>The Operator processes personal data to review user requests and inquiries; contact users using the details they provide; and send information about products and services where there is valid consent or another lawful basis.</p>',
+      'privacy.s4': '<h2>4. Legal basis</h2><p>Processing is carried out in accordance with the Constitution of the Russian Federation, the Labour Code of the Russian Federation, Federal Law No. 152-FZ of 27.07.2006 On Personal Data, other applicable laws of the Russian Federation, and, where required by law, the data subject’s consent.</p>',
+      'privacy.s5': '<h2>5. Categories of data</h2><p>Depending on how you contact us, we may process, among other things: name; organisation; phone number; email address; message text; and any other information you voluntarily provide via the feedback form or other website channels.</p>',
+      'privacy.s6': '<h2>6. Principles and retention</h2><p>Personal data are processed lawfully and fairly, only to the extent and for the time necessary to achieve the stated purposes, unless Russian law provides otherwise. Storage is subject to confidentiality and access restrictions.</p>',
+      'privacy.s7': '<h2>7. Security measures</h2><p>The Operator implements appropriate organisational and technical measures to protect personal data against unlawful or accidental access, destruction, alteration, blocking, copying, disclosure, or other unlawful actions.</p>',
+      'privacy.s8': '<h2>8. Data subject rights</h2><p>You may request information about the processing of your personal data, and where applicable under Russian law, request rectification, blocking or erasure, or withdraw consent where processing is consent-based. To exercise your rights, contact the Operator using the details in Section 11 of this Policy.</p>',
+      'privacy.s9': '<h2>9. Cookies and similar technologies</h2><p>The website may use cookies and similar technologies needed for pages to function correctly. You can restrict or disable cookies in your browser settings.</p>',
+      'privacy.s10': '<h2>10. Changes to the Policy</h2><p>The Operator may update this Policy. The revised version takes effect when published on the website unless the Policy states otherwise.</p>',
+      'privacy.s11': '<h2>11. Contacts for personal data matters</h2><p>For questions about personal data processing, please contact us at:</p><p>E-mail: <a href="mailto:info@raecht.ru">info@raecht.ru</a><br>Phone: <a href="tel:+79685934321">+7 (968) 593-43-21</a><br>Postal address: 115230, Moscow, Varshavskoye shosse, 46.</p>',
 
       // ---- Hero arrows ----
       'hero.prev': 'Previous',
@@ -979,6 +1017,8 @@
       'opyt.cta.title': 'Want to Become Our Customer?',
       'opyt.cta.desc': 'Tell us about your task — we will offer a solution based on our extensive project experience.',
       'opyt.cta.btn': 'Discuss Project',
+      'opyt.map.error.title': 'Map unavailable',
+      'opyt.map.error.desc': 'The map could not be loaded. Check your internet connection or try again later.',
 
       // ===== LICENZII PAGE =====
       'lic.title': 'Licenses & Certificates — JSC ROSATOM ENERGOKHIMTEKHNOLOGII',
@@ -1041,8 +1081,9 @@
       'kont.email.label': 'Email',
       'kont.email.sub': 'We respond within one business day',
       'kont.req.label': 'Company Details',
-      'kont.form.label': 'Feedback',
-      'kont.form.title': 'Send a Message',
+      'kont.form.label': 'Demo form',
+      'kont.form.title': 'Demo: feedback',
+      'kont.form.stub.hint': 'Demonstration form: data is not sent to a server. Use the contacts on the left to reach us.',
       'kont.form.name': 'Your Name *',
       'kont.form.name.ph': 'John Smith',
       'kont.form.org': 'Organization',
@@ -1058,9 +1099,9 @@
       'kont.form.dir.5': 'General Inquiry',
       'kont.form.message': 'Message *',
       'kont.form.message.ph': 'Describe your task or question...',
-      'kont.form.privacy': 'By clicking «Submit», you agree to our <a href="#" style="color:var(--blue-mid);">privacy policy</a>.',
-      'kont.form.submit': 'Submit Message',
-      'kont.form.success': '<i class="fas fa-check-circle"></i> Your message has been sent! We will contact you within one business day.',
+      'kont.form.privacy': 'By clicking «Submit», you agree to the <a href="politika-konfidencialnosti.html" style="color:var(--blue-mid);">privacy policy</a>.',
+      'kont.form.submit': 'Submit',
+      'kont.form.sent': '<i class="fas fa-check-circle" style="color:#27ae60;" aria-hidden="true"></i> Thank you! Your message has been sent.',
       'kont.map.label': 'Location',
       'kont.map.title': 'How to Find Us',
       'kont.map.off1': 'Executive Office (Moscow)',
@@ -1192,13 +1233,21 @@
   }
 
   function setLang(lang) {
-    try { localStorage.setItem('raecht_lang', lang); } catch (e) {}
+    try {
+      localStorage.setItem('raecht_lang', lang);
+    } catch (e) {
+      console.warn('[raecht/i18n] Failed to save language preference to localStorage (key: raecht_lang)', e);
+    }
     applyTranslations(lang);
   }
 
   function init() {
     var savedLang;
-    try { savedLang = localStorage.getItem('raecht_lang'); } catch (e) {}
+    try {
+      savedLang = localStorage.getItem('raecht_lang');
+    } catch (e) {
+      console.warn('[raecht/i18n] Failed to read language preference from localStorage (key: raecht_lang)', e);
+    }
     var lang = savedLang || 'ru';
 
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -1215,4 +1264,10 @@
   } else {
     init();
   }
+
+  /** Re-apply strings to the document (e.g. nodes added after init, such as map fallback on opyt.html). */
+  window.__raechtI18nRefresh = function () {
+    var lang = document.documentElement.lang || 'ru';
+    if (translations[lang]) applyTranslations(lang);
+  };
 })();

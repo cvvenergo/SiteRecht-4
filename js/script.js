@@ -73,15 +73,27 @@
 
 // ===== TABS =====
 (function () {
+  const KNOWN_TAB_PANEL_IDS = new Set([
+    'tab-sorbenty',
+    'tab-energy',
+    'tab-inzh',
+    'tab-voda',
+  ]);
+
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabPanels = document.querySelectorAll('.tab-panel');
   if (!tabBtns.length) return;
 
+  function isAllowedTabId(id) {
+    return typeof id === 'string' && KNOWN_TAB_PANEL_IDS.has(id);
+  }
+
   function activateTab(tabId) {
+    if (!isAllowedTabId(tabId)) return;
     tabBtns.forEach(b => b.classList.remove('active'));
     tabPanels.forEach(p => p.classList.remove('active'));
     const btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
-    const panel = document.querySelector('#' + tabId);
+    const panel = document.getElementById(tabId);
     if (btn) btn.classList.add('active');
     if (panel) panel.classList.add('active');
   }
@@ -90,10 +102,16 @@
     btn.addEventListener('click', () => activateTab(btn.dataset.tab));
   });
 
-  // Activate tab from URL hash on page load
-  const hash = window.location.hash.replace('#', '');
-  if (hash && document.querySelector('#' + hash)) {
-    activateTab(hash);
+  // Activate tab from URL hash on page load (invalid / unknown hash: no-op, first tab stays active)
+  let rawHash = window.location.hash.replace(/^#/, '');
+  try {
+    rawHash = decodeURIComponent(rawHash);
+  } catch (_) {
+    rawHash = '';
+  }
+  const tabFromHash = rawHash.split(/[?&#]/)[0];
+  if (tabFromHash && isAllowedTabId(tabFromHash)) {
+    activateTab(tabFromHash);
     setTimeout(() => {
       const section = document.querySelector('.tabs');
       if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });

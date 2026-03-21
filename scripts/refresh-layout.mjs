@@ -2,6 +2,8 @@
  * Вставляет partials/header.html и partials/footer.html во все корневые *.html.
  * Проставляет body[data-nav-active] по имени файла.
  * Запуск из корня проекта: node scripts/refresh-layout.mjs
+ *
+ * Любой пропуск или ошибка по странице из NAV_ACTIVE_BY_FILE → stderr (ERROR …) и код выхода 1.
  */
 
 import fs from 'fs';
@@ -27,6 +29,17 @@ const NAV_ACTIVE_BY_FILE = {
 
 const headerPath = path.join(root, 'partials', 'header.html');
 const footerPath = path.join(root, 'partials', 'footer.html');
+
+/**
+ * @param {string} file
+ * @param {string} reason
+ * @param {Error | null} [err]
+ */
+function logError(file, reason, err = null) {
+  const parts = ['ERROR', `file=${file}`, `reason=${reason}`];
+  if (err?.message) parts.push(`detail=${JSON.stringify(err.message)}`);
+  console.error(parts.join(' '));
+}
 
 function findClosingDivEnd(html, startIdx) {
   let pos = startIdx;
@@ -84,41 +97,98 @@ function ensureBodyNavActive(html, fileName) {
   });
 }
 
-function main() {
-  const header = fs.readFileSync(headerPath, 'utf8');
-  const footer = fs.readFileSync(footerPath, 'utf8');
-  const files = fs.readdirSync(root).filter((f) => f.endsWith('.html'));
+/**
+ * @param {string} canonicalName key in NAV_ACTIVE_BY_FILE (stable casing for data-nav-active lookup)
+ * @param {string} diskFileName actual filename from disk (may differ in case on Windows)
+ * @param {string} header
+ * @param {string} footer
+ * @returns {boolean} true if page updated successfully
+ */
+function processPage(canonicalName, diskFileName, header, footer) {
+  const filePath = path.join(root, diskFileName);
+  let html;
+  try {
+    html = fs.readFileSync(filePath, 'utf8');
+  } catch (e) {
+    logError(canonicalName, 'read_failed', e instanceof Error ? e : new Error(String(e)));
+    return false;
+  }
 
-  for (const name of files) {
-    if (!NAV_ACTIVE_BY_FILE[name]) continue;
-
-    const filePath = path.join(root, name);
-    let html = fs.readFileSync(filePath, 'utf8');
-
+  try {
     const hb = sliceHeaderMobileBlock(html);
     if (!hb) {
-      console.error(`skip ${name}: no header/mobile block`);
-      continue;
+      logError(canonicalName, 'no_header_mobile_block');
+      return false;
     }
     const fb = sliceFooterBlock(html);
     if (!fb) {
-      console.error(`skip ${name}: no footer`);
-      continue;
+      logError(canonicalName, 'no_footer');
+      return false;
     }
 
     html = html.slice(0, hb.start) + header.trimEnd() + '\n\n' + html.slice(hb.end);
     const fb2 = sliceFooterBlock(html);
     if (!fb2) {
-      console.error(`skip ${name}: footer lost after header replace`);
-      continue;
+      logError(canonicalName, 'footer_lost_after_header_replace');
+      return false;
     }
     html = html.slice(0, fb2.start) + footer.trimEnd() + '\n\n' + html.slice(fb2.end);
 
-    html = ensureBodyNavActive(html, name);
+    html = ensureBodyNavActive(html, canonicalName);
 
     fs.writeFileSync(filePath, html, 'utf8');
-    console.log('ok', name);
+  } catch (e) {
+    logError(canonicalName, 'transform_or_write_failed', e instanceof Error ? e : new Error(String(e)));
+    return false;
   }
+
+  console.log('ok', canonicalName);
+  return true;
+}
+
+function main() {
+  let header;
+  let footer;
+  try {
+    header = fs.readFileSync(headerPath, 'utf8');
+  } catch (e) {
+    logError(path.relative(root, headerPath) || 'partials/header.html', 'read_failed', e instanceof Error ? e : new Error(String(e)));
+    process.exit(1);
+  }
+  try {
+    footer = fs.readFileSync(footerPath, 'utf8');
+  } catch (e) {
+    logError(path.relative(root, footerPath) || 'partials/footer.html', 'read_failed', e instanceof Error ? e : new Error(String(e)));
+    process.exit(1);
+  }
+
+  /** @type {Map<string, string>} lowercased name → actual filename on disk */
+  let rootFilesByLower;
+  try {
+    rootFilesByLower = new Map();
+    for (const entry of fs.readdirSync(root)) {
+      rootFilesByLower.set(entry.toLowerCase(), entry);
+    }
+  } catch (e) {
+    logError('.', 'readdir_root_failed', e instanceof Error ? e : new Error(String(e)));
+    process.exit(1);
+  }
+
+  const pages = Object.keys(NAV_ACTIVE_BY_FILE);
+  let failures = 0;
+
+  for (const name of pages) {
+    const diskName = rootFilesByLower.get(name.toLowerCase());
+    if (diskName === undefined) {
+      logError(name, 'page_missing_from_root');
+      failures++;
+      continue;
+    }
+    const ok = processPage(name, diskName, header, footer);
+    if (!ok) failures++;
+  }
+
+  process.exit(failures > 0 ? 1 : 0);
 }
 
 main();

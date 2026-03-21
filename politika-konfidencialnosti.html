@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Политика обработки и защиты персональных данных пользователей официального сайта АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ».">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Политика конфиденциальности — АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ»</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B" crossorigin="anonymous">
+  <style>
+    .legal-prose h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 28px 0 10px;
+      color: var(--text-dark);
+    }
+    .legal-prose h2:first-child { margin-top: 0; }
+    .legal-prose p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-mid);
+      margin: 0 0 14px;
+    }
+    .legal-prose a { color: var(--blue-mid); }
+    .legal-prose a:hover { text-decoration: underline; }
+    .privacy-cta {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .privacy-cta .btn-primary {
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body data-page-title="privacy.title">
+
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="РОСАТОМ Энергохимтехнологии">
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" data-nav="home" data-i18n="nav.home">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" data-nav="directions">
+            <span data-i18n="nav.directions">Направления</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="sorbenty.html"><i class="fas fa-atom dd-icon"></i> <span data-i18n="nav.dd.sorbents">Сорбенты Термоксид</span></a>
+            <a href="energosistemy.html"><i class="fas fa-bolt dd-icon"></i> <span data-i18n="nav.dd.energy">Моделирование энергосистем</span></a>
+            <a href="inzhiniring.html"><i class="fas fa-industry dd-icon"></i> <span data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</span></a>
+            <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> <span data-i18n="nav.dd.water">Водоподготовка и водоочистка</span></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="rukovodstvo.html" class="nav-link" data-nav="management" data-i18n="nav.management">Руководство</a>
+        </li>
+        <li class="nav-item">
+          <a href="opyt.html" class="nav-link" data-nav="experience" data-i18n="nav.experience">Опыт работ</a>
+        </li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link" data-nav="licenses" data-i18n="nav.licenses">Лицензии</a></li>
+        <li class="nav-item">
+          <a href="kontakty.html" class="nav-link" data-nav="contacts" data-i18n="nav.contacts">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <div class="header-contact">
+        <a href="tel:+79685934321" class="header-phone"><i class="fas fa-phone"></i> +7 (968) 593-43-21</a>
+        <a href="mailto:info@raecht.ru" class="header-phone"><i class="fas fa-envelope"></i> info@raecht.ru</a>
+      </div>
+      <a href="kontakty.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Написать нам</a>
+    </div>
+    <button class="hamburger" data-i18n-aria="nav.menu.aria" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <div class="mobile-lang-switcher">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="index.html" data-i18n="nav.home">Главная</a>
+  <a href="sorbenty.html" class="sub" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a>
+  <a href="energosistemy.html" class="sub" data-i18n="nav.dd.energy">Моделирование энергосистем</a>
+  <a href="inzhiniring.html" class="sub" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a>
+  <a href="vodoochistka.html" class="sub" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a>
+  <a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a>
+  <a href="opyt.html" data-i18n="nav.experience">Опыт работ</a>
+  <a href="licenzii.html" data-i18n="nav.licenses">Лицензии</a>
+  <a href="kontakty.html" data-i18n="nav.contacts">Контакты</a>
+</div>
+
+<section class="page-hero">
+  <img class="page-hero-bg" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&h=600&fit=crop&q=80" alt="">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="breadcrumb.home">Главная</a>
+        <span class="sep">›</span>
+        <span data-i18n="privacy.bc">Политика конфиденциальности</span>
+      </div>
+      <h1 class="page-title" data-i18n="privacy.h1">Политика конфиденциальности</h1>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light" style="padding: 40px 0 56px;">
+  <div class="container" style="max-width: 800px;">
+    <p style="font-size:13px;color:var(--text-mid);margin:0 0 24px;" data-i18n="privacy.updated">Действует с 21 марта 2026 г.</p>
+    <article class="legal-prose">
+      <div data-i18n-html="privacy.s1"></div>
+      <div data-i18n-html="privacy.s2"></div>
+      <div data-i18n-html="privacy.s3"></div>
+      <div data-i18n-html="privacy.s4"></div>
+      <div data-i18n-html="privacy.s5"></div>
+      <div data-i18n-html="privacy.s6"></div>
+      <div data-i18n-html="privacy.s7"></div>
+      <div data-i18n-html="privacy.s8"></div>
+      <div data-i18n-html="privacy.s9"></div>
+      <div data-i18n-html="privacy.s10"></div>
+      <div data-i18n-html="privacy.s11"></div>
+    </article>
+    <div class="privacy-cta">
+      <a href="kontakty.html" class="btn btn-primary btn-sm"><i class="fas fa-address-book" aria-hidden="true"></i> <span data-i18n="nav.contacts">Контакты</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-footer logo-footer--text">
+            <span class="logo-text-top">РОСАТОМ</span>
+            <span class="logo-text-bottom">ЭНЕРГОХИМТЕХНОЛОГИИ</span>
+          </a>
+          <p data-i18n="footer.brand_desc">АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» — производство сорбентов Термоксид, моделирование энергосистем, инжиниринг и водоочистка. Более 30 лет в атомной отрасли.</p>
+        </div>
+        <div>
+          <div class="footer-col-title" data-i18n="footer.directions">Направления</div>
+          <ul class="footer-links">
+            <li><a href="sorbenty.html" data-i18n="nav.dd.sorbents">Сорбенты Термоксид</a></li>
+            <li><a href="energosistemy.html" data-i18n="nav.dd.energy">Моделирование энергосистем</a></li>
+            <li><a href="inzhiniring.html" data-i18n="nav.dd.engineering">Инжиниринг и энергосервис</a></li>
+            <li><a href="vodoochistka.html" data-i18n="nav.dd.water">Водоподготовка и водоочистка</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title" data-i18n="footer.company">Компания</div>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="footer.about">О компании</a></li>
+            <li><a href="rukovodstvo.html" data-i18n="footer.management">Руководство</a></li>
+            <li><a href="opyt.html" data-i18n="footer.experience">Опыт работ</a></li>
+            <li><a href="licenzii.html" data-i18n="footer.licenses_certs">Лицензии и сертификаты</a></li>
+            <li><a href="kontakty.html" data-i18n="footer.contacts">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title" data-i18n="footer.contacts">Контакты</div>
+          <div class="footer-contacts">
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt fc-icon"></i>
+              <span data-i18n-html="addr.moscow">115230, г. Москва,<br>ш. Варшавское, д. 46</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone fc-icon"></i>
+              <span><a href="tel:+79685934321" style="color:inherit;">+7 (968) 593-43-21</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope fc-icon"></i>
+              <span><a href="mailto:info@raecht.ru" style="color:inherit;">info@raecht.ru</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-globe fc-icon"></i>
+              <span>термоксид.рф</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ». Все права защищены.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="politika-konfidencialnosti.html" data-i18n="footer.privacy">Политика конфиденциальности</a>
+        <a href="#" data-i18n="footer.sitemap">Карта сайта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>
