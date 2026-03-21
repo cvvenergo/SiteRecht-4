@@ -1,3 +1,12 @@
+// ===== NAV ACTIVE (data-nav-active on <body>) =====
+(function () {
+  const nav = document.body && document.body.getAttribute('data-nav-active');
+  if (!nav) return;
+  document.querySelectorAll('[data-nav-match]').forEach(function (el) {
+    if (el.getAttribute('data-nav-match') === nav) el.classList.add('active');
+  });
+})();
+
 // ===== HERO SLIDER =====
 (function () {
   const slides = document.querySelectorAll('.slide');
