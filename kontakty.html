@@ -65,9 +65,10 @@
     }
   </style>
 </head>
-<body data-page-title="kont.title">
+<body data-page-title="kont.title" data-nav-active="contacts">
 
 
+<!-- HEADER -->
 <header class="header">
   <div class="container">
     <a href="index.html" class="logo">
@@ -75,9 +76,11 @@
     </a>
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Главная</a></li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="index.html" class="nav-link" data-nav="home" data-i18n="nav.home">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" data-nav="directions">
             <span data-i18n="nav.directions">Направления</span>
             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -88,10 +91,16 @@
             <a href="vodoochistka.html"><i class="fas fa-tint dd-icon"></i> <span data-i18n="nav.dd.water">Водоподготовка и водоочистка</span></a>
           </div>
         </li>
-        <li class="nav-item"><a href="rukovodstvo.html" class="nav-link" data-i18n="nav.management">Руководство</a></li>
-        <li class="nav-item"><a href="opyt.html" class="nav-link" data-i18n="nav.experience">Опыт работ</a></li>
-        <li class="nav-item"><a href="licenzii.html" class="nav-link" data-i18n="nav.licenses">Лицензии</a></li>
-        <li class="nav-item"><a href="kontakty.html" class="nav-link active" data-i18n="nav.contacts">Контакты</a></li>
+        <li class="nav-item">
+          <a href="rukovodstvo.html" class="nav-link" data-nav="management" data-i18n="nav.management">Руководство</a>
+        </li>
+        <li class="nav-item">
+          <a href="opyt.html" class="nav-link" data-nav="experience" data-i18n="nav.experience">Опыт работ</a>
+        </li>
+        <li class="nav-item"><a href="licenzii.html" class="nav-link" data-nav="licenses" data-i18n="nav.licenses">Лицензии</a></li>
+        <li class="nav-item">
+          <a href="kontakty.html" class="nav-link" data-nav="contacts" data-i18n="nav.contacts">Контакты</a>
+        </li>
       </ul>
     </nav>
     <div class="header-right">
@@ -105,10 +114,13 @@
       </div>
       <a href="kontakty.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Написать нам</a>
     </div>
-    <button class="hamburger" data-i18n-aria="nav.menu.aria" aria-label="Меню"><span></span><span></span><span></span></button>
+    <button class="hamburger" data-i18n-aria="nav.menu.aria" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
+<!-- MOBILE NAV -->
 <div class="mobile-nav">
   <div class="mobile-lang-switcher">
     <button class="lang-btn active" data-lang="ru">RU</button>
@@ -124,6 +136,10 @@
   <a href="licenzii.html" data-i18n="nav.licenses">Лицензии</a>
   <a href="kontakty.html" data-i18n="nav.contacts">Контакты</a>
 </div>
+
+
+
+
 
 <section class="page-hero">
   <img class="page-hero-bg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=600&fit=crop&q=80" alt="Офис">
@@ -383,10 +399,10 @@
           <div class="footer-col-title" data-i18n="footer.company">Компания</div>
           <ul class="footer-links">
             <li><a href="index.html" data-i18n="footer.about">О компании</a></li>
-            <li><a href="rukovodstvo.html" data-i18n="nav.management">Руководство</a></li>
-            <li><a href="opyt.html" data-i18n="nav.experience">Опыт работ</a></li>
+            <li><a href="rukovodstvo.html" data-i18n="footer.management">Руководство</a></li>
+            <li><a href="opyt.html" data-i18n="footer.experience">Опыт работ</a></li>
             <li><a href="licenzii.html" data-i18n="footer.licenses_certs">Лицензии и сертификаты</a></li>
-            <li><a href="kontakty.html" data-i18n="nav.contacts">Контакты</a></li>
+            <li><a href="kontakty.html" data-i18n="footer.contacts">Контакты</a></li>
           </ul>
         </div>
         <div>
@@ -423,6 +439,10 @@
     </div>
   </div>
 </footer>
+
+
+
+
 
 <script src="js/script.js"></script>
 <script src="js/i18n.js"></script>

@@ -41,6 +41,15 @@
   });
 })();
 
+// ===== DESKTOP NAV ACTIVE (body[data-nav-active] + .nav-link[data-nav]) =====
+(function () {
+  const key = document.body.dataset.navActive;
+  if (!key) return;
+  document.querySelectorAll('.nav-link[data-nav]').forEach((a) => {
+    a.classList.toggle('active', a.dataset.nav === key);
+  });
+})();
+
 // ===== MOBILE NAV =====
 (function () {
   const btn = document.querySelector('.hamburger');
