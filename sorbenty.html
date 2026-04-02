@@ -12,11 +12,76 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B" crossorigin="anonymous">
   <style>
     .app-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    .app-table th, .app-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
-    .app-table th { background: var(--blue-dark); color: var(--white); font-weight: 600; font-family: 'Montserrat',sans-serif; }
+    .app-table th, .app-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .app-table th { background: var(--blue-dark); color: var(--white); font-weight: 600; font-family: 'Montserrat',sans-serif; vertical-align: middle; }
+    .app-table td { word-break: break-word; }
     .app-table tr:hover td { background: var(--bg-light); }
     .app-table td:first-child { font-weight: 600; color: var(--blue-mid); }
+    .sorb-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 12px; max-width: 100%; }
+    .sorb-table-scroll--wide .app-table { min-width: 640px; }
     .tag-blue { background: rgba(0,112,192,.1); color: var(--blue-mid); border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .sorb-page-toc { padding: 18px 0 14px; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+    .sorb-page-toc .sorb-toc-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+    .sorb-page-toc .sorb-toc-links { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+    .sorb-page-toc .sorb-toc-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(0, 112, 192, 0.08);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--blue-mid);
+      text-decoration: none;
+      transition: var(--tr);
+    }
+    .sorb-page-toc .sorb-toc-links a:hover {
+      background: rgba(0, 112, 192, 0.16);
+      border-color: var(--blue-mid);
+      color: var(--blue-dark);
+      box-shadow: var(--shadow);
+    }
+    #sorb-intro .content-text > h2 { margin-bottom: 16px; }
+    #sorb-products.section { padding-top: 48px; padding-bottom: 56px; }
+    #sorb-products .section-sub { margin-bottom: 32px; }
+    .products-grid--detail {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .products-grid--detail > .product-card--detail { min-width: 0; }
+    .product-card--detail {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      border: 1px solid var(--border);
+    }
+    .product-card--detail .product-card-color { flex-shrink: 0; width: 8px; }
+    .product-card--detail .product-detail-main { display: flex; flex-direction: column; flex: 1; min-width: 0; padding: 14px 18px; }
+    .product-card--detail .product-name { margin-bottom: 12px; }
+    .product-card--detail .product-zone--apps .product-section-title,
+    .product-card--detail .product-zone--specs .product-section-title,
+    .product-card--detail .product-zone--adv .product-section-title { font-family: 'Montserrat',sans-serif; font-size: 15px; font-weight: 700; color: var(--blue-dark); margin: 16px 0 8px; }
+    .product-card--detail .app-table { font-size: 13px; }
+    .product-card--detail .app-table th,
+    .product-card--detail .app-table td { padding: 8px 12px; }
+    .product-bullet-list { margin: 0 0 8px; padding-left: 22px; list-style: disc; font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+    .product-bullet-list li { margin-bottom: 6px; padding-left: 2px; }
+    .product-bullet-list li:last-child { margin-bottom: 0; }
+    .product-apps-intro { font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0 0 14px; }
+    .sorb-app-services-grid { margin-top: 40px; }
+    .sorb-app-list { margin: 0; padding-left: 22px; list-style: disc; font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+    .sorb-app-list li { margin-bottom: 8px; padding-left: 2px; }
+    .sorb-app-list li:last-child { margin-bottom: 0; }
+    @media (max-width: 768px) {
+      .app-table th, .app-table td { padding: 12px 14px; font-size: 13px; }
+    }
   </style>
 </head>
 <body data-page-title="sorb.title" data-nav-active="directions">
@@ -126,7 +191,7 @@
 </section>
 
 <!-- INTRO -->
-<section class="section">
+<section class="section" id="sorb-intro">
   <div class="container">
     <div class="content-grid">
       <div class="content-text">
@@ -134,15 +199,6 @@
         <h2 data-i18n="sorb.intro.h2">Селективные неорганические сорбенты «Термоксид»</h2>
         <p data-i18n="sorb.intro.p1">Сорбенты марки «Термоксид» — это высокоэффективные селективные неорганические материалы, разработанные и производимые АО «РОСАТОМ ЭНЕРГОХИМТЕХНОЛОГИИ» (ранее АО «Неорганические сорбенты»).</p>
         <p data-i18n="sorb.intro.p2">Применяются для решения экологических задач в атомной отрасли, для очистки технологических и сточных вод промышленных предприятий, питьевой воды, а также для обработки алкогольной продукции.</p>
-        <ul>
-          <li>Высокая радиационная и химическая стойкость</li>
-          <li>Значительная термическая устойчивость</li>
-          <li>Селективное поглощение радионуклидов (Cs, Sr, Co, Sb, Ag, Be и др.)</li>
-          <li>Очистка от токсичных и тяжёлых металлов, органических примесей</li>
-          <li>Возможность регенерации и повторного использования</li>
-          <li>Снижение объёма ЖРО в 3–10 раз</li>
-          <li>Компактируемость отработанного сорбента</li>
-        </ul>
       </div>
       <div class="content-img">
         <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=800&h=520&fit=crop&q=80" alt="Лабораторный анализ">
@@ -151,73 +207,290 @@
   </div>
 </section>
 
+<!-- Anchor nav (IA slugs) — after intro, before product line -->
+<nav class="sorb-page-toc" aria-label="Быстрые ссылки на марки линейки" data-i18n-aria="sorb.toc.aria">
+  <div class="container sorb-toc-inner">
+    <span class="section-label" style="margin:0;" data-i18n="sorb.toc.label">Марки линейки</span>
+    <ul class="sorb-toc-links">
+      <li><a href="#termoksid-3" data-i18n="sorb.brand.t3">Термоксид-3</a></li>
+      <li><a href="#termoksid-3a" data-i18n="sorb.brand.t3a">Термоксид-3А</a></li>
+      <li><a href="#termoksid-3k" data-i18n="sorb.brand.t3k">Термоксид-3К</a></li>
+      <li><a href="#termoksid-35" data-i18n="sorb.brand.t35">Термоксид-35</a></li>
+    </ul>
+  </div>
+</nav>
+
 <!-- PRODUCTS -->
-<section class="section section--light">
+<section class="section section--light" id="sorb-products">
   <div class="container">
     <span class="section-label" data-i18n="sorb.products.label">Линейка продукции</span>
     <h2 class="section-title" data-i18n="sorb.products.title">Марки сорбентов Термоксид</h2>
-    <p class="section-sub" data-i18n="sorb.products.sub">Каждая марка оптимизирована для конкретных задач: от очистки ЖРО и технологических вод реакторного контура АЭС до очистки питьевой воды и обработки алкогольной продукции.</p>
-    <div class="products-grid">
+    <p class="section-sub" data-i18n="sorb.products.sub">Марки ориентированы на разные задачи: от ЖРО и вод реакторного контура до питьевой воды и алкогольной отрасли.</p>
+    <div class="products-grid products-grid--detail">
 
-      <div class="product-card">
+      <article class="product-card product-card--detail" id="termoksid-3">
         <div class="product-card-color"></div>
-        <div class="product-card-body">
-          <div class="product-label">Гидроксид циркония</div>
-          <div class="product-name">Термоксид-3</div>
-          <p class="product-desc">Базовый гидроксид циркония. Применяется для очистки технологических вод 2-го и 3-го контуров АЭС, а также сточных вод промышленных предприятий от радионуклидов и тяжёлых металлов.</p>
-          <div class="product-specs">
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.form">Форма выпуска</span><span class="spec-val">Гранулы 0,5–2 мм</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.cs">Ёмкость по Cs-137</span><span class="spec-val">≥ 0,6 мг-экв/г</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.temp">Рабочая температура</span><span class="spec-val">5–80 °C</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.ph">pH рабочей среды</span><span class="spec-val">3–12</span></div>
+        <div class="product-detail-main">
+          <div class="product-zone--head">
+            <div class="product-label" data-i18n="sorb.products.t3.tag">Гидратированный диоксид циркония</div>
+            <h3 class="product-name" data-i18n="sorb.brand.t3">Термоксид-3</h3>
+          </div>
+          <div class="product-zone--apps">
+            <h4 class="product-section-title" data-i18n="sorb.section.apps">Области применения</h4>
+            <p class="product-apps-intro" data-i18n="sorb.products.t3.appsIntro">Режим применения: фильтрующая загрузка в локальных установках очистки технологических вод от кремния, мышьяка, молибдена, хрома, селена, фосфора, сульфатов, фторидов, фосфатов и др.</p>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t3.apps.li1">Очистка водных растворов от радионуклидов в атомной энергетике.</li>
+              <li data-i18n="sorb.products.t3.apps.li2">Получение особо чистых веществ в химической промышленности.</li>
+              <li data-i18n="sorb.products.t3.apps.li3">Очистка питьевой воды.</li>
+              <li data-i18n="sorb.products.t3.apps.li4">Получение порошков на основе диоксида циркония для высокотемпературных покрытий и катализаторов.</li>
+            </ul>
+          </div>
+          <div class="product-zone--specs">
+            <h4 class="product-section-title" data-i18n="sorb.section.specs">Технические характеристики</h4>
+            <div class="sorb-table-scroll">
+              <table class="app-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="sorb.products.specs.th.param">Параметр</th>
+                    <th data-i18n="sorb.products.specs.th.value">Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.form">Форма и размер</td>
+                    <td data-i18n="sorb.products.t3.spec.form">Стеклообразные гранулы сферической формы, 0,4–1,0 мм</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.appearance">Внешний вид</td>
+                    <td data-i18n="sorb.products.t3.spec.appearance">Белый цвет</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.composition">Состав</td>
+                    <td data-i18n="sorb.products.t3.spec.composition">Гидратированный диоксид циркония</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.bulk">Насыпная плотность</td>
+                    <td data-i18n="sorb.products.t3.spec.bulk">1,0–1,1 кг/дм³</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.moisture">Влажность</td>
+                    <td data-i18n="sorb.products.t3.spec.moisture">45–50 % (масс.)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="product-zone--adv">
+            <h4 class="product-section-title" data-i18n="sorb.section.adv">Ключевые преимущества</h4>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t3.adv.li1">Высокая селективность к радионуклидам, токсичным и тяжёлым металлам</li>
+              <li data-i18n="sorb.products.t3.adv.li2">Повышенная радиационная, термическая и химическая стойкость</li>
+              <li data-i18n="sorb.products.t3.adv.li3">Нерастворим в воде</li>
+              <li data-i18n="sorb.products.t3.adv.li4">Не горюч, не взрывоопасен, не токсичен</li>
+              <li data-i18n="sorb.products.t3.adv.li5">Без вреда для окружающей среды при использовании, хранении, транспортировании и утилизации</li>
+              <li data-i18n="sorb.products.t3.adv.li6">Длительный ресурс работы</li>
+            </ul>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card">
+      <article class="product-card product-card--detail" id="termoksid-3a">
         <div class="product-card-color"></div>
-        <div class="product-card-body">
-          <div class="product-label">Фосфат циркония</div>
-          <div class="product-name">Термоксид-20</div>
-          <p class="product-desc">Фосфат циркония с повышенной селективностью к ионам цезия и стронция. Идеален для переработки жидких радиоактивных отходов (ЖРО) с высоким солесодержанием.</p>
-          <div class="product-specs">
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.form">Форма выпуска</span><span class="spec-val">Гранулы 0,3–1,5 мм</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.cs">Ёмкость по Cs-137</span><span class="spec-val">≥ 1,2 мг-экв/г</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.temp">Рабочая температура</span><span class="spec-val">5–100 °C</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.ph">pH рабочей среды</span><span class="spec-val">1–10</span></div>
+        <div class="product-detail-main">
+          <div class="product-zone--head">
+            <div class="product-label" data-i18n="sorb.products.t3a.tag">Фосфат циркония</div>
+            <h3 class="product-name" data-i18n="sorb.brand.t3a">Термоксид-3А</h3>
+          </div>
+          <div class="product-zone--apps">
+            <h4 class="product-section-title" data-i18n="sorb.section.apps">Области применения</h4>
+            <p class="product-apps-intro" data-i18n="sorb.products.t3a.appsIntro">Очистка вод бассейнов выдержки и хранения ОЯТ от радионуклидов цезия, кобальта, марганца и др. при pH 6,0–8,5; локальная очистка от токсичных и тяжёлых металлов в смеси с «Термоксид-3».</p>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t3a.apps.li1">Очистка вод бассейнов выдержки атомных реакторов и систем переработки трапных вод от радионуклидов.</li>
+              <li data-i18n="sorb.products.t3a.apps.li2">Загрузка сорбционных колонн при обработке алкогольной продукции.</li>
+              <li data-i18n="sorb.products.t3a.apps.li3">Доочистка питьевой воды от железа, марганца, меди, свинца, кадмия, кобальта, никеля, мышьяка, цинка, бария, хрома и др. поливалентных металлов, общей жёсткости, органолептических показателей, радионуклидов.</li>
+            </ul>
+          </div>
+          <div class="product-zone--specs">
+            <h4 class="product-section-title" data-i18n="sorb.section.specs">Технические характеристики</h4>
+            <div class="sorb-table-scroll">
+              <table class="app-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="sorb.products.specs.th.param">Параметр</th>
+                    <th data-i18n="sorb.products.specs.th.value">Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.form">Форма и размер</td>
+                    <td data-i18n="sorb.products.t3a.spec.form">Стеклообразные гранулы сферической формы, 0,4–1,0 мм</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.appearance">Внешний вид</td>
+                    <td data-i18n="sorb.products.t3a.spec.appearance">Белый цвет</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.composition">Состав</td>
+                    <td data-i18n="sorb.products.t3a.spec.composition">Фосфат циркония</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.bulk">Насыпная плотность</td>
+                    <td data-i18n="sorb.products.t3a.spec.bulk">1,0–1,1 кг/дм³</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.moisture">Влажность</td>
+                    <td data-i18n="sorb.products.t3a.spec.moisture">35–40 % (масс.)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="product-zone--adv">
+            <h4 class="product-section-title" data-i18n="sorb.section.adv">Ключевые преимущества</h4>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t3a.adv.li1">Базовые свойства как у Термоксид-3: селективность к радионуклидам и металлам, радиационная и химическая стойкость, безопасность эксплуатации и утилизации, длительный ресурс.</li>
+              <li data-i18n="sorb.products.t3a.adv.li2">Акцент на воду бассейнов выдержки и хранения ОЯТ, трапные системы, совместная очистка с «Термоксид-3».</li>
+              <li data-i18n="sorb.products.t3a.adv.li3">Эффективная доочистка питьевой воды и сценарии с загрузкой колонн при обработке алкогольной продукции.</li>
+            </ul>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card">
+      <article class="product-card product-card--detail" id="termoksid-3k">
         <div class="product-card-color"></div>
-        <div class="product-card-body">
-          <div class="product-label">Цирконий-титановый</div>
-          <div class="product-name">Термоксид-25</div>
-          <p class="product-desc">Смешанный оксид циркония и титана. Отличается высокой устойчивостью к радиолизу и повышенной сорбционной ёмкостью по стронцию. Используется на блоках ВВЭР-1000 и ВВЭР-1200.</p>
-          <div class="product-specs">
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.form">Форма выпуска</span><span class="spec-val">Гранулы 0,5–2,5 мм</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.sr">Ёмкость по Sr-90</span><span class="spec-val">≥ 0,9 мг-экв/г</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.temp">Рабочая температура</span><span class="spec-val">5–150 °C</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.ph">pH рабочей среды</span><span class="spec-val">2–13</span></div>
+        <div class="product-detail-main">
+          <div class="product-zone--head">
+            <div class="product-label" data-i18n="sorb.products.t3k.tag">Карбонатсодержащий гидроксид циркония (щелочная среда)</div>
+            <h3 class="product-name" data-i18n="sorb.brand.t3k">Термоксид-3К</h3>
+          </div>
+          <div class="product-zone--apps">
+            <h4 class="product-section-title" data-i18n="sorb.section.apps">Области применения</h4>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t3k.apps.li1">Очистка ЖРО и технологических вод от радионуклидов стронция в щелочной среде (pH 8,5–11,0); катионы двухвалентных металлов.</li>
+            </ul>
+          </div>
+          <div class="product-zone--specs">
+            <h4 class="product-section-title" data-i18n="sorb.section.specs">Технические характеристики</h4>
+            <div class="sorb-table-scroll">
+              <table class="app-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="sorb.products.specs.th.param">Параметр</th>
+                    <th data-i18n="sorb.products.specs.th.value">Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.form">Форма и размер</td>
+                    <td data-i18n="sorb.products.t3k.spec.form">Стеклообразные гранулы сферической формы, 0,4–1,0 мм</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.appearance">Внешний вид</td>
+                    <td data-i18n="sorb.products.t3k.spec.appearance">Белый цвет</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.composition">Состав</td>
+                    <td data-i18n="sorb.products.t3k.spec.composition">Карбонатсодержащий гидроксид циркония</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.bulk">Насыпная плотность</td>
+                    <td data-i18n="sorb.products.t3k.spec.bulk">0,95–1,05 кг/дм³</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.moisture">Влажность</td>
+                    <td data-i18n="sorb.products.t3k.spec.moisture">40–50 % (масс.)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="product-zone--adv">
+            <h4 class="product-section-title" data-i18n="sorb.section.adv">Ключевые преимущества</h4>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t3k.adv.li1">Радиационная стойкость не менее 100 МГр</li>
+              <li data-i18n="sorb.products.t3k.adv.li2">Рабочая температура до 100 °C</li>
+              <li data-i18n="sorb.products.t3k.adv.li3">Нерастворим в воде</li>
+              <li data-i18n="sorb.products.t3k.adv.li4">Не горюч, не взрывоопасен, не токсичен</li>
+              <li data-i18n="sorb.products.t3k.adv.li5">Без вреда для окружающей среды при использовании, хранении, транспортировании и утилизации</li>
+              <li data-i18n="sorb.products.t3k.adv.li6">Ресурс работы не менее 3 лет</li>
+              <li data-i18n="sorb.products.t3k.adv.li7">Сохранность прочностных свойств в радиационных полях до 30 лет</li>
+            </ul>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card">
+      <article class="product-card product-card--detail" id="termoksid-35">
         <div class="product-card-color"></div>
-        <div class="product-card-body">
-          <div class="product-label">Модифицированный</div>
-          <div class="product-name">Термоксид-35</div>
-          <p class="product-desc">Новейшая разработка компании. Модифицированный сорбент с повышенной ёмкостью по цезию, стронцию и кобальту одновременно. Предназначен для блоков нового поколения ВВЭР-1200 (АЭС-2006).</p>
-          <div class="product-specs">
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.form">Форма выпуска</span><span class="spec-val">Гранулы 0,5–2 мм</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.complex">Комплексная ёмкость</span><span class="spec-val">≥ 1,8 мг-экв/г</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.temp">Рабочая температура</span><span class="spec-val">5–120 °C</span></div>
-            <div class="spec-row"><span class="spec-key" data-i18n="sorb.spec.ph">pH рабочей среды</span><span class="spec-val">3–13</span></div>
+        <div class="product-detail-main">
+          <div class="product-zone--head">
+            <div class="product-label" data-i18n="sorb.products.t35.tag">Гексацианоферрат (ферроцианит) никеля на гидроксиде циркония</div>
+            <h3 class="product-name" data-i18n="sorb.brand.t35">Термоксид-35</h3>
+          </div>
+          <div class="product-zone--apps">
+            <h4 class="product-section-title" data-i18n="sorb.section.apps">Области применения</h4>
+            <p class="product-apps-intro" data-i18n="sorb.products.t35.appsIntro">Очистка жидких РАО и технологических вод от радионуклидов цезия в широком диапазоне солесодержания и кислотности, pH от 2 до 11,5.</p>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t35.apps.li1">Селективная очистка технологических вод на АЭС и природных вод с разной минерализацией от радионуклидов цезия.</li>
+              <li data-i18n="sorb.products.t35.apps.li2">Ликвидация последствий аварийных ситуаций.</li>
+              <li data-i18n="sorb.products.t35.apps.li3">Загрузка сорбционных колонн для дезактивации вод разного солевого состава, в т.ч. при высокой минерализации.</li>
+            </ul>
+          </div>
+          <div class="product-zone--specs">
+            <h4 class="product-section-title" data-i18n="sorb.section.specs">Технические характеристики</h4>
+            <div class="sorb-table-scroll">
+              <table class="app-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="sorb.products.specs.th.param">Параметр</th>
+                    <th data-i18n="sorb.products.specs.th.value">Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.form">Форма и размер</td>
+                    <td data-i18n="sorb.products.t35.spec.form">Стеклообразные гранулы сферической формы, 0,4–1,0 мм</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.appearance">Внешний вид</td>
+                    <td data-i18n="sorb.products.t35.spec.appearance">Зелёный цвет</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.composition">Состав</td>
+                    <td data-i18n="sorb.products.t35.spec.composition">Гексацианоферрат (ферроцианит) никеля на носителе гидроксид циркония</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.bulk">Насыпная плотность</td>
+                    <td data-i18n="sorb.products.t35.spec.bulk">1,1–1,2 кг/дм³</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.moisture">Влажность</td>
+                    <td data-i18n="sorb.products.t35.spec.moisture">37–42 % (масс.)</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sorb.matrix.param.exchCapCs">Обменная ёмкость по Cs (из 0,1 н. CsCl)</td>
+                    <td data-i18n="sorb.products.t35.spec.exchCapCs">0,45–0,55 моль/кг</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n-html="sorb.matrix.param.kdCs">K<sub>d</sub> Cs в имитате ЖРО АЭС</td>
+                    <td data-i18n="sorb.products.t35.spec.kdCs">&gt; 1,0×10⁴ дм³/кг</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="product-zone--adv">
+            <h4 class="product-section-title" data-i18n="sorb.section.adv">Ключевые преимущества</h4>
+            <ul class="product-bullet-list">
+              <li data-i18n="sorb.products.t35.adv.li1">Повышенная селективность к радионуклидам цезия</li>
+              <li data-i18n="sorb.products.t35.adv.li2">Радиационная стойкость ≥ 100 МГр</li>
+              <li data-i18n="sorb.products.t35.adv.li3">Рабочая температура до 100 °C</li>
+              <li data-i18n="sorb.products.t35.adv.li4">Линейная скорость фильтрации 5–50 м/ч при высоте загрузки 1 м</li>
+              <li data-i18n="sorb.products.t35.adv.li5">Срок сохраняемости ≥ 3 лет</li>
+              <li data-i18n="sorb.products.t35.adv.li6">Сохранность прочностных свойств в радиационных полях до 30 лет</li>
+            </ul>
           </div>
         </div>
-      </div>
+      </article>
 
     </div>
   </div>
@@ -228,55 +501,61 @@
   <div class="container">
     <span class="section-label" data-i18n="sorb.app.label">Применение</span>
     <h2 class="section-title" data-i18n="sorb.app.title">Области применения сорбентов «Термоксид»</h2>
-    <p class="section-sub" data-i18n="sorb.app.sub">Широкий спектр направлений — от атомной энергетики до пищевой промышленности и водоподготовки для питьевых нужд.</p>
+    <p class="section-sub" data-i18n="sorb.app.sub">Атомная отрасль, промышленность, питьевая вода, алкоголь и медицина — подбор марки под задачу очистки.</p>
 
-    <div class="services-grid" style="margin-top:40px;">
+    <div class="services-grid sorb-app-services-grid">
 
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-atom"></i></div>
         <h3 class="service-title" data-i18n="sorb.app.nuclear">Атомная отрасль</h3>
-        <p class="service-desc" style="margin-bottom:14px;">Дезактивация технологических вод АЭС и других производств атомной отрасли:</p>
-        <ul style="padding-left:18px; font-size:14px; color:var(--text-secondary); line-height:1.8;">
-          <li>Очистка ЖРО объектов атомной отрасли</li>
-          <li>Очистка вод бассейнов выдержки и хранения ОЯТ</li>
-          <li>Очистка конденсатов и кубовых остатков выпарных аппаратов</li>
-          <li>Очистка регенерационных растворов ионообменных смол</li>
-          <li>Очистка вод спецпрачечных, трапных вод, дебалансных вод и других водных растворов</li>
-          <li>Ликвидация последствий аварийных ситуаций</li>
+        <p class="service-desc" data-i18n="sorb.app.nuclear.intro" style="margin-bottom:14px;">Очистка технологических и вспомогательных вод на объектах атомной отрасли.</p>
+        <ul class="sorb-app-list">
+          <li data-i18n="sorb.app.nuclear.li1">ЖРО; бассейны выдержки и хранения ОЯТ; регенерационные растворы ионообменных смол</li>
+          <li data-i18n="sorb.app.nuclear.li2">Конденсаты и кубовые остатки выпаривания; спецпрачечные, трапные и дебалансные воды</li>
+          <li data-i18n="sorb.app.nuclear.li3">Ликвидация последствий аварийных ситуаций</li>
         </ul>
       </div>
 
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-industry"></i></div>
         <h3 class="service-title" data-i18n="sorb.app.industry">Промышленные предприятия</h3>
-        <p class="service-desc" style="margin-bottom:14px;">Очистка технологических и сточных вод от радионуклидов, токсичных и тяжёлых металлов и других загрязнений:</p>
-        <ul style="padding-left:18px; font-size:14px; color:var(--text-secondary); line-height:1.8;">
-          <li>Очистка технологических вод промышленных предприятий, в т.ч. конденсатов выпарных аппаратов</li>
-          <li>Очистка регенерационных растворов ионообменных смол</li>
-          <li>Очистка сточных вод промышленных предприятий</li>
-          <li>Ликвидация последствий аварийных ситуаций</li>
+        <p class="service-desc" data-i18n="sorb.app.industry.intro" style="margin-bottom:14px;">Технологические и сточные воды: радионуклиды, токсичные и тяжёлые металлы, типовые примеси.</p>
+        <ul class="sorb-app-list">
+          <li data-i18n="sorb.app.industry.li1">Технологические воды и конденсаты выпаривания</li>
+          <li data-i18n="sorb.app.industry.li2">Регенерационные растворы ионообменных смол; промышленные стоки</li>
+          <li data-i18n="sorb.app.industry.li3">Аварийные сценарии — по задаче</li>
         </ul>
       </div>
 
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-tint"></i></div>
         <h3 class="service-title" data-i18n="sorb.app.drinking">Питьевая вода</h3>
-        <p class="service-desc" style="margin-bottom:14px;">Очистка питьевой воды от радионуклидов, токсичных и тяжёлых металлов, стабилизация pH, улучшение органолептических показателей. Высокоэффективное удаление:</p>
-        <ul style="padding-left:18px; font-size:14px; color:var(--text-secondary); line-height:1.8;">
-          <li>Радионуклидов цезия, стронция, кобальта, сурьмы, серебра, бериллия и др.</li>
-          <li>Многозарядных анионов кремния, мышьяка, молибдена, хрома, селена, фосфора и др.</li>
-          <li>Железа, марганца, алюминия, аминов, токсичных и тяжёлых металлов, сероводорода, аммиака, активного хлора и др.</li>
+        <p class="service-desc" data-i18n="sorb.app.drinking.intro" style="margin-bottom:14px;">Доочистка: радионуклиды, металлы, pH и органолептика — в соответствии с нормами для питьевой воды.</p>
+        <ul class="sorb-app-list">
+          <li data-i18n="sorb.app.drinking.li1">Cs, Sr, Co, Sb, Ag, Be и др.</li>
+          <li data-i18n="sorb.app.drinking.li2">Si, As, Mo, Cr, Se, P и др. (в т.ч. в виде анионов)</li>
+          <li data-i18n="sorb.app.drinking.li3">Fe, Mn, Al, тяжёлые металлы, сероводород, аммиак, активный хлор и др.</li>
         </ul>
       </div>
 
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-wine-bottle"></i></div>
         <h3 class="service-title" data-i18n="sorb.app.alcohol">Алкогольная продукция</h3>
-        <p class="service-desc" style="margin-bottom:14px;">Обработка самогона, водки, коньяка, виски, бренди, вина в фильтрах и фильтр-системах:</p>
-        <ul style="padding-left:18px; font-size:14px; color:var(--text-secondary); line-height:1.8;">
-          <li>Эффективная обработка от солей жёсткости, радионуклидов, аммиака, токсичных и тяжёлых металлов (Pb, Cd, Cu, Al, Fe, Mn, Cr, Zn и др.), а также органических примесей (альдегидов, сложных эфиров и тяжёлых спиртов)</li>
-          <li>Удаление избыточных концентраций катионов K⁺ и Ca²⁺ для стабилизации вин и коньяков против кристаллических и металлических помутнений</li>
-          <li>Улучшение органолептических показателей, устранение посторонних запахов и придание мягкости вкусу алкогольной продукции</li>
+        <p class="service-desc" data-i18n="sorb.app.alcohol.intro" style="margin-bottom:14px;">Фильтрация крепкого алкоголя и вин: снижение примесей и стабилизация по задаче производителя.</p>
+        <ul class="sorb-app-list">
+          <li data-i18n="sorb.app.alcohol.li1">Жёсткость, радионуклиды, NH₃, металлы, органические примеси</li>
+          <li data-i18n="sorb.app.alcohol.li2">Стабилизация вин и коньяков (K⁺, Ca²⁺) против помутнений</li>
+          <li data-i18n="sorb.app.alcohol.li3">Органолептика и вкус — по согласованному режиму</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-heart-pulse"></i></div>
+        <h3 class="service-title" data-i18n="sorb.app.medicine">Медицина</h3>
+        <p class="service-desc" data-i18n="sorb.app.medicine.desc" style="margin-bottom:14px;">Применение сорбентов в медицинской отрасли — подбор фильтрующих материалов и технических решений с учётом действующих нормативных требований к составу сред и контактным материалам.</p>
+        <ul class="sorb-app-list">
+          <li data-i18n="sorb.app.medicine.li1">Использование в составе фильтрационных систем там, где это предусмотрено техническим заданием и регламентами.</li>
+          <li data-i18n="sorb.app.medicine.li2">Консультации по подбору марок и режимов — через отдел продаж и техническую поддержку компании.</li>
         </ul>
       </div>
 
@@ -294,7 +573,7 @@
     <span class="section-label" data-i18n="sorb.table.label">Опыт поставок</span>
     <h2 class="section-title" data-i18n="sorb.table.title">Объекты применения сорбентов Термоксид</h2>
     <p class="section-sub" data-i18n="sorb.table.sub">Продукция компании поставляется на атомные электростанции России, зарубежные АЭС российского дизайна и предприятия атомной отрасли.</p>
-    <div style="overflow-x:auto; border-radius: var(--radius); box-shadow: var(--shadow);">
+    <div class="sorb-table-scroll sorb-table-scroll--wide">
       <table class="app-table">
         <thead>
           <tr>
