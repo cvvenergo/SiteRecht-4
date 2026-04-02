@@ -19,11 +19,16 @@ const NAV_ACTIVE_BY_FILE = {
   'energosistemy.html': 'directions',
   'inzhiniring.html': 'directions',
   'vodoochistka.html': 'directions',
+  'nauka-innovacii.html': 'directions',
+  'nauka-vodoochistka.html': 'directions',
+  'nauka-medicina.html': 'directions',
+  'nauka-atom.html': 'directions',
   'rza.html': 'directions',
   'nadezhnost.html': 'directions',
   'rukovodstvo.html': 'management',
   'opyt.html': 'experience',
   'licenzii.html': 'licenses',
+  'suot.html': 'none',
   'kontakty.html': 'contacts',
 };
 

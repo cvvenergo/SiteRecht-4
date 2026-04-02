@@ -1,0 +1,11 @@
+{
+  "name": "raecht-static-site",
+  "private": true,
+  "scripts": {
+    "verify:email": "node scripts/verify-email.js",
+    "verify:site-copy": "node scripts/verify-site-copy.js"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
