@@ -76,7 +76,6 @@
   const KNOWN_TAB_PANEL_IDS = new Set([
     'tab-sorbenty',
     'tab-energy',
-    'tab-inzh',
     'tab-voda',
   ]);
 

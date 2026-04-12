@@ -531,6 +531,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100%;
   object-fit: cover;
 }
+.page-hero-bg--focus-top {
+  object-position: top center;
+}
 .page-hero-overlay {
   position: absolute;
   inset: 0;

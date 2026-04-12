@@ -12,10 +12,62 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B" crossorigin="anonymous">
   <style>
     /* ---- Intro ---- */
+    /* Узкий вертикальный ритм страницы лицензий */
+    section.lic-page-section { padding: 44px 0; }
+    section.lic-page-section--gallery { padding: 32px 0 48px; }
+
+    .lic-policy-download {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 20px;
+      background: var(--white);
+      padding: 18px 22px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--accent);
+    }
+    .lic-policy-download__lead {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      min-width: 200px;
+    }
+    .lic-policy-download__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(0,32,96,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-mid);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .lic-policy-download__icon svg {
+      display: block;
+      width: 28px;
+      height: 28px;
+    }
+    .lic-policy-download__title {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text-dark);
+    }
+    .lic-policy-download__desc {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
     .smk-intro {
       display: grid;
       grid-template-columns: 1fr 360px;
-      gap: 60px;
+      gap: 48px;
       align-items: center;
     }
     .smk-intro-text p {
@@ -388,7 +440,7 @@
 
 <!-- HERO -->
 <section class="page-hero">
-  <img class="page-hero-bg" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=600&fit=crop&q=80" alt="Документы и сертификаты">
+  <img class="page-hero-bg" src="assets/pics/licensii.png" alt="Документы и сертификаты">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <div class="container">
@@ -403,7 +455,7 @@
 </section>
 
 <!-- INTRO -->
-<section class="section">
+<section class="section lic-page-section">
   <div class="container">
     <div class="smk-intro">
       <div class="smk-intro-text">
@@ -448,7 +500,7 @@
 </section>
 
 <!-- CERTIFICATES -->
-<section class="section section--light">
+<section class="section section--light lic-page-section">
   <div class="container">
     <span class="section-label" data-i18n="lic.certs.label">Подтверждённое соответствие</span>
     <h2 class="section-title" data-i18n="lic.certs.title">Сертификаты соответствия</h2>
@@ -527,11 +579,29 @@
       </div>
 
     </div>
+
+    <div class="lic-policy-download">
+      <div class="lic-policy-download__lead">
+        <div class="lic-policy-download__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path fill="#c62828" d="M6 4a2 2 0 0 1 2-2h10l8 8v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4Z"/>
+            <path fill="#ffebee" d="M18 2v8h8L18 2Z"/>
+            <path fill="#fff" d="M9 14h14v1.5H9V14Zm0 3.5h14V19H9v-1.5Zm0 3.5h10V22H9v-1Z"/>
+            <text x="16" y="28.5" text-anchor="middle" fill="#fff" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="7" font-weight="800" letter-spacing=".02em">PDF</text>
+          </svg>
+        </div>
+        <div>
+          <div class="lic-policy-download__title" data-i18n="lic.policy.download.title">Политика в области качества</div>
+          <p class="lic-policy-download__desc" data-i18n="lic.policy.download.desc">Документ в формате PDF для скачивания.</p>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="assets/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0.pdf" download target="_blank" rel="noopener" data-i18n="lic.policy.download.btn">Скачать PDF</a>
+    </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="section section--light">
+<section class="section section--light lic-page-section lic-page-section--gallery">
   <div class="container">
     <span class="section-label" data-i18n="lic.gallery.label">Оригиналы документов</span>
     <h2 class="section-title" data-i18n="lic.gallery.title">Копии сертификатов</h2>
@@ -597,7 +667,7 @@
 </section>
 
 <!-- CTA -->
-<section class="section section--blue">
+<section class="section section--blue lic-page-section">
   <div class="container" style="text-align:center; max-width:720px;">
     <span class="section-label" style="color:var(--accent);" data-i18n="lic.cta.label">Вопросы по документам</span>
     <h2 class="section-title" data-i18n="lic.cta.title">Нужны копии сертификатов?</h2>
