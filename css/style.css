@@ -516,6 +516,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .news-title a:hover { color: var(--blue-mid); }
 .news-excerpt { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
+.news-section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 /* ===== PAGE HERO ===== */
 .page-hero {
   height: 380px;
